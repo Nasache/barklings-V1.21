@@ -3,28 +3,37 @@ package net.nathan.nathansbiomes.entity.custom;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.mob.EvokerFangsEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.SpellcastingIllagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.raid.RaiderEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.World;
 import net.nathan.nathansbiomes.block.ModBlocks;
 
+import java.util.EnumSet;
 import java.util.List;
-
+import java.util.Random;
 
 public class IceologerEntity extends SpellcastingIllagerEntity {
+    private static final Random RANDOM = new Random();
+
     public IceologerEntity(EntityType<? extends IceologerEntity> entityType, World world) {
         super(entityType, world);
         this.experiencePoints = 10;
@@ -34,8 +43,9 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
         super.initGoals();
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new LookAtTargetGoal());
-        this.goalSelector.add(2, new FleeEntityGoal<>(this, PlayerEntity.class, 8.0F, 0.6, 1.0));
-        this.goalSelector.add(4, new SummonIceGoal());
+        this.goalSelector.add(2, new FleeEntityGoal<>(this, PlayerEntity.class, 6.0F, 0.4, 0.7));
+        this.goalSelector.add(4, new ConjureFangsGoal());
+        this.goalSelector.add(3, new SummonIceGoal());
         this.goalSelector.add(8, new WanderAroundGoal(this, 0.6));
         this.goalSelector.add(9, new LookAtEntityGoal(this, PlayerEntity.class, 3.0F, 1.0F));
         this.goalSelector.add(10, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
@@ -44,7 +54,10 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
     }
 
     public static DefaultAttributeContainer.Builder createIceologerAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 12.0).add(EntityAttributes.GENERIC_MAX_HEALTH, 24.0);
+        return HostileEntity.createHostileAttributes()
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 20.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 40.0);
     }
 
     protected void initDataTracker(DataTracker.Builder builder) {
@@ -96,36 +109,48 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
         }
 
         public boolean canStart() {
-            return super.canStart() && IceologerEntity.this.getTarget() != null;
+            LivingEntity target = IceologerEntity.this.getTarget();
+            if (target != null) {
+                if (RANDOM.nextInt(30) + 1 == 8) { // Generate a number between 1 and 10
+                    double distance = IceologerEntity.this.squaredDistanceTo(target);
+                    return distance > 18; // Ensure the target is within the range
+                }
+            }
+            return false;
         }
 
         protected int getSpellTicks() {
-            return 100;
+            return 40; // Duration of the spell effect
         }
 
         protected int startTimeDelay() {
-            return 340;
+            return 300; // Delay before starting this spell again
         }
 
         protected void castSpell() {
-            List<PlayerEntity> nearbyPlayers = IceologerEntity.this.getWorld().getEntitiesByClass(PlayerEntity.class,
-                    IceologerEntity.this.getBoundingBox().expand(15), player -> player.isAlive());
+            LivingEntity target = IceologerEntity.this.getTarget();
+            ServerWorld serverWorld = (ServerWorld) getWorld();
+            if (target != null) {
+                BlockPos centerPos = target.getBlockPos().up(10);
 
-            for (PlayerEntity player : nearbyPlayers) {
-                BlockPos pos = player.getBlockPos().up(10);
                 int[][] firstLayer = {
-                        {0, 0}, {1, 0}, {2, 0},
-                        {0, 1}, {1, 1}, {2, 1},
-                        {0, 2}, {1, 2}, {2, 2}
+                        {-1, -1}, {0, -1}, {1, -1},
+                        {-1, 0}, {0, 0}, {1, 0},
+                        {-1, 1}, {0, 1}, {1, 1}
                 };
 
                 int[][] secondLayer = {
-                        {0, 1}, {1, 1}, {2, 1},
-                        {1, 0}, {1, 1}, {1, 2}
+                        {0, -1}, {-1, 0}, {0, 0},
+                        {1, 0}, {0, 1}
                 };
 
-                placeBlocks((ServerWorld) IceologerEntity.this.getWorld(), pos, firstLayer, 0);
-                placeBlocks((ServerWorld) IceologerEntity.this.getWorld(), pos, secondLayer, 1);
+                // Place blocks with the centerPos as the reference point
+                placeBlocks((ServerWorld) IceologerEntity.this.getWorld(), centerPos, firstLayer, 0);
+                placeBlocks((ServerWorld) IceologerEntity.this.getWorld(), centerPos, secondLayer, 1);
+
+                // Spawn both the explosion particle and the 3x3 particle effect
+                spawnExplosionParticle(serverWorld, centerPos.down());
+                spawnParticleEffect(serverWorld, centerPos.down(10));
             }
         }
 
@@ -139,13 +164,109 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
             }
         }
 
+        private void spawnExplosionParticle(ServerWorld world, BlockPos pos) {
+            double centerX = pos.getX() + 0.5;
+            double centerY = pos.getY() + 0.5;
+            double centerZ = pos.getZ() + 0.5;
 
-        protected SoundEvent getSoundPrepare() {
+            world.spawnParticles(ParticleTypes.EXPLOSION, centerX, centerY, centerZ, 1, 0.0, 0.0, 0.0, 0.0);
+        }
+
+        private void spawnParticleEffect(ServerWorld world, BlockPos pos) {
+            double centerX = pos.getX() + 0.5;
+            double centerY = pos.getY() + 0.5;
+            double centerZ = pos.getZ() + 0.5;
+
+            // Create a 3x3 square around the position
+            for (int x = -1; x <= 1; x++) {
+                for (int z = -1; z <= 1; z++) {
+                    world.spawnParticles(ParticleTypes.CLOUD, centerX + x, centerY, centerZ + z, 1, 0.0, 0.0, 0.0, 0.0);
+                }
+            }
+        }
+
+
+
+    protected SoundEvent getSoundPrepare() {
             return SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON;
         }
 
         protected Spell getSpell() {
-            return Spell.SUMMON_VEX; // Adjust to a new spell type if necessary
+            return Spell.SUMMON_VEX;
+        }
+    }
+
+    private class ConjureFangsGoal extends SpellcastingIllagerEntity.CastSpellGoal {
+        ConjureFangsGoal() {
+            super();
+        }
+
+        protected int getSpellTicks() {
+            return 20; // Duration of the spell effect
+        }
+
+        protected int startTimeDelay() {
+            return 340; // Delay before starting this spell again
+        }
+
+        public boolean canStart() {
+            LivingEntity target = IceologerEntity.this.getTarget();
+            if (target != null) {
+                if (RANDOM.nextInt(15) + 1 == 8) { // Generate a number between 1 and 10
+                    double distance = IceologerEntity.this.squaredDistanceTo(target);
+                    return distance <= 18; // Ensure the target is within the range
+                }
+            }
+            return false;
+        }
+
+        protected void castSpell() {
+            LivingEntity target = IceologerEntity.this.getTarget();
+            if (target != null) {
+                BlockPos center = new BlockPos((int) IceologerEntity.this.getX(), (int) IceologerEntity.this.getY(), (int) IceologerEntity.this.getZ());
+                for (int xOffset = -1; xOffset <= 1; xOffset++) {
+                    for (int zOffset = -1; zOffset <= 1; zOffset++) {
+                        if (xOffset != 0 || zOffset != 0) {
+                            conjureFangs(center.getX() + xOffset, center.getY(), center.getZ() + zOffset);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void conjureFangs(double x, double y, double z) {
+            BlockPos blockPos = new BlockPos((int) x, (int) y, (int) z);
+            boolean hasSolidBlockBelow = false;
+            double yPos = 0.0;
+
+            do {
+                BlockPos belowPos = blockPos.down();
+                BlockState blockState = IceologerEntity.this.getWorld().getBlockState(belowPos);
+                if (blockState.isSideSolidFullSquare(IceologerEntity.this.getWorld(), belowPos, Direction.UP)) {
+                    if (!IceologerEntity.this.getWorld().isAir(blockPos)) {
+                        BlockState currentState = IceologerEntity.this.getWorld().getBlockState(blockPos);
+                        VoxelShape voxelShape = currentState.getCollisionShape(IceologerEntity.this.getWorld(), blockPos);
+                        if (!voxelShape.isEmpty()) {
+                            yPos = voxelShape.getMax(Direction.Axis.Y);
+                        }
+                    }
+                    hasSolidBlockBelow = true;
+                    break;
+                }
+                blockPos = blockPos.down();
+            } while (blockPos.getY() >= MathHelper.floor(y) - 1);
+
+            if (hasSolidBlockBelow) {
+                IceologerEntity.this.getWorld().spawnEntity(new EvokerFangsEntity(IceologerEntity.this.getWorld(), x, blockPos.getY() + yPos, z, 0.0F, 3, IceologerEntity.this));
+            }
+        }
+
+        protected SoundEvent getSoundPrepare() {
+            return SoundEvents.ENTITY_EVOKER_PREPARE_ATTACK;
+        }
+
+        protected Spell getSpell() {
+            return Spell.FANGS;
         }
     }
 }
