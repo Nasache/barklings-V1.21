@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"net.nathan.nathansbiomes.NathansBiomesDataGenerator"
+		],
+		"client": [
+			"net.nathan.nathansbiomes.NathansBiomesClient"
 		]
 	},
 	"mixins": [

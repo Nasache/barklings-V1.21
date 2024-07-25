@@ -2,8 +2,10 @@ package net.nathan.nathansbiomes;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.nathan.nathansbiomes.block.ModBlocks;
 import net.nathan.nathansbiomes.entity.ModEntities;
+import net.nathan.nathansbiomes.entity.custom.IceologerEntity;
 import net.nathan.nathansbiomes.item.ModItemGroup;
 import net.nathan.nathansbiomes.item.ModItems;
 import net.nathan.nathansbiomes.util.ModLootTableModifiers;
@@ -31,6 +33,11 @@ public class NathansBiomes implements ModInitializer {
 		ModWorldGeneration.generateModWorldGeneration();
 
 		ModEntities.registerModEntities();
+
+
+
+		FabricDefaultAttributeRegistry.register(ModEntities.ICEOLOGER, IceologerEntity.createIceologerAttributes());
+
 
 	}
 }
