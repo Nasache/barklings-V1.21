@@ -3,7 +3,6 @@ package net.nathan.nathansbiomes.entity.custom;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.SnowballEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.EntityHitResult;
@@ -43,8 +42,7 @@ public class MagicSnowballEntity extends SnowballEntity {
         if (hitResult.getType() == HitResult.Type.ENTITY) {
             Entity entity = ((EntityHitResult) hitResult).getEntity();
 
-            if (getWorld() instanceof ServerWorld) {
-                ServerWorld serverWorld = (ServerWorld) getWorld();
+            if (getWorld() instanceof ServerWorld serverWorld) {
                 BlockPos entityPos = entity.getBlockPos().up(10);
 
                 int[][] firstLayer = {
@@ -62,6 +60,7 @@ public class MagicSnowballEntity extends SnowballEntity {
                 placeBlocks(serverWorld, entityPos, secondLayer, 1);
 
                 spawnExplosionParticle(serverWorld, entityPos.down());
+                spawnParticleEffect(serverWorld, entityPos.down(10));
             }
 
             discard();
@@ -87,6 +86,15 @@ public class MagicSnowballEntity extends SnowballEntity {
         world.spawnParticles(ParticleTypes.EXPLOSION, centerX, centerY, centerZ, 1, 0.0, 0.0, 0.0, 0.0);
     }
 
-    public void setProperties(PlayerEntity player, float pitch, float yaw, float v, float v1, float v2) {
+    private void spawnParticleEffect(ServerWorld world, BlockPos pos) {
+        double centerX = pos.getX() + 0.5;
+        double centerY = pos.getY() + 0.5;
+        double centerZ = pos.getZ() + 0.5;
+
+        for (int x = -1; x <= 1; x++) {
+            for (int z = -1; z <= 1; z++) {
+                world.spawnParticles(ParticleTypes.CLOUD, centerX + x, centerY, centerZ + z, 1, 0.0, 0.0, 0.0, 0.0);
+            }
+        }
     }
 }

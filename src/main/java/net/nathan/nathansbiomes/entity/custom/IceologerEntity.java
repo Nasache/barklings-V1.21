@@ -1,6 +1,7 @@
 package net.nathan.nathansbiomes.entity.custom;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -27,8 +28,6 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.World;
 import net.nathan.nathansbiomes.block.ModBlocks;
 
-import java.util.EnumSet;
-import java.util.List;
 import java.util.Random;
 
 public class IceologerEntity extends SpellcastingIllagerEntity {
@@ -78,6 +77,20 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
 
     protected void mobTick() {
         super.mobTick();
+        freezeWaterUnderneath();
+    }
+
+    private void freezeWaterUnderneath() {
+        BlockPos pos = this.getBlockPos();
+        World world = this.getWorld();
+
+        for (int y = 0; y <= 9; y++) {
+            BlockPos checkPos = pos.down(y);
+            BlockState state = world.getBlockState(checkPos);
+            if (state.getBlock() == Blocks.WATER) {
+                world.setBlockState(checkPos, Blocks.FROSTED_ICE.getDefaultState());
+            }
+        }
     }
 
     public boolean isTeammate(Entity other) {
@@ -111,20 +124,20 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
         public boolean canStart() {
             LivingEntity target = IceologerEntity.this.getTarget();
             if (target != null) {
-                if (RANDOM.nextInt(30) + 1 == 8) { // Generate a number between 1 and 10
+                if (RANDOM.nextInt(35) + 1 == 8) {
                     double distance = IceologerEntity.this.squaredDistanceTo(target);
-                    return distance > 18; // Ensure the target is within the range
+                    return distance > 18;
                 }
             }
             return false;
         }
 
         protected int getSpellTicks() {
-            return 40; // Duration of the spell effect
+            return 40;
         }
 
         protected int startTimeDelay() {
-            return 300; // Delay before starting this spell again
+            return 300;
         }
 
         protected void castSpell() {
@@ -144,11 +157,9 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
                         {1, 0}, {0, 1}
                 };
 
-                // Place blocks with the centerPos as the reference point
                 placeBlocks((ServerWorld) IceologerEntity.this.getWorld(), centerPos, firstLayer, 0);
                 placeBlocks((ServerWorld) IceologerEntity.this.getWorld(), centerPos, secondLayer, 1);
 
-                // Spawn both the explosion particle and the 3x3 particle effect
                 spawnExplosionParticle(serverWorld, centerPos.down());
                 spawnParticleEffect(serverWorld, centerPos.down(10));
             }
@@ -177,7 +188,6 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
             double centerY = pos.getY() + 0.5;
             double centerZ = pos.getZ() + 0.5;
 
-            // Create a 3x3 square around the position
             for (int x = -1; x <= 1; x++) {
                 for (int z = -1; z <= 1; z++) {
                     world.spawnParticles(ParticleTypes.CLOUD, centerX + x, centerY, centerZ + z, 1, 0.0, 0.0, 0.0, 0.0);
@@ -202,19 +212,19 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
         }
 
         protected int getSpellTicks() {
-            return 20; // Duration of the spell effect
+            return 20;
         }
 
         protected int startTimeDelay() {
-            return 340; // Delay before starting this spell again
+            return 340;
         }
 
         public boolean canStart() {
             LivingEntity target = IceologerEntity.this.getTarget();
             if (target != null) {
-                if (RANDOM.nextInt(15) + 1 == 8) { // Generate a number between 1 and 10
+                if (RANDOM.nextInt(18) + 1 == 8) {
                     double distance = IceologerEntity.this.squaredDistanceTo(target);
-                    return distance <= 18; // Ensure the target is within the range
+                    return distance <= 18;
                 }
             }
             return false;

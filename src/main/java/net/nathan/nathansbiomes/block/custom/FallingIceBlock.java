@@ -6,6 +6,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -32,6 +34,7 @@ public class FallingIceBlock extends FallingBlock {
         world.getOtherEntities(null, fallingBlockEntity.getBoundingBox().expand(0.5), entity -> entity.isAlive())
                 .forEach(entity -> entity.damage(getDamageSource(fallingBlockEntity), 1.5f));
 
+        world.playSound(null, pos, SoundEvents.BLOCK_GLASS_BREAK, SoundCategory.BLOCKS, 0.5f, 1.0f);
         world.removeBlock(pos, false);
     }
 
@@ -42,7 +45,7 @@ public class FallingIceBlock extends FallingBlock {
 
     @Override
     public DamageSource getDamageSource(Entity attacker) {
-        return attacker.getDamageSources().fallingAnvil(attacker);
+        return attacker.getDamageSources().magic();
     }
 
     @Override

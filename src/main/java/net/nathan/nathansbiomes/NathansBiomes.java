@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.nathan.nathansbiomes.block.ModBlocks;
+import net.nathan.nathansbiomes.effect.ModEffects;
 import net.nathan.nathansbiomes.entity.ModEntities;
 import net.nathan.nathansbiomes.entity.custom.IceologerEntity;
 import net.nathan.nathansbiomes.item.ModItemGroup;
@@ -20,6 +21,8 @@ public class NathansBiomes implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModEffects.registerEffects();
+
 		ModItemGroup.registerItemGroups();
 
 		ModItems.registerModItems();
@@ -33,6 +36,7 @@ public class NathansBiomes implements ModInitializer {
 		ModWorldGeneration.generateModWorldGeneration();
 
 		ModEntities.registerModEntities();
+
 
 
 
