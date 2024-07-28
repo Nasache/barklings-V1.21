@@ -25,7 +25,7 @@ public class IceSpawnerItem extends ToolItem {
         ItemStack itemStack = player.getStackInHand(hand);
 
         if (itemStack.getDamage() < itemStack.getMaxDamage()) {
-            player.getItemCooldownManager().set(this, 20);
+            player.getItemCooldownManager().set(this, 30);
 
             world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_BREEZE_SHOOT, SoundCategory.PLAYERS, 0.5F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
 

@@ -12,5 +12,6 @@ public class NathansBiomesClient implements ClientModInitializer {
 
 
         EntityRendererRegistry.register(ModEntities.ICEOLOGER, IceologerEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.ICEOLOGER, IceologerEntityRenderer::new);
     }
 }

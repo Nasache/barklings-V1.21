@@ -8,11 +8,15 @@ import net.minecraft.util.Identifier;
 import net.nathan.nathansbiomes.NathansBiomes;
 import net.nathan.nathansbiomes.entity.ModEntities;
 import net.nathan.nathansbiomes.item.custom.IceSpawnerItem;
+import net.nathan.nathansbiomes.item.custom.SlowballItem;
 
 public class ModItems {
 
     public static final Item ICE_WAND = registerItem("ice_wand",
             new IceSpawnerItem(ModToolMaterial.ICE_WAND, new Item.Settings()));
+
+    public static final Item SLOWBALL = registerItem("slowball",
+            new SlowballItem(new Item.Settings()));
 
     public static final Item ICEOLOGER_SPAWN_EGG = registerItem("iceologer_spawn_egg",
             new SpawnEggItem(ModEntities.ICEOLOGER, 0xffffff, 0xffffff, new Item.Settings()));

@@ -17,6 +17,7 @@ public class ModItemGroup {
                     .icon(() -> new ItemStack(ModItems.ICE_WAND)).entries((displayContext, entries) -> {
 
                         entries.add(ModItems.ICE_WAND);
+                        entries.add(ModItems.SLOWBALL);
                         entries.add(ModItems.ICEOLOGER_SPAWN_EGG);
 
 
