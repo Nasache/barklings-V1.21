@@ -43,9 +43,8 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new LookAtTargetGoal());
         this.goalSelector.add(2, new FleeEntityGoal<>(this, PlayerEntity.class, 6.0F, 0.4, 0.7));
-        this.goalSelector.add(5, new ConjureFangsGoal());
-        this.goalSelector.add(4, new SummonIceGoal());
-        this.goalSelector.add(3, new ThrowSlowballGoal());
+        this.goalSelector.add(3, new SummonIceGoal());
+        this.goalSelector.add(4, new ConjureFangsGoal());
         this.goalSelector.add(8, new WanderAroundGoal(this, 0.6));
         this.goalSelector.add(9, new LookAtEntityGoal(this, PlayerEntity.class, 3.0F, 1.0F));
         this.goalSelector.add(10, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
@@ -235,7 +234,6 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
             LivingEntity target = IceologerEntity.this.getTarget();
             if (target != null) {
                 BlockPos center = new BlockPos((int) IceologerEntity.this.getX(), (int) IceologerEntity.this.getY(), (int) IceologerEntity.this.getZ());
-                // Define the relative positions for the new pattern, excluding the center
                 BlockPos[] positions = new BlockPos[]{
                         new BlockPos(-1, 0, -2), new BlockPos(0, 0, -2), new BlockPos(1, 0, -2),
                         new BlockPos(-2, 0, -1), new BlockPos(-1, 0, -1), new BlockPos(0, 0, -1), new BlockPos(1, 0, -1), new BlockPos(2, 0, -1),
@@ -273,7 +271,7 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
             } while (blockPos.getY() >= MathHelper.floor(y) - 1);
 
             if (hasSolidBlockBelow) {
-                IceologerEntity.this.getWorld().spawnEntity(new EvokerFangsEntity(IceologerEntity.this.getWorld(), x, blockPos.getY() + yPos, z, 0.0F, 3, IceologerEntity.this));
+                IceologerEntity.this.getWorld().spawnEntity(new IceologerFangsEntity(IceologerEntity.this.getWorld(), x, blockPos.getY() + yPos, z, 0.0F, 3, IceologerEntity.this));
             }
         }
 
@@ -281,73 +279,6 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
             return SoundEvents.ENTITY_EVOKER_PREPARE_ATTACK;
         }
 
-        protected Spell getSpell() {
-            return Spell.FANGS;
-        }
-    }
-
-
-
-
-
-    private class ThrowSlowballGoal extends SpellcastingIllagerEntity.CastSpellGoal {
-        ThrowSlowballGoal() {
-            super();
-        }
-
-        @Override
-        protected int getSpellTicks() {
-            return 10;
-        }
-
-        @Override
-        protected int startTimeDelay() {
-            return 10;
-        }
-
-        @Override
-        public boolean canStart() {
-            LivingEntity target = IceologerEntity.this.getTarget();
-            if (target != null) {
-                if (RANDOM.nextInt(100) + 1 == 8) {
-                    double distance = IceologerEntity.this.squaredDistanceTo(target);
-                    return distance <= 100;
-                }
-            }
-            return false;
-        }
-
-        @Override
-        protected void castSpell() {
-            LivingEntity target = IceologerEntity.this.getTarget();
-            if (target != null) {
-                ServerWorld serverWorld = (ServerWorld) IceologerEntity.this.getWorld();
-                BlockPos targetPos = target.getBlockPos();
-                double xOffset = targetPos.getX() - IceologerEntity.this.getX();
-                double yOffset = targetPos.getY() - IceologerEntity.this.getY();
-                double zOffset = targetPos.getZ() - IceologerEntity.this.getZ();
-                double distance = Math.sqrt(xOffset * xOffset + yOffset * yOffset + zOffset * zOffset);
-
-                double xVelocity = (xOffset / distance); // Increased from 0.5 to 1.0
-                double yVelocity = (yOffset / distance); // Increased from 0.5 to 1.0
-                double zVelocity = (zOffset / distance); // Increased from 0.5 to 1.0
-
-                spawnSlowball(serverWorld, xVelocity, yVelocity, zVelocity);
-            }
-        }
-
-        private void spawnSlowball(ServerWorld world, double xVelocity, double yVelocity, double zVelocity) {
-            SlowballEntity slowball = new SlowballEntity(world, IceologerEntity.this);
-            slowball.setVelocity(xVelocity, yVelocity, zVelocity);
-            world.spawnEntity(slowball);
-        }
-
-        @Override
-        protected SoundEvent getSoundPrepare() {
-            return SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON;
-        }
-
-        @Override
         protected Spell getSpell() {
             return Spell.SUMMON_VEX;
         }

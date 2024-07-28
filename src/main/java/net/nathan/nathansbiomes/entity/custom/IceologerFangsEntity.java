@@ -7,6 +7,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Ownable;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
@@ -136,10 +138,11 @@ public class IceologerFangsEntity extends Entity implements Ownable {
                     if (var5 instanceof ServerWorld) {
                         ServerWorld serverWorld = (ServerWorld)var5;
                         EnchantmentHelper.onTargetDamaged(serverWorld, target, damageSource);
+
+                        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 1000, 1));
                     }
                 }
             }
-
         }
     }
 
