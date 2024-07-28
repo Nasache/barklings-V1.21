@@ -13,11 +13,12 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.mob.EvokerFangsEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
+import net.nathan.nathansbiomes.NathansBiomes;
 import net.nathan.nathansbiomes.entity.custom.IceologerFangsEntity;
 
 @Environment(EnvType.CLIENT)
 public class IceologerFangsEntityRenderer extends EntityRenderer<IceologerFangsEntity> {
-    private static final Identifier TEXTURE = Identifier.ofVanilla("textures/entity/illager/evoker_fangs.png");
+    private static final Identifier TEXTURE = Identifier.of(NathansBiomes.MOD_ID,"textures/entity/iceologer_fangs.png");
     private final EvokerFangsEntityModel<IceologerFangsEntity> model;
 
     public IceologerFangsEntityRenderer(EntityRendererFactory.Context context) {

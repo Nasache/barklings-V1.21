@@ -1,8 +1,7 @@
 package net.nathan.nathansbiomes.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -11,11 +10,25 @@ import net.minecraft.util.Identifier;
 import net.nathan.nathansbiomes.NathansBiomes;
 import net.nathan.nathansbiomes.block.custom.FallingIceBlock;
 
-import static net.minecraft.block.Blocks.ICE;
 public class ModBlocks {
 
+    public static final Block SNOW_BRICKS = registerBlock("snow_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS)));
+    public static final Block CHISELED_SNOW_BRICKS = registerBlock("chiseled_snow_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.CHISELED_STONE_BRICKS)));
+    public static final Block SNOW_BRICK_STAIRS = registerBlock("snow_brick_stairs",
+            new StairsBlock(ModBlocks.SNOW_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.STONE_BRICK_STAIRS)));
+    public static final Block SNOW_BRICK_SLAB = registerBlock("snow_brick_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.STONE_BRICK_SLAB)));
+    public static final Block SNOW_BRICK_BUTTON = registerBlock("snow_brick_button",
+            new ButtonBlock(BlockSetType.STONE, 20, AbstractBlock.Settings.copy(Blocks.STONE_BUTTON)));
+    public static final Block SNOW_BRICK_PRESSURE_PLATE = registerBlock("snow_brick_pressure_plate",
+            new PressurePlateBlock(BlockSetType.STONE, AbstractBlock.Settings.copy(Blocks.STONE_PRESSURE_PLATE)));
+    public static final Block SNOW_BRICK_WALL = registerBlock("snow_brick_wall",
+            new WallBlock(AbstractBlock.Settings.copy(Blocks.STONE_BRICK_WALL)));
+
     public static final Block FALLING_ICE_BLOCK = registerBlockWithoutBlockItem("falling_ice_block",
-            new FallingIceBlock(AbstractBlock.Settings.copy(ICE)));
+            new FallingIceBlock(AbstractBlock.Settings.copy(Blocks.ICE)));
 
 
 

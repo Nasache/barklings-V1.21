@@ -1,0 +1,19 @@
+{
+  "item.nathansbiomes.ice_wand": "Ice Wand",
+  "item.nathansbiomes.iceologer_spawn_egg": "Iceologer Spawn Egg",
+
+  "block.nathansbiomes.snow_bricks": "Snow Bricks",
+  "block.nathansbiomes.chiseled_snow_bricks": "Chiseled Snow Bricks",
+  "block.nathansbiomes.snow_brick_stairs": "Snow Brick Stairs",
+  "block.nathansbiomes.snow_brick_slab": "Snow Brick Slab",
+  "block.nathansbiomes.snow_brick_button": "Snow Brick Button",
+  "block.nathansbiomes.snow_brick_pressure_plate": "Snow Brick Pressure Plate",
+  "block.nathansbiomes.snow_brick_wall": "Snow Brick Wall",
+
+  "effect.nathansbiomes.penguins_grace": "Penguin's Grace",
+
+  "entity.nathansbiomes.iceologer": "Iceologer",
+
+  "itemgroup.snow": "Snow"
+
+}

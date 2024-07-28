@@ -9,11 +9,13 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.EvokerFangsEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
+import net.nathan.nathansbiomes.entity.ModEntities;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
@@ -33,17 +35,17 @@ public class IceologerFangsEntity extends Entity implements Ownable {
     @Nullable
     private UUID ownerUuid;
 
-    public IceologerFangsEntity(EntityType<? extends net.minecraft.entity.mob.EvokerFangsEntity> entityType, World world) {
+    public IceologerFangsEntity(EntityType<? extends IceologerFangsEntity> entityType, World world) {
         super(entityType, world);
-        this.ticksLeft = 22;
+        this.ticksLeft = 20;
     }
 
-    public IceologerFangsEntity(World world, double x, double y, double z, float yaw, int warmup, LivingEntity owner) {
-        this(EntityType.EVOKER_FANGS, world);
-        this.warmup = warmup;
+    public IceologerFangsEntity(World world, double x, double y, double z, float yaw, int warmup, @Nullable LivingEntity owner) {
+        this(ModEntities.ICEOLOGER_FANGS, world);
         this.setOwner(owner);
-        this.setYaw(yaw * 57.295776F);
+        this.setYaw(yaw);
         this.setPosition(x, y, z);
+        this.warmup = warmup;
     }
 
     protected void initDataTracker(DataTracker.Builder builder) {

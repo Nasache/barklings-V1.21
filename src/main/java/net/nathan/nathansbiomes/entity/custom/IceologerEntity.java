@@ -124,7 +124,7 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
         public boolean canStart() {
             LivingEntity target = IceologerEntity.this.getTarget();
             if (target != null) {
-                if (RANDOM.nextInt(70) + 1 == 8) {
+                if (RANDOM.nextInt(55) + 1 == 8) {
                     double distance = IceologerEntity.this.squaredDistanceTo(target);
                     return distance > 18;
                 }
@@ -222,7 +222,7 @@ public class IceologerEntity extends SpellcastingIllagerEntity {
         public boolean canStart() {
             LivingEntity target = IceologerEntity.this.getTarget();
             if (target != null) {
-                if (RANDOM.nextInt(30) + 1 == 8) {
+                if (RANDOM.nextInt(28) + 1 == 8) {
                     double distance = IceologerEntity.this.squaredDistanceTo(target);
                     return distance <= 18;
                 }

@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.nathan.nathansbiomes.NathansBiomes;
+import net.nathan.nathansbiomes.block.ModBlocks;
 
 public class ModItemGroup {
 
@@ -16,8 +17,16 @@ public class ModItemGroup {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.snow"))
                     .icon(() -> new ItemStack(ModItems.ICE_WAND)).entries((displayContext, entries) -> {
 
+                        entries.add(ModBlocks.SNOW_BRICKS);
+                        entries.add(ModBlocks.CHISELED_SNOW_BRICKS);
+                        entries.add(ModBlocks.SNOW_BRICK_STAIRS);
+                        entries.add(ModBlocks.SNOW_BRICK_SLAB);
+                        entries.add(ModBlocks.SNOW_BRICK_WALL);
+                        entries.add(ModBlocks.SNOW_BRICK_PRESSURE_PLATE);
+                        entries.add(ModBlocks.SNOW_BRICK_BUTTON);
+
+
                         entries.add(ModItems.ICE_WAND);
-                        entries.add(ModItems.SLOWBALL);
                         entries.add(ModItems.ICEOLOGER_SPAWN_EGG);
 
 
