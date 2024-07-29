@@ -6,11 +6,13 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.nathan.nathansbiomes.block.ModBlocks;
+import net.nathan.nathansbiomes.item.ModItems;
 
 
 import java.util.concurrent.CompletableFuture;
@@ -29,19 +31,19 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .pattern("SS")
                 .input('S', Blocks.SNOW_BLOCK)
                 .criterion(hasItem(Blocks.SNOW_BLOCK), conditionsFromItem(Blocks.SNOW_BLOCK))
-                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.SNOW_BRICKS)));
+                .offerTo(exporter);
 
         createStairsRecipe(ModBlocks.SNOW_BRICK_STAIRS, Ingredient.ofItems(ModBlocks.SNOW_BRICKS))
                 .criterion(hasItem(ModBlocks.SNOW_BRICKS), conditionsFromItem(ModBlocks.SNOW_BRICKS))
-                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.SNOW_BRICK_STAIRS)));
+                .offerTo(exporter);
         createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SNOW_BRICK_SLAB, Ingredient.ofItems(ModBlocks.SNOW_BRICKS))
                 .criterion(hasItem(ModBlocks.SNOW_BRICKS), conditionsFromItem(ModBlocks.SNOW_BRICKS))
-                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.SNOW_BRICK_SLAB)));
+                .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.SNOW_BRICK_BUTTON)
                 .input(ModBlocks.SNOW_BRICKS)
                 .criterion(hasItem(ModBlocks.SNOW_BRICKS), conditionsFromItem(ModBlocks.SNOW_BRICKS))
-                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.SNOW_BRICK_BUTTON)));
+                .offerTo(exporter);
         offerPressurePlateRecipe(exporter, ModBlocks.SNOW_BRICK_PRESSURE_PLATE, ModBlocks.SNOW_BRICKS);
 
         offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SNOW_BRICK_WALL, ModBlocks.SNOW_BRICKS);
@@ -54,6 +56,13 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SNOW_BRICK_WALL, ModBlocks.SNOW_BRICKS);
 
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.ICE_WAND)
+                .pattern("A")
+                .pattern("B")
+                .input('A', Items.AMETHYST_SHARD)
+                .input('B', ModItems.BROKEN_ICE_WAND)
+                .criterion(hasItem(ModItems.BROKEN_ICE_WAND), conditionsFromItem(ModItems.BROKEN_ICE_WAND))
+                .offerTo(exporter);
 
     }
 }

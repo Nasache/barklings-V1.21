@@ -13,6 +13,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.nathan.nathansbiomes.entity.custom.MagicSnowballEntity;
+import net.nathan.nathansbiomes.item.ModItems;
 
 public class IceSpawnerItem extends ToolItem {
 
@@ -31,7 +32,7 @@ public class IceSpawnerItem extends ToolItem {
 
             if (!world.isClient) {
                 MagicSnowballEntity snowball = new MagicSnowballEntity(world, player);
-                snowball.setItem(new ItemStack(this));
+                snowball.setItem(new ItemStack(ModItems.MAGIC_SNOWBALL));
 
                 Vec3d eyePos = player.getCameraPosVec(1.0F);
                 Vec3d lookDir = player.getRotationVec(1.0F);

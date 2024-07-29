@@ -1,6 +1,7 @@
-// 1.21	2024-07-28T16:41:50.0707997	nathansbiomes/Model Definitions
+// 1.21	2024-07-28T20:40:55.3101323	nathansbiomes/Model Definitions
 571a27be54bed660f2e117a28a75d705804ff3d2 assets\nathansbiomes\models\item\chiseled_snow_bricks.json
 bfcc6733f25bc2def5f304f315442fd9a28ae801 assets\nathansbiomes\models\block\snow_brick_wall_side.json
+02dec9952081180b4b120e6c5c1278adfbe32c75 assets\nathansbiomes\models\item\broken_ice_wand.json
 438d964f7f8a1319853991415a36c94da3c8dda1 assets\nathansbiomes\blockstates\snow_brick_stairs.json
 78df695dbe25d2e8c1752d83490b7ee8a0b0d0cd assets\nathansbiomes\models\item\snow_brick_slab.json
 8d46d9802b705c0cce12f1491e81b6a37efb8f91 assets\nathansbiomes\models\block\snow_brick_slab_top.json
@@ -14,6 +15,7 @@ c529909f611a0586a152b5ec0eeed15519211018 assets\nathansbiomes\models\block\snow_
 f1f51029237c19d05f6495faf722235b7f89856e assets\nathansbiomes\blockstates\snow_brick_button.json
 7ee88a6b67472cf2da4ee8f5b2be654f31dc75a4 assets\nathansbiomes\models\item\snow_bricks.json
 846f3e97fa95969ed1c56ac9efe416b6b66d58ff assets\nathansbiomes\models\block\snow_brick_wall_side_tall.json
+d099ca23ef86bf6eabeb05875b845c83d810d9b4 assets\nathansbiomes\models\item\magic_snowball.json
 bbf655dbc4b39feb11cdab781de64dac567e6a97 assets\nathansbiomes\blockstates\snow_brick_pressure_plate.json
 ea6db929fb80cfe959d8c8382d7a6984031d398e assets\nathansbiomes\models\block\snow_brick_pressure_plate.json
 88e1f1a89bc1c1f4851319d3f48c10d7590be0ef assets\nathansbiomes\models\item\snow_brick_pressure_plate.json

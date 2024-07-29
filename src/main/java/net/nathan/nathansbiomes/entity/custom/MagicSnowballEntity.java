@@ -2,6 +2,7 @@ package net.nathan.nathansbiomes.entity.custom;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.thrown.SnowballEntity;
 import net.minecraft.particle.ParticleTypes;
@@ -20,6 +21,10 @@ public class MagicSnowballEntity extends SnowballEntity {
     public MagicSnowballEntity(World world, Entity owner) {
         super(world, (LivingEntity) owner);
         this.setNoGravity(true);
+    }
+
+    public MagicSnowballEntity(EntityType<MagicSnowballEntity> magicSnowballEntityEntityType, World world) {
+        super(magicSnowballEntityEntityType, world);
     }
 
     @Override

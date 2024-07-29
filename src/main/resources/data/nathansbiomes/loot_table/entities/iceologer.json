@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "nathansbiomes:ice_wand"
+          "name": "nathansbiomes:broken_ice_wand"
         }
       ],
       "rolls": 1.0

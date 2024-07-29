@@ -36,6 +36,8 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 
         itemModelGenerator.register(ModItems.ICE_WAND, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.BROKEN_ICE_WAND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MAGIC_SNOWBALL, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.ICEOLOGER_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));

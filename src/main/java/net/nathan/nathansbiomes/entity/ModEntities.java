@@ -25,6 +25,11 @@ public class ModEntities {
             FabricEntityTypeBuilder.<IceologerFangsEntity>create(SpawnGroup.MONSTER, IceologerFangsEntity::new)
                     .dimensions(EntityDimensions.fixed(0.75f, 2f)).build());
 
+    public static final EntityType<MagicSnowballEntity> MAGIC_SNOWBALL = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(NathansBiomes.MOD_ID, "magic_snowball"),
+            FabricEntityTypeBuilder.<MagicSnowballEntity>create(SpawnGroup.MONSTER, MagicSnowballEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
+
 
     public static void registerModEntities() {
         NathansBiomes.LOGGER.info("Registering Mod Entities for " + NathansBiomes.MOD_ID);

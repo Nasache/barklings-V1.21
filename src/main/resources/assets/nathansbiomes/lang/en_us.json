@@ -1,5 +1,9 @@
 {
   "item.nathansbiomes.ice_wand": "Ice Wand",
+  "item.nathansbiomes.broken_ice_wand": "Broken Ice Wand",
+  "item.nathansbiomes.magic_snowball": "Magic Snowball",
+
+
   "item.nathansbiomes.iceologer_spawn_egg": "Iceologer Spawn Egg",
 
   "block.nathansbiomes.snow_bricks": "Snow Bricks",
