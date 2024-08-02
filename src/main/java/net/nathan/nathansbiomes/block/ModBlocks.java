@@ -6,11 +6,20 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.nathan.nathansbiomes.NathansBiomes;
 import net.nathan.nathansbiomes.block.custom.FallingIceBlock;
 
 public class ModBlocks {
+
+
+    public static final Block FROZEN_GRASS_BLOCK = registerBlock("frozen_grass_block",
+            new GrassBlock(AbstractBlock.Settings.copy(Blocks.ROOTED_DIRT).strength(1.5F, 6.0F)));
+
+
+    public static final Block FROZEN_DIRT = registerBlock("frozen_dirt",
+            new Block(AbstractBlock.Settings.copy(Blocks.ROOTED_DIRT).strength(1.5F, 6.0F)));
 
     public static final Block SNOW_BRICKS = registerBlock("snow_bricks",
             new Block(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS)));

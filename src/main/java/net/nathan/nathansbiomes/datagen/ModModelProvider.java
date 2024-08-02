@@ -29,6 +29,8 @@ public class ModModelProvider extends FabricModelProvider {
         snowBricksTexturePool.wall(ModBlocks.SNOW_BRICK_WALL);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_SNOW_BRICKS);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.FROZEN_DIRT);
+
 
     }
 

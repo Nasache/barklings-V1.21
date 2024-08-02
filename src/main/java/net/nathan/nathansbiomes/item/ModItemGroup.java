@@ -17,6 +17,9 @@ public class ModItemGroup {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.snow"))
                     .icon(() -> new ItemStack(ModItems.ICE_WAND)).entries((displayContext, entries) -> {
 
+                        entries.add(ModBlocks.FROZEN_DIRT);
+                        entries.add(ModBlocks.FROZEN_GRASS_BLOCK);
+
                         entries.add(ModBlocks.SNOW_BRICKS);
                         entries.add(ModBlocks.CHISELED_SNOW_BRICKS);
                         entries.add(ModBlocks.SNOW_BRICK_STAIRS);

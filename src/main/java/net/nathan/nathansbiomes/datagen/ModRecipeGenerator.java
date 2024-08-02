@@ -26,6 +26,18 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FROZEN_GRASS_BLOCK)
+                .input(Blocks.GRASS_BLOCK)
+                .input(Blocks.ICE)
+                .criterion(hasItem(Blocks.ICE), conditionsFromItem(Blocks.ICE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FROZEN_DIRT)
+                .input(Blocks.DIRT)
+                .input(Blocks.ICE)
+                .criterion(hasItem(Blocks.ICE), conditionsFromItem(Blocks.ICE))
+                .offerTo(exporter);
+
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SNOW_BRICKS)
                 .pattern("SS")
                 .pattern("SS")

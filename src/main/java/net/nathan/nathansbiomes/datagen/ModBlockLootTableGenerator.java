@@ -17,6 +17,9 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
 
+        addDrop(ModBlocks.FROZEN_GRASS_BLOCK, oreDrops(ModBlocks.FROZEN_GRASS_BLOCK, ModBlocks.FROZEN_DIRT.asItem()));
+        addDrop(ModBlocks.FROZEN_DIRT);
+
         addDrop(ModBlocks.SNOW_BRICKS);
         addDrop(ModBlocks.CHISELED_SNOW_BRICKS);
         addDrop(ModBlocks.SNOW_BRICK_STAIRS);
