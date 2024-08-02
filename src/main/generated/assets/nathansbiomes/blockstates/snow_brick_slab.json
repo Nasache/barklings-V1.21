@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nathansbiomes:block/snow_brick_slab"
+    },
+    "type=double": {
+      "model": "nathansbiomes:block/snow_bricks"
+    },
+    "type=top": {
+      "model": "nathansbiomes:block/snow_brick_slab_top"
+    }
+  }
+}

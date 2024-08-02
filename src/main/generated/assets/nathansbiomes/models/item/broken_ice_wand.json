@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nathansbiomes:item/broken_ice_wand"
+  }
+}
