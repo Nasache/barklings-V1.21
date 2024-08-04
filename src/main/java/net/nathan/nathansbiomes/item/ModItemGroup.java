@@ -15,10 +15,9 @@ public class ModItemGroup {
     public static final ItemGroup SNOW = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(NathansBiomes.MOD_ID, "snow"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.snow"))
-                    .icon(() -> new ItemStack(ModItems.ICE_WAND)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModBlocks.SNOW_GRASS_BLOCK)).entries((displayContext, entries) -> {
 
-                        entries.add(ModBlocks.FROZEN_DIRT);
-                        entries.add(ModBlocks.FROZEN_GRASS_BLOCK);
+                        entries.add(ModBlocks.SNOW_GRASS_BLOCK);
 
                         entries.add(ModBlocks.SNOW_BRICKS);
                         entries.add(ModBlocks.CHISELED_SNOW_BRICKS);
@@ -27,6 +26,8 @@ public class ModItemGroup {
                         entries.add(ModBlocks.SNOW_BRICK_WALL);
                         entries.add(ModBlocks.SNOW_BRICK_PRESSURE_PLATE);
                         entries.add(ModBlocks.SNOW_BRICK_BUTTON);
+
+                        entries.add(ModBlocks.BLUE_STARSHROOM_BLOCK);
 
 
                         entries.add(ModItems.ICE_WAND);

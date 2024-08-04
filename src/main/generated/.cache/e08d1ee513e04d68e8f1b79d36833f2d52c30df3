@@ -1,10 +1,11 @@
-// 1.21	2024-08-01T21:31:04.3761719	nathansbiomes/Block Loot Tables
+// 1.21	2024-08-04T14:35:58.4237973	nathansbiomes/Block Loot Tables
 63ec7d27c134dd8847010ad21a2402cfc3440d8e data\nathansbiomes\loot_table\blocks\chiseled_snow_bricks.json
 5b0252fbb09fd1d65659dcbb99dd56cee70df3ee data\nathansbiomes\loot_table\blocks\snow_bricks.json
-9c9f9f85296c2afff3489e9d145380c157b09227 data\nathansbiomes\loot_table\blocks\frozen_dirt.json
 dd0f1b96bf1cb599cb83699ad06129d73ab9ff05 data\nathansbiomes\loot_table\blocks\snow_brick_button.json
+37c595cad40a4d2629349ca351198309c8844fa6 data\nathansbiomes\loot_table\blocks\potted_snowdrop.json
+12fd314fcb4f19236eac33d14a8d7a852ee41dae data\nathansbiomes\loot_table\blocks\snowdrop.json
 77839bf3334425543e9be50532fe0b25a901ba2a data\nathansbiomes\loot_table\blocks\snow_brick_pressure_plate.json
 37f7b924e0c70a4a5bdbc463d5a176a99a707b35 data\nathansbiomes\loot_table\blocks\snow_brick_slab.json
 1f9d98c27b81193857434b5a0ec8bb2a17948bf1 data\nathansbiomes\loot_table\blocks\snow_brick_wall.json
 ec9fa6988c3a04a07cae1b26a749cc3438eb990c data\nathansbiomes\loot_table\blocks\snow_brick_stairs.json
-a57bb22d7226c5632b68131361e8d4ef8adab6f5 data\nathansbiomes\loot_table\blocks\frozen_grass_block.json
+367513ea9a1cd8f0d1e0ab115a30f84019a2552f data\nathansbiomes\loot_table\blocks\snow_grass_block.json

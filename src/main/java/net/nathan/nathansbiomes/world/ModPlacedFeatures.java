@@ -8,12 +8,21 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.nathan.nathansbiomes.NathansBiomes;
+import net.nathan.nathansbiomes.block.ModBlocks;
 
 import java.util.List;
 
 public class ModPlacedFeatures {
+
+    public static final RegistryKey<PlacedFeature> WINTER_OAK_PLACED_KEY = registerKey("winter_oak_placed");
+
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+
+
+        register(context, WINTER_OAK_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WINTER_OAK_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        PlacedFeatures.createCountExtraModifier(0, 0.2f, 1), ModBlocks.WINTER_OAK_SAPLING));
 
     }
 

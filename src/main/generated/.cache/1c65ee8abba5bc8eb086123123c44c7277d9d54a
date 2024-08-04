@@ -1,1 +1,5 @@
-// 1.21	2024-08-01T21:31:04.3741693	nathansbiomes/World Gen
+// 1.21	2024-08-04T14:35:58.4197932	nathansbiomes/World Gen
+1439aea7064ebbe41a8f00e1f913fb1aefa451ed data\nathansbiomes\worldgen\placed_feature\winter_oak_placed.json
+09d7294734bfaa795dbdff2bb33bb16c49f9613e data\nathansbiomes\worldgen\biome\winter_forest.json
+3a85bacd26be9656ee2c70178947098f41e98f5c data\nathansbiomes\worldgen\configured_feature\winter_oak.json
+20b7ca508b6f71e7a321bd08230d37c9a8574f85 data\nathansbiomes\worldgen\biome\snowy_caves.json

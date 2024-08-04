@@ -25,12 +25,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                         ModBlocks.SNOW_BRICK_BUTTON
                 );
 
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.FROZEN_GRASS_BLOCK,
-                        ModBlocks.FROZEN_DIRT
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+                .add(ModBlocks.SNOW_GRASS_BLOCK
                 );
 
+        getOrCreateTagBuilder(BlockTags.DIRT)
+                .add(ModBlocks.SNOW_GRASS_BLOCK
+                );
 
+        getOrCreateTagBuilder(BlockTags.FLOWERS)
+                .add(ModBlocks.SNOWDROP
+                );
 
         getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(ModBlocks.SNOW_BRICK_WALL);

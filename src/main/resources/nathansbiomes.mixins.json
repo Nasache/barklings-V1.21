@@ -3,7 +3,8 @@
   "package": "net.nathan.nathansbiomes.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "BoatEntityMixin"
+    "BoatEntityMixin",
+    "MixinStrayEntity"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -23,6 +23,9 @@
 		],
 		"client": [
 			"net.nathan.nathansbiomes.NathansBiomesClient"
+		],
+		"terrablender": [
+			"net.nathan.nathansbiomes.world.biome.ModTerraBlenderAPI"
 		]
 	},
 	"mixins": [

@@ -40,7 +40,6 @@ public class NathansBiomes implements ModInitializer {
 
 
 
-		FabricDefaultAttributeRegistry.register(ModEntities.ICEOLOGER, IceologerEntity.createIceologerAttributes());
 
 
 	}

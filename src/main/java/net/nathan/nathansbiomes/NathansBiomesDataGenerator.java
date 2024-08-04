@@ -7,6 +7,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.nathan.nathansbiomes.datagen.*;
 import net.nathan.nathansbiomes.world.ModConfiguredFeatures;
 import net.nathan.nathansbiomes.world.ModPlacedFeatures;
+import net.nathan.nathansbiomes.world.biome.ModBiomes;
 
 
 public class NathansBiomesDataGenerator implements DataGeneratorEntrypoint {
@@ -25,5 +26,6 @@ public class NathansBiomesDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::bootstrap);
 	}
 }
