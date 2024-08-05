@@ -12,6 +12,7 @@ import net.nathan.nathansbiomes.item.ModItems;
 import net.nathan.nathansbiomes.util.ModLootTableModifiers;
 import net.nathan.nathansbiomes.util.ModRegistries;
 import net.nathan.nathansbiomes.world.gen.ModWorldGeneration;
+import net.nathan.nathansbiomes.world.tree.ModFoliagePlacerTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +33,8 @@ public class NathansBiomes implements ModInitializer {
 		ModRegistries.registerModStuffs();
 
 		ModLootTableModifiers.modifyLootTables();
+
+		ModFoliagePlacerTypes.register();
 
 		ModWorldGeneration.generateModWorldGeneration();
 

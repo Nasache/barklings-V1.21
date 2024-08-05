@@ -16,7 +16,12 @@ public class NathansBiomesClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SNOWDROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_SNOWDROP, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_STARSHROOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BLUE_STARSHROOM, RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_STARSHROOM_BLOCK, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_STARSHROOM_BLOCK, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_STARSHROOM_BLOCK, RenderLayer.getTranslucent());
 
         EntityRendererRegistry.register(ModEntities.ICEOLOGER, IceologerEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.ICEOLOGER_FANGS, IceologerFangsEntityRenderer::new);

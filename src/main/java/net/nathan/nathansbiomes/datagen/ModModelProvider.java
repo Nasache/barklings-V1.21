@@ -32,7 +32,11 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.SNOWDROP, ModBlocks.POTTED_SNOWDROP, NOT_TINTED);
 
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BLUE_STARSHROOM, ModBlocks.POTTED_BLUE_STARSHROOM, NOT_TINTED);
+
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLUE_STARSHROOM_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GREEN_STARSHROOM_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_STARSHROOM_BLOCK);
 
 
     }

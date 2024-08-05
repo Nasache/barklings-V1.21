@@ -29,6 +29,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.SNOW_GRASS_BLOCK
                 );
 
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+                .add(ModBlocks.BLUE_STARSHROOM_BLOCK,
+                        ModBlocks.GREEN_STARSHROOM_BLOCK,
+                        ModBlocks.PURPLE_STARSHROOM_BLOCK
+                );
+
+        getOrCreateTagBuilder(BlockTags.LEAVES)
+                .add(ModBlocks.BLUE_STARSHROOM_BLOCK,
+                        ModBlocks.GREEN_STARSHROOM_BLOCK,
+                        ModBlocks.PURPLE_STARSHROOM_BLOCK
+                );
+
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(ModBlocks.SNOW_GRASS_BLOCK
                 );

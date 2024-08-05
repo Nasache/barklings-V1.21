@@ -11,13 +11,17 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.LargeOakFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.GiantTrunkPlacer;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.nathan.nathansbiomes.NathansBiomes;
+import net.nathan.nathansbiomes.block.ModBlocks;
+import net.nathan.nathansbiomes.world.tree.custom.BigStarshroomFoliagePlacer;
 
 
 public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> WINTER_OAK_KEY = registerKey("winter_oak");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BIG_BLUE_STARSHROOM_KEY = registerKey("big_blue_starshroom");
 
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
@@ -27,6 +31,13 @@ public class ModConfiguredFeatures {
                 new LargeOakTrunkPlacer(5, 5, 5),
                 BlockStateProvider.of(Blocks.AIR),
                 new LargeOakFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0), 0),
+                new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, BIG_BLUE_STARSHROOM_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(Blocks.BIRCH_LOG),
+                new GiantTrunkPlacer(15, 5, 5),
+                BlockStateProvider.of(ModBlocks.BLUE_STARSHROOM_BLOCK),
+                new BigStarshroomFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0), 0),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
     }
 

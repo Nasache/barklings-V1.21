@@ -18,7 +18,9 @@
   "block.nathansbiomes.snow_brick_pressure_plate": "Snow Brick Pressure Plate",
   "block.nathansbiomes.snow_brick_wall": "Snow Brick Wall",
 
-  "block.nathansbiomes.snow_starshroom_block": "Snow Starshroom Block",
+  "block.nathansbiomes.blue_starshroom_block": "Blue Starshroom Block",
+  "block.nathansbiomes.green_starshroom_block": "Green Starshroom Block",
+  "block.nathansbiomes.purple_starshroom_block": "Purple Starshroom Block",
 
   "effect.nathansbiomes.penguins_grace": "Penguin's Grace",
 

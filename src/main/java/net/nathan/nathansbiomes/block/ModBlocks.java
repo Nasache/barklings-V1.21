@@ -6,9 +6,11 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.nathan.nathansbiomes.NathansBiomes;
 import net.nathan.nathansbiomes.block.custom.FallingIceBlock;
+import net.nathan.nathansbiomes.block.custom.StarshroomBlock;
 import net.nathan.nathansbiomes.world.tree.ModSaplingGenerators;
 
 public class ModBlocks {
@@ -18,8 +20,21 @@ public class ModBlocks {
             new GrassBlock(AbstractBlock.Settings.copy(Blocks.ROOTED_DIRT).strength(0.6F)));
 
     public static final Block BLUE_STARSHROOM_BLOCK = registerBlock("blue_starshroom_block",
-            new TranslucentBlock(AbstractBlock.Settings.copy(Blocks.WARPED_HYPHAE).nonOpaque().luminance((state) -> {
-                return 7;
+            new StarshroomBlock(AbstractBlock.Settings.copy(Blocks.WARPED_HYPHAE).sounds(BlockSoundGroup.AMETHYST_BLOCK).nonOpaque().luminance((state) -> {
+                return 5;
+            })));
+    public static final Block BLUE_STARSHROOM = registerBlock("blue_starshroom",
+            new SaplingBlock(ModSaplingGenerators.BLUE_STARSHROOM, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block POTTED_BLUE_STARSHROOM = registerBlockWithoutBlockItem("potted_blue_starshroom",
+            new FlowerPotBlock(BLUE_STARSHROOM, AbstractBlock.Settings.copy(Blocks.POTTED_OXEYE_DAISY).mapColor(MapColor.LIGHT_BLUE)));
+
+    public static final Block GREEN_STARSHROOM_BLOCK = registerBlock("green_starshroom_block",
+            new StarshroomBlock(AbstractBlock.Settings.copy(Blocks.WARPED_HYPHAE).sounds(BlockSoundGroup.AMETHYST_BLOCK).nonOpaque().luminance((state) -> {
+                return 5;
+            })));
+    public static final Block PURPLE_STARSHROOM_BLOCK = registerBlock("purple_starshroom_block",
+            new StarshroomBlock(AbstractBlock.Settings.copy(Blocks.WARPED_HYPHAE).sounds(BlockSoundGroup.AMETHYST_BLOCK).nonOpaque().luminance((state) -> {
+                return 5;
             })));
 
 
@@ -49,8 +64,7 @@ public class ModBlocks {
             new FlowerPotBlock(SNOWDROP, AbstractBlock.Settings.copy(Blocks.POTTED_OXEYE_DAISY).mapColor(MapColor.WHITE)));
 
 
-    public static final Block WINTER_OAK_SAPLING = registerBlockWithoutBlockItem("winter_oak_sapling",
-            new SaplingBlock(ModSaplingGenerators.WINTER_OAK, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+
 
 
 

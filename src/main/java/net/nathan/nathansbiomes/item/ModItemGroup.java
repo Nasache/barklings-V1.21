@@ -28,6 +28,9 @@ public class ModItemGroup {
                         entries.add(ModBlocks.SNOW_BRICK_BUTTON);
 
                         entries.add(ModBlocks.BLUE_STARSHROOM_BLOCK);
+                        entries.add(ModBlocks.BLUE_STARSHROOM);
+                        entries.add(ModBlocks.GREEN_STARSHROOM_BLOCK);
+                        entries.add(ModBlocks.PURPLE_STARSHROOM_BLOCK);
 
 
                         entries.add(ModItems.ICE_WAND);
