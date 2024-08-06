@@ -10,6 +10,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.nathan.nathansbiomes.NathansBiomes;
 import net.nathan.nathansbiomes.block.custom.FallingIceBlock;
+import net.nathan.nathansbiomes.block.custom.SnowGrassBlock;
 import net.nathan.nathansbiomes.block.custom.StarshroomBlock;
 import net.nathan.nathansbiomes.world.tree.ModSaplingGenerators;
 
@@ -17,7 +18,7 @@ public class ModBlocks {
 
 
     public static final Block SNOW_GRASS_BLOCK = registerBlock("snow_grass_block",
-            new GrassBlock(AbstractBlock.Settings.copy(Blocks.ROOTED_DIRT).strength(0.6F)));
+            new SnowGrassBlock(AbstractBlock.Settings.copy(Blocks.ROOTED_DIRT).ticksRandomly().strength(0.6F)));
 
     public static final Block BLUE_STARSHROOM_BLOCK = registerBlock("blue_starshroom_block",
             new StarshroomBlock(AbstractBlock.Settings.copy(Blocks.WARPED_HYPHAE).sounds(BlockSoundGroup.AMETHYST_BLOCK).nonOpaque().luminance((state) -> {

@@ -4,7 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BoatEntityMixin",
-    "MixinStrayEntity"
+    "MixinStrayEntity",
+    "ShovelItemMixin",
+    "HoeItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

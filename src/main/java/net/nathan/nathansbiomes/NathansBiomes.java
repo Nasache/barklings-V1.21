@@ -9,6 +9,7 @@ import net.nathan.nathansbiomes.entity.ModEntities;
 import net.nathan.nathansbiomes.entity.custom.IceologerEntity;
 import net.nathan.nathansbiomes.item.ModItemGroup;
 import net.nathan.nathansbiomes.item.ModItems;
+import net.nathan.nathansbiomes.util.ModEvents;
 import net.nathan.nathansbiomes.util.ModLootTableModifiers;
 import net.nathan.nathansbiomes.util.ModRegistries;
 import net.nathan.nathansbiomes.world.gen.ModWorldGeneration;
@@ -40,6 +41,7 @@ public class NathansBiomes implements ModInitializer {
 
 		ModEntities.registerModEntities();
 
+		ModEvents.register();
 
 
 
