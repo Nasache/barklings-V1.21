@@ -4,6 +4,7 @@ package net.nathan.nathansbiomes.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
+import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.util.Identifier;
 import net.nathan.nathansbiomes.block.ModBlocks;
 import net.nathan.nathansbiomes.item.ModItems;
@@ -19,6 +20,25 @@ public class ModModelProvider extends FabricModelProvider {
     }
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+
+        BlockStateModelGenerator.BlockTexturePool starshroomPlanksTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.STARSHROOM_PLANKS);
+        starshroomPlanksTexturePool.stairs(ModBlocks.STARSHROOM_STAIRS);
+        starshroomPlanksTexturePool.slab(ModBlocks.STARSHROOM_SLAB);
+        starshroomPlanksTexturePool.button(ModBlocks.STARSHROOM_BUTTON);
+        starshroomPlanksTexturePool.pressurePlate(ModBlocks.STARSHROOM_PRESSURE_PLATE);
+        starshroomPlanksTexturePool.fence(ModBlocks.STARSHROOM_FENCE);
+        starshroomPlanksTexturePool.fenceGate(ModBlocks.STARSHROOM_FENCE_GATE);
+        blockStateModelGenerator.registerDoor(ModBlocks.STARSHROOM_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.STARSHROOM_TRAPDOOR);
+
+        //starshroomPlanksTexturePool.family(BlockFamilies.register(ModBlocks.STARSHROOM_PLANKS).sign(ModBlocks.STARSHROOM_SIGN, ModBlocks.STARSHROOM_WALL_SIGN).build());
+//
+        //blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_STARSHROOM_STEM, ModBlocks.STARSHROOM_HANGING_SIGN, ModBlocks.STARSHROOM_WALL_HANGING_SIGN);
+
+        blockStateModelGenerator.registerLog(ModBlocks.STARSHROOM_STEM).log(ModBlocks.STARSHROOM_STEM).wood(ModBlocks.STARSHROOM_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_STARSHROOM_STEM).log(ModBlocks.STRIPPED_STARSHROOM_STEM).wood(ModBlocks.STRIPPED_STARSHROOM_WOOD);
+
+
 
 
         BlockStateModelGenerator.BlockTexturePool snowBricksTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SNOW_BRICKS);

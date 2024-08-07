@@ -17,6 +17,20 @@ public class ModItemGroup {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.snow"))
                     .icon(() -> new ItemStack(ModBlocks.SNOW_GRASS_BLOCK)).entries((displayContext, entries) -> {
 
+                        entries.add(ModBlocks.STARSHROOM_PLANKS);
+                        entries.add(ModBlocks.STARSHROOM_SLAB);
+                        entries.add(ModBlocks.STARSHROOM_STAIRS);
+                        entries.add(ModBlocks.STARSHROOM_STEM);
+                        entries.add(ModBlocks.STARSHROOM_WOOD);
+                        entries.add(ModBlocks.STRIPPED_STARSHROOM_STEM);
+                        entries.add(ModBlocks.STRIPPED_STARSHROOM_WOOD);
+                        entries.add(ModBlocks.STARSHROOM_DOOR);
+                        entries.add(ModBlocks.STARSHROOM_TRAPDOOR);
+                        entries.add(ModBlocks.STARSHROOM_BUTTON);
+                        entries.add(ModBlocks.STARSHROOM_PRESSURE_PLATE);
+
+
+
                         entries.add(ModBlocks.SNOW_GRASS_BLOCK);
 
                         entries.add(ModBlocks.SNOW_BRICKS);

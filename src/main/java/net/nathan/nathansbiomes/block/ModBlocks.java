@@ -1,5 +1,6 @@
 package net.nathan.nathansbiomes.block;
 
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
@@ -15,6 +16,36 @@ import net.nathan.nathansbiomes.block.custom.StarshroomBlock;
 import net.nathan.nathansbiomes.world.tree.ModSaplingGenerators;
 
 public class ModBlocks {
+
+    public static final Block STARSHROOM_PLANKS = registerBlock("starshroom_planks",
+            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+    public static final Block STARSHROOM_STAIRS = registerBlock("starshroom_stairs",
+            new StairsBlock(ModBlocks.STARSHROOM_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS)));
+    public static final Block STARSHROOM_SLAB = registerBlock("starshroom_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB)));
+    public static final Block STARSHROOM_BUTTON = registerBlock("starshroom_button",
+            new ButtonBlock(BlockSetType.OAK, 30, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)));
+    public static final Block STARSHROOM_PRESSURE_PLATE = registerBlock("starshroom_pressure_plate",
+            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
+    public static final Block STARSHROOM_FENCE = registerBlock("starshroom_fence",
+            new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE)));
+    public static final Block STARSHROOM_FENCE_GATE = registerBlock("starshroom_fence_gate",
+            new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE)));
+    public static final Block STARSHROOM_DOOR = registerBlock("starshroom_door",
+            new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_DOOR)));
+    public static final Block STARSHROOM_TRAPDOOR = registerBlock("starshroom_trapdoor",
+            new TrapdoorBlock( BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)));
+    public static final Block STARSHROOM_STEM = registerBlock("starshroom_stem",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
+    public static final Block STARSHROOM_WOOD = registerBlock("starshroom_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_STARSHROOM_STEM = registerBlock("stripped_starshroom_stem",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_STARSHROOM_WOOD = registerBlock("stripped_starshroom_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+
+
 
 
     public static final Block SNOW_GRASS_BLOCK = registerBlock("snow_grass_block",

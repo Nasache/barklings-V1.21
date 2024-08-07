@@ -13,6 +13,9 @@ public class NathansBiomesClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STARSHROOM_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STARSHROOM_TRAPDOOR, RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SNOWDROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_SNOWDROP, RenderLayer.getCutout());
 
