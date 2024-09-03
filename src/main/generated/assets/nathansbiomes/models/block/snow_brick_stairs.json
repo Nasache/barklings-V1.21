@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "nathansbiomes:block/snow_bricks",
-    "side": "nathansbiomes:block/snow_bricks",
-    "top": "nathansbiomes:block/snow_bricks"
-  }
-}

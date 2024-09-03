@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "nathansbiomes",
+	"id": "forest_dwellers",
 	"version": "${version}",
-	"name": "nathansbiomes",
+	"name": "forest_dwellers",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
@@ -12,24 +12,21 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/nathansbiomes/icon.png",
+	"icon": "assets/forest_dwellers/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.nathan.nathansbiomes.NathansBiomes"
+			"net.nathan.forest_dwellers.ForestDwellersMain"
 		],
 		"fabric-datagen": [
-			"net.nathan.nathansbiomes.NathansBiomesDataGenerator"
+			"net.nathan.forest_dwellers.ForestDwellersDataGenerator"
 		],
 		"client": [
-			"net.nathan.nathansbiomes.NathansBiomesClient"
-		],
-		"terrablender": [
-			"net.nathan.nathansbiomes.world.biome.ModTerraBlenderAPI"
+			"net.nathan.forest_dwellers.ForestDwellersClient"
 		]
 	},
 	"mixins": [
-		"nathansbiomes.mixins.json"
+		"forest_dwellers.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.15.11",
