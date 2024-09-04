@@ -12,7 +12,7 @@ public class ModEntities {
 
     public static final EntityType<DwellerEntity> DWELLER = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(ForestDwellersMain.MOD_ID, "dweller"),
-            EntityType.Builder.create(DwellerEntity::new, SpawnGroup.CREATURE).dimensions(0.8f, 0.8f).build());
+            EntityType.Builder.create(DwellerEntity::new, SpawnGroup.CREATURE).dimensions(0.7f, 0.9f).build());
 
 
     public static void registerModEntities() {
