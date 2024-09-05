@@ -12,7 +12,7 @@ public class ModItems {
 
 
     public static final Item DWELLER_SPAWN_EGG = registerItem("dweller_spawn_egg",
-            new SpawnEggItem(ModEntities.DWELLER, 0xffffff, 0xffffff, new Item.Settings()));
+            new SpawnEggItem(ModEntities.DWELLER, 0x745a36, 0xc29d62, new Item.Settings()));
 
 
     private static Item registerItem(String name, Item item) {

@@ -17,13 +17,35 @@ public class DwellerRenderer extends MobEntityRenderer<DwellerEntity, DwellerMod
 
     private static final Map<DwellerVariant, Identifier> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(DwellerVariant.class), map -> {
-                map.put(DwellerVariant.PLAIN_OAK, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/oak_dweller.png"));
-                map.put(DwellerVariant.BOTH_OAK, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/oak_dweller_both.png"));
-                map.put(DwellerVariant.RED_OAK, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/oak_dweller_red.png"));
-                map.put(DwellerVariant.BROWN_OAK, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/oak_dweller_brown.png"));
-                map.put(DwellerVariant.DARK_OAK, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/dark_oak_dweller.png"));
-                map.put(DwellerVariant.SPRUCE, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce_dweller.png"));
-                map.put(DwellerVariant.ACACIA, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/acacia_dweller.png"));
+                map.put(DwellerVariant.OAK, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/oak/oak_dweller.png"));
+                map.put(DwellerVariant.OAK_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/oak/oak_dweller_moss.png"));
+
+                map.put(DwellerVariant.BIRCH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/birch/birch_dweller.png"));
+                map.put(DwellerVariant.BIRCH_SMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/birch/birch_dweller_smush.png"));
+                map.put(DwellerVariant.BIRCH_BMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/birch/birch_dweller_bmush.png"));
+                map.put(DwellerVariant.BIRCH_DMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/birch/birch_dweller_dmush.png"));
+                map.put(DwellerVariant.BIRCH_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/birch/birch_dweller_moss.png"));
+                map.put(DwellerVariant.BIRCH_SMUSH_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/birch/birch_dweller_smush_moss.png"));
+                map.put(DwellerVariant.BIRCH_BMUSH_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/birch/birch_dweller_bmush_moss.png"));
+                map.put(DwellerVariant.BIRCH_DMUSH_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/birch/birch_dweller_dmush_moss.png"));
+
+                map.put(DwellerVariant.DARK_OAK, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/dark_oak/dark_oak_dweller.png"));
+                map.put(DwellerVariant.DARK_OAK_RMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/dark_oak/dark_oak_dweller_rmush.png"));
+                map.put(DwellerVariant.DARK_OAK_BMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/dark_oak/dark_oak_dweller_bmush.png"));
+                map.put(DwellerVariant.DARK_OAK_DMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/dark_oak/dark_oak_dweller_dmush.png"));
+                map.put(DwellerVariant.DARK_OAK_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/dark_oak/dark_oak_dweller_moss.png"));
+                map.put(DwellerVariant.DARK_OAK_RMUSH_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/dark_oak/dark_oak_dweller_rmush_moss.png"));
+                map.put(DwellerVariant.DARK_OAK_BMUSH_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/dark_oak/dark_oak_dweller_bmush_moss.png"));
+                map.put(DwellerVariant.DARK_OAK_DMUSH_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/dark_oak/dark_oak_dweller_dmush_moss.png"));
+
+                map.put(DwellerVariant.SPRUCE, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller.png"));
+                map.put(DwellerVariant.SPRUCE_SMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller_smush.png"));
+                map.put(DwellerVariant.SPRUCE_BMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller_bmush.png"));
+                map.put(DwellerVariant.SPRUCE_DMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller_dmush.png"));
+                map.put(DwellerVariant.SPRUCE_SNOW, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller_snow.png"));
+                map.put(DwellerVariant.SPRUCE_SMUSH_SNOW, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller_smush_snow.png"));
+                map.put(DwellerVariant.SPRUCE_BMUSH_SNOW, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller_bmush_snow.png"));
+                map.put(DwellerVariant.SPRUCE_DMUSH_SNOW, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller_dmush_snow.png"));
             });
 
     public DwellerRenderer(EntityRendererFactory.Context context) {
