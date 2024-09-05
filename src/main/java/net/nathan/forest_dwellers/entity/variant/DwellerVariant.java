@@ -8,7 +8,9 @@ public enum DwellerVariant {
     BOTH_OAK(1),
     RED_OAK(2),
     BROWN_OAK(3),
-    DARK_OAK(4);
+    DARK_OAK(4),
+    ACACIA(5),
+    SPRUCE(6);
 
     private static final DwellerVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.comparingInt(
             DwellerVariant::getId)).toArray(DwellerVariant[]::new);

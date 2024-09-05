@@ -22,6 +22,8 @@ public class DwellerRenderer extends MobEntityRenderer<DwellerEntity, DwellerMod
                 map.put(DwellerVariant.RED_OAK, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/oak_dweller_red.png"));
                 map.put(DwellerVariant.BROWN_OAK, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/oak_dweller_brown.png"));
                 map.put(DwellerVariant.DARK_OAK, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/dark_oak_dweller.png"));
+                map.put(DwellerVariant.SPRUCE, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce_dweller.png"));
+                map.put(DwellerVariant.ACACIA, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/acacia_dweller.png"));
             });
 
     public DwellerRenderer(EntityRendererFactory.Context context) {

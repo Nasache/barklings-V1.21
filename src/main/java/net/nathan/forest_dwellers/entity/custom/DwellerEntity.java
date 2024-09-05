@@ -84,7 +84,7 @@ public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
 
     @Override
     public boolean isBreedingItem(ItemStack stack) {
-        return stack.isOf(Items.APPLE);
+        return stack.isOf(Items.GOLDEN_APPLE);
     }
 
     @Nullable
@@ -92,17 +92,22 @@ public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         DwellerEntity child = ModEntities.DWELLER.create(world);
         if (child != null) {
-            RegistryEntry<Biome> biome = world.getBiome(this.getBlockPos());
+            RegistryEntry<Biome> registryEntry = world.getBiome(this.getBlockPos());
             DwellerVariant variant;
 
-            if (biome.matchesKey(BiomeKeys.FOREST)) {
+            if (registryEntry.matchesKey(BiomeKeys.FOREST)) {
                 variant = DwellerVariant.PLAIN_OAK;
-            } else if (biome.matchesKey(BiomeKeys.DARK_FOREST)) {
-                variant = DwellerVariant.DARK_OAK;
-            } else if (biome.matchesKey(BiomeKeys.BIRCH_FOREST)) {
-                variant = DwellerVariant.BROWN_OAK;
+            } else if (registryEntry.matchesKey(BiomeKeys.DARK_FOREST)) {
+                variant = (DwellerVariant.DARK_OAK);
+            } else if (registryEntry.matchesKey(BiomeKeys.TAIGA) || registryEntry.matchesKey(BiomeKeys.SNOWY_TAIGA)
+                    || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_PINE_TAIGA) || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA)) {
+                variant = (DwellerVariant.SPRUCE);
+            } else if (registryEntry.matchesKey(BiomeKeys.SAVANNA) || registryEntry.matchesKey(BiomeKeys.SAVANNA_PLATEAU)
+                    || registryEntry.matchesKey(BiomeKeys.WINDSWEPT_SAVANNA) || registryEntry.matchesKey(BiomeKeys.BADLANDS)
+                    || registryEntry.matchesKey(BiomeKeys.ERODED_BADLANDS) || registryEntry.matchesKey(BiomeKeys.WOODED_BADLANDS)) {
+                variant = (DwellerVariant.ACACIA);
             } else {
-                variant = DwellerVariant.BOTH_OAK;
+                variant = (DwellerVariant.BOTH_OAK);
             }
 
             child.setVariant(variant);
@@ -136,8 +141,13 @@ public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
             variant = DwellerVariant.PLAIN_OAK;
         } else if (registryEntry.matchesKey(BiomeKeys.DARK_FOREST)) {
             variant = (DwellerVariant.DARK_OAK);
-        } else if (registryEntry.matchesKey(BiomeKeys.BIRCH_FOREST)) {
-            variant = (DwellerVariant.BROWN_OAK);
+        } else if (registryEntry.matchesKey(BiomeKeys.TAIGA) || registryEntry.matchesKey(BiomeKeys.SNOWY_TAIGA)
+                || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_PINE_TAIGA) || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA)) {
+            variant = (DwellerVariant.SPRUCE);
+        } else if (registryEntry.matchesKey(BiomeKeys.SAVANNA) || registryEntry.matchesKey(BiomeKeys.SAVANNA_PLATEAU)
+                || registryEntry.matchesKey(BiomeKeys.WINDSWEPT_SAVANNA) || registryEntry.matchesKey(BiomeKeys.BADLANDS)
+                || registryEntry.matchesKey(BiomeKeys.ERODED_BADLANDS) || registryEntry.matchesKey(BiomeKeys.WOODED_BADLANDS)) {
+            variant = (DwellerVariant.ACACIA);
         } else {
             variant = (DwellerVariant.BOTH_OAK);
         }
