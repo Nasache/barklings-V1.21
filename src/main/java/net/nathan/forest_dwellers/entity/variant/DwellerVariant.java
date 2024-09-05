@@ -32,7 +32,38 @@ public enum DwellerVariant {
     SPRUCE_BMUSH(22),
     SPRUCE_BMUSH_SNOW(23),
     SPRUCE_DMUSH(24),
-    SPRUCE_DMUSH_SNOW(25);
+    SPRUCE_DMUSH_SNOW(25),
+
+    CHERRY(26),
+    CHERRY_MOSS(27),
+    CHERRY_HONEY(28),
+
+    MANGROVE(29),
+    MANGROVE_MOSS(30),
+    MANGROVE_BMUSH(31),
+    MANGROVE_BMUSH_MOSS(32),
+    MANGROVE_RMUSH(33),
+    MANGROVE_RMUSH_MOSS(34),
+    MANGROVE_DMUSH(35),
+    MANGROVE_DMUSH_MOSS(36),
+
+    JUNGLE(37),
+    JUNGLE_MOSS(38),
+    JUNGLE_VINES(39),
+
+    ACACIA(40),
+    ACACIA_MOSS(41),
+    ACACIA_VINES(42),
+
+    CRIMSON(43),
+    CRIMSON_SHROOM(44),
+    CRIMSON_WART(45),
+    CRIMSON_WART_SHROOM(46),
+
+    WARPED(47),
+    WARPED_SHROOM(48),
+    WARPED_WART(49),
+    WARPED_WART_SHROOM(50);
 
     private static final DwellerVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.comparingInt(
             DwellerVariant::getId)).toArray(DwellerVariant[]::new);

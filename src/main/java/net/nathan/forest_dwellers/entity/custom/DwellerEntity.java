@@ -113,6 +113,16 @@ public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
                     || registryEntry.matchesKey(BiomeKeys.FROZEN_RIVER) || registryEntry.matchesKey(BiomeKeys.DEEP_FROZEN_OCEAN)) {
                 int randomSpruceId = 18 + world.getRandom().nextInt(8);
                 variant = DwellerVariant.byId(randomSpruceId);
+            } else if (registryEntry.matchesKey(BiomeKeys.CHERRY_GROVE)) {
+                int randomCherryId = 26 + world.getRandom().nextInt(3);
+                variant = DwellerVariant.byId(randomCherryId);
+            } else if (registryEntry.matchesKey(BiomeKeys.SWAMP) || registryEntry.matchesKey(BiomeKeys.MANGROVE_SWAMP)) {
+                int randomMangroveId = 29 + world.getRandom().nextInt(8);
+                variant = DwellerVariant.byId(randomMangroveId);
+            } else if (registryEntry.matchesKey(BiomeKeys.JUNGLE) || registryEntry.matchesKey(BiomeKeys.BAMBOO_JUNGLE)
+                    || registryEntry.matchesKey(BiomeKeys.SPARSE_JUNGLE)) {
+                int randomJungleId = 37 + world.getRandom().nextInt(3);
+                variant = DwellerVariant.byId(randomJungleId);
             } else {
                 int randomOakId = 0 + world.getRandom().nextInt(4);
                 variant = DwellerVariant.byId(randomOakId);
@@ -164,6 +174,31 @@ public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
                 || registryEntry.matchesKey(BiomeKeys.FROZEN_RIVER) || registryEntry.matchesKey(BiomeKeys.DEEP_FROZEN_OCEAN)) {
             int randomSpruceId = 18 + world.getRandom().nextInt(8);
             variant = DwellerVariant.byId(randomSpruceId);
+        } else if (registryEntry.matchesKey(BiomeKeys.CHERRY_GROVE)) {
+            int randomCherryId = 26 + world.getRandom().nextInt(3);
+            variant = DwellerVariant.byId(randomCherryId);
+        } else if (registryEntry.matchesKey(BiomeKeys.SWAMP) || registryEntry.matchesKey(BiomeKeys.MANGROVE_SWAMP)) {
+            int randomMangroveId = 29 + world.getRandom().nextInt(8);
+            variant = DwellerVariant.byId(randomMangroveId);
+        } else if (registryEntry.matchesKey(BiomeKeys.JUNGLE) || registryEntry.matchesKey(BiomeKeys.BAMBOO_JUNGLE)
+                || registryEntry.matchesKey(BiomeKeys.SPARSE_JUNGLE)) {
+            int randomJungleId = 37 + world.getRandom().nextInt(3);
+            variant = DwellerVariant.byId(randomJungleId);
+        } else if (registryEntry.matchesKey(BiomeKeys.SAVANNA) || registryEntry.matchesKey(BiomeKeys.SAVANNA_PLATEAU)
+                || registryEntry.matchesKey(BiomeKeys.WINDSWEPT_SAVANNA) || registryEntry.matchesKey(BiomeKeys.BADLANDS)
+                || registryEntry.matchesKey(BiomeKeys.WOODED_BADLANDS) || registryEntry.matchesKey(BiomeKeys.ERODED_BADLANDS)) {
+            int randomAcaciaId = 40 + world.getRandom().nextInt(3);
+            variant = DwellerVariant.byId(randomAcaciaId);
+        } else if (registryEntry.matchesKey(BiomeKeys.CRIMSON_FOREST)) {
+            int randomCrimsonId = 43 + world.getRandom().nextInt(4);
+            variant = DwellerVariant.byId(randomCrimsonId);
+        } else if (registryEntry.matchesKey(BiomeKeys.WARPED_FOREST)) {
+            int randomWarpedId = 47 + world.getRandom().nextInt(4);
+            variant = DwellerVariant.byId(randomWarpedId);
+        } else if (registryEntry.matchesKey(BiomeKeys.NETHER_WASTES)  || registryEntry.matchesKey(BiomeKeys.SOUL_SAND_VALLEY)
+                || registryEntry.matchesKey(BiomeKeys.BASALT_DELTAS)) {
+            int randomNetherId = 43 + world.getRandom().nextInt(8);
+            variant = DwellerVariant.byId(randomNetherId);
         } else {
             int randomOakId = 0 + world.getRandom().nextInt(4);
             variant = DwellerVariant.byId(randomOakId);

@@ -46,6 +46,38 @@ public class DwellerRenderer extends MobEntityRenderer<DwellerEntity, DwellerMod
                 map.put(DwellerVariant.SPRUCE_SMUSH_SNOW, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller_smush_snow.png"));
                 map.put(DwellerVariant.SPRUCE_BMUSH_SNOW, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller_bmush_snow.png"));
                 map.put(DwellerVariant.SPRUCE_DMUSH_SNOW, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/spruce/spruce_dweller_dmush_snow.png"));
+
+                map.put(DwellerVariant.CHERRY, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/cherry/cherry_dweller.png"));
+                map.put(DwellerVariant.CHERRY_HONEY, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/cherry/cherry_dweller_honey.png"));
+                map.put(DwellerVariant.CHERRY_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/cherry/cherry_dweller_moss.png"));
+
+                map.put(DwellerVariant.MANGROVE, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/mangrove/mangrove_dweller.png"));
+                map.put(DwellerVariant.MANGROVE_RMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/mangrove/mangrove_dweller_rmush.png"));
+                map.put(DwellerVariant.MANGROVE_BMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/mangrove/mangrove_dweller_bmush.png"));
+                map.put(DwellerVariant.MANGROVE_DMUSH, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/mangrove/mangrove_dweller_dmush.png"));
+                map.put(DwellerVariant.MANGROVE_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/mangrove/mangrove_dweller_moss.png"));
+                map.put(DwellerVariant.MANGROVE_RMUSH_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/mangrove/mangrove_dweller_rmush_moss.png"));
+                map.put(DwellerVariant.MANGROVE_BMUSH_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/mangrove/mangrove_dweller_bmush_moss.png"));
+                map.put(DwellerVariant.MANGROVE_DMUSH_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/mangrove/mangrove_dweller_dmush_moss.png"));
+
+                map.put(DwellerVariant.JUNGLE, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/jungle/jungle_dweller.png"));
+                map.put(DwellerVariant.JUNGLE_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/jungle/jungle_dweller_moss.png"));
+                map.put(DwellerVariant.JUNGLE_VINES, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/jungle/jungle_dweller_vines.png"));
+
+                map.put(DwellerVariant.ACACIA, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/acacia/acacia_dweller.png"));
+                map.put(DwellerVariant.ACACIA_MOSS, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/acacia/acacia_dweller_moss.png"));
+                map.put(DwellerVariant.ACACIA_VINES, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/acacia/acacia_dweller_vines.png"));
+
+                map.put(DwellerVariant.CRIMSON, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/crimson/crimson_dweller.png"));
+                map.put(DwellerVariant.CRIMSON_SHROOM, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/crimson/crimson_dweller_shroom.png"));
+                map.put(DwellerVariant.CRIMSON_WART, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/crimson/crimson_dweller_wart.png"));
+                map.put(DwellerVariant.CRIMSON_WART_SHROOM, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/crimson/crimson_dweller_wart_shroom.png"));
+
+                map.put(DwellerVariant.WARPED, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/warped/warped_dweller.png"));
+                map.put(DwellerVariant.WARPED_SHROOM, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/warped/warped_dweller_shroom.png"));
+                map.put(DwellerVariant.WARPED_WART, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/warped/warped_dweller_wart.png"));
+                map.put(DwellerVariant.WARPED_WART_SHROOM, Identifier.of(ForestDwellersMain.MOD_ID, "textures/entity/dwellers/warped/warped_dweller_wart_shroom.png"));
+
             });
 
     public DwellerRenderer(EntityRendererFactory.Context context) {
