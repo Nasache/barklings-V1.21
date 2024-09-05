@@ -1,23 +1,41 @@
 package net.nathan.forest_dwellers.entity.custom;
 
 import net.minecraft.entity.AnimationState;
+import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.Util;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import net.nathan.forest_dwellers.entity.ModEntities;
+import net.nathan.forest_dwellers.entity.variant.DwellerVariant;
 import org.jetbrains.annotations.Nullable;
 
 public class DwellerEntity extends AnimalEntity {
+
+public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
+        DataTracker.registerData(DwellerEntity.class, TrackedDataHandlerRegistry.INTEGER);
+
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
@@ -57,14 +75,12 @@ public class DwellerEntity extends AnimalEntity {
         }
     }
 
-
     public static DefaultAttributeContainer.Builder createDwellerAttributes() {
         return MobEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 12)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 0);
     }
-
 
     @Override
     public boolean isBreedingItem(ItemStack stack) {
@@ -74,6 +90,70 @@ public class DwellerEntity extends AnimalEntity {
     @Nullable
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.DWELLER.create(world);
+        DwellerEntity child = ModEntities.DWELLER.create(world);
+        if (child != null) {
+            RegistryEntry<Biome> biome = world.getBiome(this.getBlockPos());
+            DwellerVariant variant;
+
+            if (biome.matchesKey(BiomeKeys.FOREST)) {
+                variant = DwellerVariant.PLAIN_OAK;
+            } else if (biome.matchesKey(BiomeKeys.DARK_FOREST)) {
+                variant = DwellerVariant.DARK_OAK;
+            } else if (biome.matchesKey(BiomeKeys.BIRCH_FOREST)) {
+                variant = DwellerVariant.BROWN_OAK;
+            } else {
+                variant = DwellerVariant.BOTH_OAK;
+            }
+
+            child.setVariant(variant);
+        }
+        return child;
+    }
+
+    @Override
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(DATA_ID_TYPE_VARIANT, 0);
+    }
+
+    private int getTypeVariant() {
+        return this.dataTracker.get(DATA_ID_TYPE_VARIANT);
+    }
+
+    public DwellerVariant getVariant() {
+        return DwellerVariant.byId(this.getTypeVariant() & 255);
+    }
+
+    public void setVariant(DwellerVariant variant) {
+        this.dataTracker.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
+    }
+
+    @Override
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
+        RegistryEntry<Biome> registryEntry = world.getBiome(this.getBlockPos());
+        DwellerVariant variant;
+        if (registryEntry.matchesKey(BiomeKeys.FOREST)) {
+            variant = DwellerVariant.PLAIN_OAK;
+        } else if (registryEntry.matchesKey(BiomeKeys.DARK_FOREST)) {
+            variant = (DwellerVariant.DARK_OAK);
+        } else if (registryEntry.matchesKey(BiomeKeys.BIRCH_FOREST)) {
+            variant = (DwellerVariant.BROWN_OAK);
+        } else {
+            variant = (DwellerVariant.BOTH_OAK);
+        }
+        setVariant(variant);
+        return super.initialize(world, difficulty, spawnReason, entityData);
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        this.dataTracker.set(DATA_ID_TYPE_VARIANT, nbt.getInt("Variant"));
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putInt("Variant", this.getTypeVariant());
     }
 }
