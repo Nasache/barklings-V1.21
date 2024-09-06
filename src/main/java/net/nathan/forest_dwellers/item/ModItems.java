@@ -1,14 +1,50 @@
 package net.nathan.forest_dwellers.item;
 
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.nathan.forest_dwellers.ForestDwellersMain;
+import net.nathan.forest_dwellers.block.ModBlocks;
 import net.nathan.forest_dwellers.entity.ModEntities;
 
 public class ModItems {
+
+
+    public static final Item CHERRIES = registerItem("cherries",
+            new Item(new Item.Settings().food(ModFoodComponents.CHERRIES)));
+    public static final Item BANANA = registerItem("banana",
+            new Item(new Item.Settings().food(ModFoodComponents.BANANA)));
+    public static final Item ORANGE = registerItem("orange",
+            new Item(new Item.Settings().food(ModFoodComponents.ORANGE)));
+    public static final Item POMEGRANATE = registerItem("pomegranate",
+            new Item(new Item.Settings().food(ModFoodComponents.POMEGRANATE)));
+    public static final Item PEAR = registerItem("pear",
+            new Item(new Item.Settings().food(ModFoodComponents.PEAR)));
+    public static final Item PLUM = registerItem("plum",
+            new Item(new Item.Settings().food(ModFoodComponents.PLUM)));
+    public static final Item STARFRUIT = registerItem("starfruit",
+            new Item(new Item.Settings().food(ModFoodComponents.STARFRUIT)));
+
+    public static final Item STRAWBERRY = registerItem("strawberry",
+            new AliasedBlockItem(ModBlocks.STRAWBERRY_BUSH, new Item.Settings().food(ModFoodComponents.STRAWBERRY)));
+
+
+    public static final Item LEEK_SEEDS = registerItem("leek_seeds",
+            new AliasedBlockItem(ModBlocks.LEEK_CROP, new Item.Settings()));
+    public static final Item ROASTED_LEEK = registerItem("roasted_leek",
+            new Item(new Item.Settings().food(ModFoodComponents.ROASTED_LEEK)));
+    public static final Item LEEK = registerItem("leek",
+            new Item(new Item.Settings().food(ModFoodComponents.LEEK)));
+
+    public static final Item TOMATO = registerItem("tomato",
+            new Item(new Item.Settings().food(ModFoodComponents.TOMATO)));
+    public static final Item LETTUCE_LEAF = registerItem("lettuce_leaf",
+            new Item(new Item.Settings().food(ModFoodComponents.LETTUCE_LEAF)));
+
+
 
 
     public static final Item DWELLER_SPAWN_EGG = registerItem("dweller_spawn_egg",

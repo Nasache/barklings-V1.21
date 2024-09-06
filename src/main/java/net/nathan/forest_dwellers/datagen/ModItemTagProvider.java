@@ -2,7 +2,9 @@ package net.nathan.forest_dwellers.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 

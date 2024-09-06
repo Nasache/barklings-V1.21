@@ -1,3 +1,25 @@
 {
+  "itemgroup.forest_dwellers": "Forest Dwellers",
+
+
+  "item.forest_dwellers.cherries": "Cherries",
+  "item.forest_dwellers.orange": "Orange",
+  "item.forest_dwellers.banana": "Banana",
+  "item.forest_dwellers.plum": "Plum",
+  "item.forest_dwellers.pomegranate": "Pomegranate",
+  "item.forest_dwellers.starfruit": "Starfruit",
+  "item.forest_dwellers.pear": "Pear",
+
+  "item.forest_dwellers.strawberry": "Strawberry",
+
+  "item.forest_dwellers.leak": "Leak",
+  "item.forest_dwellers.leak_seeds": "Leak Seeds",
+  "item.forest_dwellers.roasted_leak": "Roasted Leak",
+
+  "item.forest_dwellers.tomato": "Tomato",
+
+  "item.forest_dwellers.lettuce_leaf": "Lettuce Leaf",
+
+
   "item.forest_dwellers.dweller_spawn_egg": "Dweller Spawn Egg"
 }
