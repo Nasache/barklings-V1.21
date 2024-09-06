@@ -9,13 +9,16 @@ import net.minecraft.loot.LootTables;
 import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.context.LootContextTypes;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.nathan.forest_dwellers.entity.CustomLootTables;
+import net.nathan.forest_dwellers.entity.variant.DwellerVariant;
 
+import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Objects;
@@ -33,16 +36,103 @@ public class PickUpAppleGoal extends Goal {
         this.setControls(EnumSet.of(Control.MOVE));
     }
 
+    public DwellerVariant getVariant() {
+        return DwellerVariant.byId(dweller.getTypeVariant() & 255);
+    }
+
     public List<ItemStack> dropLoot() {
+        DwellerVariant variant = getVariant();
+
+        RegistryKey<LootTable> lootTableIdentifier;
+        switch (variant) {
+            case OAK:
+            case OAK_MOSS:
+                lootTableIdentifier = CustomLootTables.OAK_DWELLER_BARTERING;
+                break;
+            case BIRCH:
+            case BIRCH_MOSS:
+            case BIRCH_SMUSH:
+            case BIRCH_SMUSH_MOSS:
+            case BIRCH_BMUSH:
+            case BIRCH_BMUSH_MOSS:
+            case BIRCH_DMUSH:
+            case BIRCH_DMUSH_MOSS:
+                lootTableIdentifier = CustomLootTables.BIRCH_DWELLER_BARTERING;
+                break;
+            case DARK_OAK:
+            case DARK_OAK_MOSS:
+            case DARK_OAK_BMUSH:
+            case DARK_OAK_BMUSH_MOSS:
+            case DARK_OAK_RMUSH:
+            case DARK_OAK_RMUSH_MOSS:
+            case DARK_OAK_DMUSH:
+            case DARK_OAK_DMUSH_MOSS:
+                lootTableIdentifier = CustomLootTables.DARK_OAK_DWELLER_BARTERING;
+                break;
+            case SPRUCE:
+            case SPRUCE_SNOW:
+            case SPRUCE_SMUSH:
+            case SPRUCE_SMUSH_SNOW:
+            case SPRUCE_BMUSH:
+            case SPRUCE_BMUSH_SNOW:
+            case SPRUCE_DMUSH:
+            case SPRUCE_DMUSH_SNOW:
+                lootTableIdentifier = CustomLootTables.SPRUCE_DWELLER_BARTERING;
+                break;
+            case CHERRY:
+            case CHERRY_MOSS:
+            case CHERRY_HONEY:
+                lootTableIdentifier = CustomLootTables.CHERRY_DWELLER_BARTERING;
+                break;
+            case MANGROVE:
+            case MANGROVE_MOSS:
+            case MANGROVE_BMUSH:
+            case MANGROVE_BMUSH_MOSS:
+            case MANGROVE_RMUSH:
+            case MANGROVE_RMUSH_MOSS:
+            case MANGROVE_DMUSH:
+            case MANGROVE_DMUSH_MOSS:
+                lootTableIdentifier = CustomLootTables.MANGROVE_DWELLER_BARTERING;
+                break;
+            case JUNGLE:
+            case JUNGLE_MOSS:
+            case JUNGLE_VINES:
+                lootTableIdentifier = CustomLootTables.JUNGLE_DWELLER_BARTERING;
+                break;
+            case ACACIA:
+            case ACACIA_MOSS:
+            case ACACIA_VINES:
+                lootTableIdentifier = CustomLootTables.ACACIA_DWELLER_BARTERING;
+                break;
+            case CRIMSON:
+            case CRIMSON_SHROOM:
+            case CRIMSON_WART:
+            case CRIMSON_WART_SHROOM:
+                lootTableIdentifier = CustomLootTables.CRIMSON_DWELLER_BARTERING;
+                break;
+            case WARPED:
+            case WARPED_SHROOM:
+            case WARPED_WART:
+            case WARPED_WART_SHROOM:
+                lootTableIdentifier = CustomLootTables.WARPED_DWELLER_BARTERING;
+                break;
+            default:
+                return Collections.emptyList();
+        }
+
         LootTable lootTable = Objects.requireNonNull(
-                Objects.requireNonNull(dweller.getWorld().getServer()).getReloadableRegistries().getLootTable(CustomLootTables.DWELLER_BARTERING)
+                Objects.requireNonNull(dweller.getWorld().getServer())
+                        .getReloadableRegistries()
+                        .getLootTable(lootTableIdentifier)
         );
-        List<ItemStack> list = lootTable.generateLoot(
-                (new LootContextParameterSet.Builder((ServerWorld) dweller.getWorld()))
+
+        List<ItemStack> lootList = lootTable.generateLoot(
+                new LootContextParameterSet.Builder((ServerWorld) dweller.getWorld())
                         .add(LootContextParameters.THIS_ENTITY, dweller)
                         .build(LootContextTypes.BARTER)
         );
-        return list;
+
+        return lootList;
     }
 
     private ItemStack getRandomItem(List<ItemStack> loot) {

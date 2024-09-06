@@ -106,7 +106,7 @@ public class DwellerEntity extends AnimalEntity {
         builder.add(DATA_ID_TYPE_VARIANT, 0);
     }
 
-    private int getTypeVariant() {
+    int getTypeVariant() {
         return this.dataTracker.get(DATA_ID_TYPE_VARIANT);
     }
 
@@ -220,11 +220,11 @@ public class DwellerEntity extends AnimalEntity {
         }
     }
 
-    @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return SoundEvents.ENTITY_ALLAY_AMBIENT_WITH_ITEM;
-    }
+    //@Nullable
+    //@Override
+    //protected SoundEvent getAmbientSound() {
+    //    return SoundEvents.ENTITY_ALLAY_AMBIENT_WITH_ITEM;
+    //}
 
     protected SoundEvent getStepSound() {
         return SoundEvents.BLOCK_WOOD_STEP;

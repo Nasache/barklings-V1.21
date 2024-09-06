@@ -194,5 +194,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "forest_dwellers:gameplay/dweller_bartering"
+  "random_sequence": "forest_dwellers:gameplay/dweller/oak_dweller_bartering"
 }
