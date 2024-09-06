@@ -1,9 +1,6 @@
 package net.nathan.forest_dwellers.entity.custom;
 
-import net.minecraft.entity.AnimationState;
-import net.minecraft.entity.EntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -18,23 +15,21 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.tag.BiomeTags;
-import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.Util;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
 import net.nathan.forest_dwellers.entity.ModEntities;
 import net.nathan.forest_dwellers.entity.variant.DwellerVariant;
+import net.nathan.forest_dwellers.entity.variant.DwellerVariantCalculator;
 import org.jetbrains.annotations.Nullable;
 
 public class DwellerEntity extends AnimalEntity {
 
-public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
-        DataTracker.registerData(DwellerEntity.class, TrackedDataHandlerRegistry.INTEGER);
+    public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
+            DataTracker.registerData(DwellerEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
@@ -48,17 +43,18 @@ public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0));
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
-        this.goalSelector.add(3, new TemptGoal(this, 1.25, (stack) -> {
+        this.goalSelector.add(3, new PickUpAppleGoal(this, 1.25));
+        this.goalSelector.add(4, new TemptGoal(this, 1.25, (stack) -> {
             return stack.isOf(Items.APPLE) || stack.isOf(Items.GOLDEN_APPLE);
         }, false));
-        this.goalSelector.add(4, new FollowParentGoal(this, 1.25));
-        this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));
-        this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
-        this.goalSelector.add(7, new LookAroundGoal(this));
+        this.goalSelector.add(5, new FollowParentGoal(this, 1.25));
+        this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0));
+        this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
+        this.goalSelector.add(8, new LookAroundGoal(this));
     }
 
     private void setupAnimationStates() {
-        if(this.idleAnimationTimeout <=0 ) {
+        if (this.idleAnimationTimeout <= 0) {
             this.idleAnimationTimeout = 40;
             this.idleAnimationState.start(this.age);
         } else {
@@ -70,7 +66,7 @@ public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
     public void tick() {
         super.tick();
 
-        if(this.getWorld().isClient()) {
+        if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
     }
@@ -93,41 +89,7 @@ public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
         DwellerEntity child = ModEntities.DWELLER.create(world);
         if (child != null) {
             RegistryEntry<Biome> registryEntry = world.getBiome(this.getBlockPos());
-            DwellerVariant variant;
-
-            if (registryEntry.matchesKey(BiomeKeys.FOREST) || registryEntry.matchesKey(BiomeKeys.FLOWER_FOREST)) {
-                int randomOakId = 0 + world.getRandom().nextInt(4);
-                variant = DwellerVariant.byId(randomOakId);
-            } else if (registryEntry.matchesKey(BiomeKeys.BIRCH_FOREST) || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_BIRCH_FOREST)) {
-                int randomBirchId = 2 + world.getRandom().nextInt(8);
-                variant = DwellerVariant.byId(randomBirchId);
-            } else if (registryEntry.matchesKey(BiomeKeys.DARK_FOREST)) {
-                int randomDarkOakId = 10 + world.getRandom().nextInt(8);
-                variant = DwellerVariant.byId(randomDarkOakId);
-            } else if (registryEntry.matchesKey(BiomeKeys.GROVE) || registryEntry.matchesKey(BiomeKeys.TAIGA)
-                    || registryEntry.matchesKey(BiomeKeys.SNOWY_TAIGA) || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_PINE_TAIGA)
-                    || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA) || registryEntry.matchesKey(BiomeKeys.SNOWY_BEACH)
-                    || registryEntry.matchesKey(BiomeKeys.SNOWY_PLAINS) || registryEntry.matchesKey(BiomeKeys.SNOWY_SLOPES)
-                    || registryEntry.matchesKey(BiomeKeys.COLD_OCEAN) || registryEntry.matchesKey(BiomeKeys.DEEP_COLD_OCEAN)
-                    || registryEntry.matchesKey(BiomeKeys.FROZEN_OCEAN) || registryEntry.matchesKey(BiomeKeys.FROZEN_PEAKS)
-                    || registryEntry.matchesKey(BiomeKeys.FROZEN_RIVER) || registryEntry.matchesKey(BiomeKeys.DEEP_FROZEN_OCEAN)) {
-                int randomSpruceId = 18 + world.getRandom().nextInt(8);
-                variant = DwellerVariant.byId(randomSpruceId);
-            } else if (registryEntry.matchesKey(BiomeKeys.CHERRY_GROVE)) {
-                int randomCherryId = 26 + world.getRandom().nextInt(3);
-                variant = DwellerVariant.byId(randomCherryId);
-            } else if (registryEntry.matchesKey(BiomeKeys.SWAMP) || registryEntry.matchesKey(BiomeKeys.MANGROVE_SWAMP)) {
-                int randomMangroveId = 29 + world.getRandom().nextInt(8);
-                variant = DwellerVariant.byId(randomMangroveId);
-            } else if (registryEntry.matchesKey(BiomeKeys.JUNGLE) || registryEntry.matchesKey(BiomeKeys.BAMBOO_JUNGLE)
-                    || registryEntry.matchesKey(BiomeKeys.SPARSE_JUNGLE)) {
-                int randomJungleId = 37 + world.getRandom().nextInt(3);
-                variant = DwellerVariant.byId(randomJungleId);
-            } else {
-                int randomOakId = 0 + world.getRandom().nextInt(4);
-                variant = DwellerVariant.byId(randomOakId);
-            }
-
+            DwellerVariant variant = DwellerVariantCalculator.getVariantForBiome(registryEntry, world.getRandom());
             child.setVariant(variant);
         }
         return child;
@@ -154,60 +116,13 @@ public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
         RegistryEntry<Biome> registryEntry = world.getBiome(this.getBlockPos());
-        DwellerVariant variant;
+        Random random = world.getRandom();
 
-        if (registryEntry.matchesKey(BiomeKeys.FOREST) || registryEntry.matchesKey(BiomeKeys.FLOWER_FOREST)) {
-            int randomOakId = 0 + world.getRandom().nextInt(4);
-            variant = DwellerVariant.byId(randomOakId);
-        } else if (registryEntry.matchesKey(BiomeKeys.BIRCH_FOREST) || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_BIRCH_FOREST)) {
-            int randomBirchId = 2 + world.getRandom().nextInt(8);
-            variant = DwellerVariant.byId(randomBirchId);
-        } else if (registryEntry.matchesKey(BiomeKeys.DARK_FOREST)) {
-            int randomDarkOakId = 10 + world.getRandom().nextInt(8);
-            variant = DwellerVariant.byId(randomDarkOakId);
-        } else if (registryEntry.matchesKey(BiomeKeys.GROVE) || registryEntry.matchesKey(BiomeKeys.TAIGA)
-                || registryEntry.matchesKey(BiomeKeys.SNOWY_TAIGA) || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_PINE_TAIGA)
-                || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA) || registryEntry.matchesKey(BiomeKeys.SNOWY_BEACH)
-                || registryEntry.matchesKey(BiomeKeys.SNOWY_PLAINS) || registryEntry.matchesKey(BiomeKeys.SNOWY_SLOPES)
-                || registryEntry.matchesKey(BiomeKeys.COLD_OCEAN) || registryEntry.matchesKey(BiomeKeys.DEEP_COLD_OCEAN)
-                || registryEntry.matchesKey(BiomeKeys.FROZEN_OCEAN) || registryEntry.matchesKey(BiomeKeys.FROZEN_PEAKS)
-                || registryEntry.matchesKey(BiomeKeys.FROZEN_RIVER) || registryEntry.matchesKey(BiomeKeys.DEEP_FROZEN_OCEAN)) {
-            int randomSpruceId = 18 + world.getRandom().nextInt(8);
-            variant = DwellerVariant.byId(randomSpruceId);
-        } else if (registryEntry.matchesKey(BiomeKeys.CHERRY_GROVE)) {
-            int randomCherryId = 26 + world.getRandom().nextInt(3);
-            variant = DwellerVariant.byId(randomCherryId);
-        } else if (registryEntry.matchesKey(BiomeKeys.SWAMP) || registryEntry.matchesKey(BiomeKeys.MANGROVE_SWAMP)) {
-            int randomMangroveId = 29 + world.getRandom().nextInt(8);
-            variant = DwellerVariant.byId(randomMangroveId);
-        } else if (registryEntry.matchesKey(BiomeKeys.JUNGLE) || registryEntry.matchesKey(BiomeKeys.BAMBOO_JUNGLE)
-                || registryEntry.matchesKey(BiomeKeys.SPARSE_JUNGLE)) {
-            int randomJungleId = 37 + world.getRandom().nextInt(3);
-            variant = DwellerVariant.byId(randomJungleId);
-        } else if (registryEntry.matchesKey(BiomeKeys.SAVANNA) || registryEntry.matchesKey(BiomeKeys.SAVANNA_PLATEAU)
-                || registryEntry.matchesKey(BiomeKeys.WINDSWEPT_SAVANNA) || registryEntry.matchesKey(BiomeKeys.BADLANDS)
-                || registryEntry.matchesKey(BiomeKeys.WOODED_BADLANDS) || registryEntry.matchesKey(BiomeKeys.ERODED_BADLANDS)) {
-            int randomAcaciaId = 40 + world.getRandom().nextInt(3);
-            variant = DwellerVariant.byId(randomAcaciaId);
-        } else if (registryEntry.matchesKey(BiomeKeys.CRIMSON_FOREST)) {
-            int randomCrimsonId = 43 + world.getRandom().nextInt(4);
-            variant = DwellerVariant.byId(randomCrimsonId);
-        } else if (registryEntry.matchesKey(BiomeKeys.WARPED_FOREST)) {
-            int randomWarpedId = 47 + world.getRandom().nextInt(4);
-            variant = DwellerVariant.byId(randomWarpedId);
-        } else if (registryEntry.matchesKey(BiomeKeys.NETHER_WASTES)  || registryEntry.matchesKey(BiomeKeys.SOUL_SAND_VALLEY)
-                || registryEntry.matchesKey(BiomeKeys.BASALT_DELTAS)) {
-            int randomNetherId = 43 + world.getRandom().nextInt(8);
-            variant = DwellerVariant.byId(randomNetherId);
-        } else {
-            int randomOakId = 0 + world.getRandom().nextInt(4);
-            variant = DwellerVariant.byId(randomOakId);
-        }
+        DwellerVariant variant = DwellerVariantCalculator.getVariantForBiome(registryEntry, random);
 
         setVariant(variant);
         return super.initialize(world, difficulty, spawnReason, entityData);
     }
-
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {

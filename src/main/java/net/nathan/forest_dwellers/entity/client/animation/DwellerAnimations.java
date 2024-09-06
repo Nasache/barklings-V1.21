@@ -178,4 +178,13 @@ public class DwellerAnimations {
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(1f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR))).build();
+    public static final Animation INSPECT = Animation.Builder.create(0f).looping()
+            .addBoneAnimation("head",
+                    new Transformation(Transformation.Targets.ROTATE,
+                            new Keyframe(0f, AnimationHelper.createRotationalVector(5.22f, 54.84f, 4.01f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("rarm",
+                    new Transformation(Transformation.Targets.ROTATE,
+                            new Keyframe(0f, AnimationHelper.createRotationalVector(-59.55f, 33.49f, 17.97f),
+                                    Transformation.Interpolations.LINEAR))).build();
 }
