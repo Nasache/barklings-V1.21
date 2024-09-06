@@ -4,6 +4,7 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
@@ -135,4 +136,84 @@ public class DwellerEntity extends AnimalEntity {
         super.writeCustomDataToNbt(nbt);
         nbt.putInt("Variant", this.getTypeVariant());
     }
+
+    private ItemStack getDropForVariant() {
+        DwellerVariant variant = getVariant();
+
+        switch (variant) {
+            case OAK:
+            case OAK_MOSS:
+                return new ItemStack(Items.OAK_LOG);
+            case BIRCH:
+            case BIRCH_MOSS:
+            case BIRCH_SMUSH:
+            case BIRCH_SMUSH_MOSS:
+            case BIRCH_BMUSH:
+            case BIRCH_BMUSH_MOSS:
+            case BIRCH_DMUSH:
+            case BIRCH_DMUSH_MOSS:
+                return new ItemStack(Items.BIRCH_LOG);
+            case DARK_OAK:
+            case DARK_OAK_MOSS:
+            case DARK_OAK_BMUSH:
+            case DARK_OAK_BMUSH_MOSS:
+            case DARK_OAK_RMUSH:
+            case DARK_OAK_RMUSH_MOSS:
+            case DARK_OAK_DMUSH:
+            case DARK_OAK_DMUSH_MOSS:
+                return new ItemStack(Items.DARK_OAK_LOG);
+            case SPRUCE:
+            case SPRUCE_SNOW:
+            case SPRUCE_SMUSH:
+            case SPRUCE_SMUSH_SNOW:
+            case SPRUCE_BMUSH:
+            case SPRUCE_BMUSH_SNOW:
+            case SPRUCE_DMUSH:
+            case SPRUCE_DMUSH_SNOW:
+                return new ItemStack(Items.SPRUCE_LOG);
+            case CHERRY:
+            case CHERRY_MOSS:
+            case CHERRY_HONEY:
+                return new ItemStack(Items.CHERRY_LOG);
+            case MANGROVE:
+            case MANGROVE_MOSS:
+            case MANGROVE_BMUSH:
+            case MANGROVE_BMUSH_MOSS:
+            case MANGROVE_RMUSH:
+            case MANGROVE_RMUSH_MOSS:
+            case MANGROVE_DMUSH:
+            case MANGROVE_DMUSH_MOSS:
+                return new ItemStack(Items.MANGROVE_LOG);
+            case JUNGLE:
+            case JUNGLE_MOSS:
+            case JUNGLE_VINES:
+                return new ItemStack(Items.JUNGLE_LOG);
+            case ACACIA:
+            case ACACIA_MOSS:
+            case ACACIA_VINES:
+                return new ItemStack(Items.ACACIA_LOG);
+            case CRIMSON:
+            case CRIMSON_SHROOM:
+            case CRIMSON_WART:
+            case CRIMSON_WART_SHROOM:
+                return new ItemStack(Items.CRIMSON_STEM);
+            case WARPED:
+            case WARPED_SHROOM:
+            case WARPED_WART:
+            case WARPED_WART_SHROOM:
+                return new ItemStack(Items.WARPED_STEM);
+            default:
+                return ItemStack.EMPTY;
+        }
+    }
+
+    @Override
+    public void onDeath(DamageSource source) {
+        super.onDeath(source);
+
+        if (!this.isBaby() && !this.getWorld().isClient) {
+            this.dropStack(getDropForVariant());
+        }
+    }
+
 }

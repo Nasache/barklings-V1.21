@@ -57,18 +57,22 @@ public class PickUpAppleGoal extends Goal {
         ItemStack randomItem = getRandomItem(loot);
         if (!randomItem.isEmpty()) {
             World world = dweller.getWorld();
-            BlockPos pos = dweller.getBlockPos();
-            ItemEntity itemEntity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), randomItem);
+            Vec3d pos = dweller.getPos();
+            ItemEntity itemEntity = new ItemEntity(world, pos.x, pos.y, pos.z, randomItem);
             world.spawnEntity(itemEntity);
         }
     }
 
     @Override
     public boolean canStart() {
+        if (this.dweller.isBaby()) {
+            return false;
+        }
+
         List<ItemEntity> list = this.dweller.getWorld().getEntitiesByClass(ItemEntity.class,
                 this.dweller.getBoundingBox().expand(8.0D, 4.0D, 8.0D), (item) -> item.getStack().isOf(Items.APPLE));
         if (!list.isEmpty()) {
-            this.targetApple = list.getFirst();
+            this.targetApple = list.get(0);
             return true;
         }
         return false;
@@ -77,10 +81,9 @@ public class PickUpAppleGoal extends Goal {
     @Override
     public void start() {
         BlockPos applePos = this.targetApple.getBlockPos();
-        Vec3d targetPosition = new Vec3d(applePos.getX() + 0.5D, applePos.getY() + 0.5D, applePos.getZ() + 0.5D);
+        Vec3d targetPosition = new Vec3d(applePos.getX(), applePos.getY(), applePos.getZ());
         this.dweller.getNavigation().startMovingTo(targetPosition.x, targetPosition.y, targetPosition.z, this.speed);
     }
-
 
     @Override
     public void stop() {
@@ -97,12 +100,17 @@ public class PickUpAppleGoal extends Goal {
         }
 
         if (this.targetApple != null && this.targetApple.isAlive()) {
-            double distance = this.dweller.squaredDistanceTo(this.targetApple);
-            if (distance > 1.0D) {
-                BlockPos applePos = this.targetApple.getBlockPos();
-                Vec3d targetPosition = new Vec3d(applePos.getX() + 0.5D, applePos.getY() + 0.5D, applePos.getZ() + 0.5D);
+            Vec3d targetPosition = new Vec3d(this.targetApple.getX(), this.targetApple.getY(), this.targetApple.getZ());
+            double distanceSquared = this.dweller.getPos().squaredDistanceTo(targetPosition);
+
+            if (distanceSquared > 3.0D) {
                 this.dweller.getNavigation().startMovingTo(targetPosition.x, targetPosition.y, targetPosition.z, this.speed);
-            } else {
+            } else if (distanceSquared > 0.02D && distanceSquared <= 3.0D) {
+                Vec3d direction = targetPosition.subtract(this.dweller.getPos()).normalize();
+                double speedFactor = 0.25;
+                Vec3d newPosition = this.dweller.getPos().add(direction.multiply(speedFactor));
+                this.dweller.setPosition(newPosition.x, newPosition.y, newPosition.z);
+            } else if (distanceSquared <= 0.02D) {
                 this.dweller.getNavigation().stop();
                 this.dweller.playSound(SoundEvents.ENTITY_ITEM_PICKUP, 1.0F, (this.dweller.getRandom().nextFloat() - this.dweller.getRandom().nextFloat()) * 0.2F + 1.0F);
 
@@ -115,7 +123,7 @@ public class PickUpAppleGoal extends Goal {
                 }
 
                 this.dropRandomLoot();
-                this.cooldown = 20;
+                this.cooldown = 30;
             }
         }
     }
