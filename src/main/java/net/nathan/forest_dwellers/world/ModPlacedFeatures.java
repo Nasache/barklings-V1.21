@@ -12,10 +12,25 @@ import net.nathan.forest_dwellers.ForestDwellersMain;
 import java.util.List;
 
 public class ModPlacedFeatures {
+    public static final RegistryKey<PlacedFeature> PATCH_STRAWBERRY_PLACED_KEY = registerKey("strawberry_placed");
+    public static final RegistryKey<PlacedFeature> PATCH_GRAPE_PLACED_KEY = registerKey("grape_placed");
+    public static final RegistryKey<PlacedFeature> PATCH_BLUEBERRY_PLACED_KEY = registerKey("blueberry_placed");
 
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+
+        register(context, PATCH_STRAWBERRY_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PATCH_STRAWBERRY_BUSH),
+                new PlacementModifier[]{RarityFilterPlacementModifier.of(24), SquarePlacementModifier.of(),
+                        PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of()});
+
+        register(context, PATCH_GRAPE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PATCH_GRAPE_BUSH),
+                new PlacementModifier[]{RarityFilterPlacementModifier.of(24), SquarePlacementModifier.of(),
+                        PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of()});
+
+        register(context, PATCH_BLUEBERRY_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PATCH_BLUEBERRY_BUSH),
+                new PlacementModifier[]{RarityFilterPlacementModifier.of(24), SquarePlacementModifier.of(),
+                        PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of()});
 
     }
 

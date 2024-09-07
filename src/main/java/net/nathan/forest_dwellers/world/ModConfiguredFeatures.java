@@ -1,16 +1,46 @@
 package net.nathan.forest_dwellers.world;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.nathan.forest_dwellers.ForestDwellersMain;
+import net.nathan.forest_dwellers.block.ModBlocks;
+import net.nathan.forest_dwellers.block.custom.BlueberryBush;
+import net.nathan.forest_dwellers.block.custom.GrapeBush;
+import net.nathan.forest_dwellers.block.custom.StrawberryBush;
+
+import java.util.List;
 
 public class ModConfiguredFeatures {
 
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_STRAWBERRY_BUSH = registerKey("strawberry_bush");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_GRAPE_BUSH = registerKey("grape_bush");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_BLUEBERRY_BUSH = registerKey("blueberry_bush");
+
+
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
+
+        ConfiguredFeatures.register(context, PATCH_STRAWBERRY_BUSH, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig
+                        (BlockStateProvider.of((BlockState) ModBlocks.STRAWBERRY_BUSH.getDefaultState()
+                                .with(StrawberryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+
+        ConfiguredFeatures.register(context, PATCH_GRAPE_BUSH, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig
+                        (BlockStateProvider.of((BlockState) ModBlocks.GRAPE_BUSH.getDefaultState()
+                                .with(GrapeBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+
+        ConfiguredFeatures.register(context, PATCH_BLUEBERRY_BUSH, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig
+                        (BlockStateProvider.of((BlockState) ModBlocks.BLUEBERRY_BUSH.getDefaultState()
+                                .with(BlueberryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+
     }
 
 
