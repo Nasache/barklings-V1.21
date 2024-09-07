@@ -11,10 +11,12 @@
   "item.forest_dwellers.pear": "Pear",
 
   "item.forest_dwellers.strawberry": "Strawberry",
+  "item.forest_dwellers.grapes": "Grapes",
+  "item.forest_dwellers.blueberry": "Blueberry",
 
-  "item.forest_dwellers.leak": "Leak",
-  "item.forest_dwellers.leak_seeds": "Leak Seeds",
-  "item.forest_dwellers.roasted_leak": "Roasted Leak",
+  "item.forest_dwellers.leek": "Leek",
+  "item.forest_dwellers.leek_seeds": "Leek Seeds",
+  "item.forest_dwellers.roasted_leek": "Roasted Leek",
 
   "item.forest_dwellers.tomato": "Tomato",
 

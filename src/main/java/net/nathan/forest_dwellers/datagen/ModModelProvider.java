@@ -26,6 +26,14 @@ public class ModModelProvider extends FabricModelProvider {
             return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.STRAWBERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
         })));
 
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.GRAPE_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
+            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.GRAPE_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
+        })));
+
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLUEBERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
+            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.BLUEBERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
+        })));
+
 
 
     }
@@ -42,13 +50,14 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.STARFRUIT, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.STRAWBERRY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GRAPES, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLUEBERRY, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.LEEK, Models.GENERATED);
         itemModelGenerator.register(ModItems.ROASTED_LEEK, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
         itemModelGenerator.register(ModItems.LETTUCE_LEAF, Models.GENERATED);
-
 
         itemModelGenerator.register(ModItems.DWELLER_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));

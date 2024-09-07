@@ -12,6 +12,8 @@ public class ModFoodComponents {
     public static final FoodComponent STARFRUIT = new FoodComponent.Builder().nutrition(4).saturationModifier(0.3F).build();
 
     public static final FoodComponent STRAWBERRY = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent GRAPES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
+    public static final FoodComponent BLUEBERRY = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build();
 
     public static final FoodComponent LEEK = new FoodComponent.Builder().nutrition(2).saturationModifier(4f).build();
     public static final FoodComponent ROASTED_LEEK = new FoodComponent.Builder().nutrition(6).saturationModifier(6.5f).build();

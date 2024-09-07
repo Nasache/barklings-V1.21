@@ -12,11 +12,14 @@ import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.nathan.forest_dwellers.entity.CustomLootTables;
 import net.nathan.forest_dwellers.entity.variant.DwellerVariant;
+import net.nathan.forest_dwellers.util.ModTags;
 
 import java.util.Collections;
 import java.util.EnumSet;
@@ -160,7 +163,7 @@ public class PickUpAppleGoal extends Goal {
         }
 
         List<ItemEntity> list = this.dweller.getWorld().getEntitiesByClass(ItemEntity.class,
-                this.dweller.getBoundingBox().expand(8.0D, 4.0D, 8.0D), (item) -> item.getStack().isOf(Items.APPLE));
+                this.dweller.getBoundingBox().expand(8.0D, 4.0D, 8.0D), (item) -> item.getStack().isIn(ModTags.Items.FRUIT));
         if (!list.isEmpty()) {
             this.targetApple = list.get(0);
             return true;
@@ -193,28 +196,41 @@ public class PickUpAppleGoal extends Goal {
             Vec3d targetPosition = new Vec3d(this.targetApple.getX(), this.targetApple.getY(), this.targetApple.getZ());
             double distanceSquared = this.dweller.getPos().squaredDistanceTo(targetPosition);
 
-            if (distanceSquared > 3.0D) {
-                this.dweller.getNavigation().startMovingTo(targetPosition.x, targetPosition.y, targetPosition.z, this.speed);
-            } else if (distanceSquared > 0.02D && distanceSquared <= 3.0D) {
-                Vec3d direction = targetPosition.subtract(this.dweller.getPos()).normalize();
-                double speedFactor = 0.25;
-                Vec3d newPosition = this.dweller.getPos().add(direction.multiply(speedFactor));
-                this.dweller.setPosition(newPosition.x, newPosition.y, newPosition.z);
-            } else if (distanceSquared <= 0.02D) {
-                this.dweller.getNavigation().stop();
-                this.dweller.playSound(SoundEvents.ENTITY_ITEM_PICKUP, 1.0F, (this.dweller.getRandom().nextFloat() - this.dweller.getRandom().nextFloat()) * 0.2F + 1.0F);
+            if (hasLineOfSight(this.dweller, this.targetApple)) {
+                if (distanceSquared > 3.0D) {
+                    this.dweller.getNavigation().startMovingTo(targetPosition.x, targetPosition.y, targetPosition.z, this.speed);
+                } else if (distanceSquared > 0.02D && distanceSquared <= 3.0D) {
+                    Vec3d direction = targetPosition.subtract(this.dweller.getPos()).normalize();
+                    double speedFactor = 0.2;
+                    Vec3d newPosition = this.dweller.getPos().add(direction.multiply(speedFactor));
+                    this.dweller.setPosition(newPosition.x, newPosition.y, newPosition.z);
+                } else if (distanceSquared <= 0.02D) {
+                    this.dweller.getNavigation().stop();
+                    this.dweller.playSound(SoundEvents.ENTITY_ITEM_PICKUP, 1.0F, (this.dweller.getRandom().nextFloat() - this.dweller.getRandom().nextFloat()) * 0.2F + 1.0F);
 
-                ItemStack stack = this.targetApple.getStack();
-                if (stack.getCount() > 1) {
-                    stack.decrement(1);
-                    this.targetApple.setStack(stack);
-                } else {
-                    this.targetApple.discard();
+                    ItemStack stack = this.targetApple.getStack();
+                    if (stack.getCount() > 1) {
+                        stack.decrement(1);
+                        this.targetApple.setStack(stack);
+                    } else {
+                        this.targetApple.discard();
+                    }
+
+                    this.dropRandomLoot();
+                    this.cooldown = 30;
                 }
-
-                this.dropRandomLoot();
-                this.cooldown = 30;
+            } else {
+                this.dweller.getNavigation().startMovingTo(targetPosition.x, targetPosition.y, targetPosition.z, this.speed);
             }
         }
+    }
+
+    private boolean hasLineOfSight(DwellerEntity dweller, ItemEntity target) {
+        World world = dweller.getWorld();
+        Vec3d dwellerPos = dweller.getEyePos();
+        Vec3d targetPos = target.getPos();
+
+        return world.raycast(new RaycastContext(dwellerPos, targetPos, RaycastContext.ShapeType.COLLIDER,
+                RaycastContext.FluidHandling.NONE, dweller)).getType() == HitResult.Type.MISS;
     }
 }

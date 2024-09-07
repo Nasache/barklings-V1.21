@@ -30,6 +30,10 @@ public class ModItems {
 
     public static final Item STRAWBERRY = registerItem("strawberry",
             new AliasedBlockItem(ModBlocks.STRAWBERRY_BUSH, new Item.Settings().food(ModFoodComponents.STRAWBERRY)));
+    public static final Item GRAPES = registerItem("grapes",
+            new AliasedBlockItem(ModBlocks.GRAPE_BUSH, new Item.Settings().food(ModFoodComponents.GRAPES)));
+    public static final Item BLUEBERRY = registerItem("blueberry",
+            new AliasedBlockItem(ModBlocks.BLUEBERRY_BUSH, new Item.Settings().food(ModFoodComponents.BLUEBERRY)));
 
 
     public static final Item LEEK_SEEDS = registerItem("leek_seeds",

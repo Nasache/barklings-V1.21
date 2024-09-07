@@ -29,6 +29,7 @@ import net.minecraft.world.biome.Biome;
 import net.nathan.forest_dwellers.entity.ModEntities;
 import net.nathan.forest_dwellers.entity.variant.DwellerVariant;
 import net.nathan.forest_dwellers.entity.variant.DwellerVariantCalculator;
+import net.nathan.forest_dwellers.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 public class DwellerEntity extends AnimalEntity {
@@ -50,7 +51,7 @@ public class DwellerEntity extends AnimalEntity {
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
         this.goalSelector.add(3, new PickUpAppleGoal(this, 1.25));
         this.goalSelector.add(4, new TemptGoal(this, 1.25, (stack) -> {
-            return stack.isOf(Items.APPLE) || stack.isOf(Items.GOLDEN_APPLE);
+            return stack.isIn(ModTags.Items.FRUIT) || stack.isOf(Items.GOLDEN_APPLE);
         }, false));
         this.goalSelector.add(5, new FollowParentGoal(this, 1.25));
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0));

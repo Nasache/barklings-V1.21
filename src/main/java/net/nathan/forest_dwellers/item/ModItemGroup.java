@@ -27,6 +27,8 @@ public class ModItemGroup {
                         entries.add(ModItems.STARFRUIT);
 
                         entries.add(ModItems.STRAWBERRY);
+                        entries.add(ModItems.BLUEBERRY);
+                        entries.add(ModItems.GRAPES);
 
                         entries.add(ModItems.LEEK);
                         entries.add(ModItems.ROASTED_LEEK);

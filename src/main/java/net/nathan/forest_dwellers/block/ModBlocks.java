@@ -10,6 +10,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.nathan.forest_dwellers.ForestDwellersMain;
+import net.nathan.forest_dwellers.block.custom.BlueberryBush;
+import net.nathan.forest_dwellers.block.custom.GrapeBush;
 import net.nathan.forest_dwellers.block.custom.LeekCropBlock;
 import net.nathan.forest_dwellers.block.custom.StrawberryBush;
 
@@ -18,9 +20,13 @@ public class ModBlocks {
 
     public static final Block STRAWBERRY_BUSH = registerBlockWithoutBlockItem("strawberry_bush",
             new StrawberryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block GRAPE_BUSH = registerBlockWithoutBlockItem("grape_bush",
+            new GrapeBush(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block BLUEBERRY_BUSH = registerBlockWithoutBlockItem("blueberry_bush",
+            new BlueberryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
+
     public static final Block LEEK_CROP = registerBlockWithoutBlockItem("leek_crop",
             new LeekCropBlock(FabricBlockSettings.copyOf(Blocks.POTATOES)));
-
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(ForestDwellersMain.MOD_ID, name), block);
