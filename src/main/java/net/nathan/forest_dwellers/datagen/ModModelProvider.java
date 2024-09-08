@@ -21,6 +21,7 @@ public class ModModelProvider extends FabricModelProvider {
 
 
         blockStateModelGenerator.registerCrop(ModBlocks.LEEK_CROP, LeekCropBlock.AGE, 0, 1, 2, 3);
+        blockStateModelGenerator.registerFlowerbed(ModBlocks.CLOVER);
 
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.STRAWBERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
             return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.STRAWBERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));

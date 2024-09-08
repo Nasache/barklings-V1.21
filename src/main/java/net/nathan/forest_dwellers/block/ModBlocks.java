@@ -26,21 +26,25 @@ public class ModBlocks {
             new BlueberryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
 
     public static final Block LEEK_CROP = registerBlockWithoutBlockItem("leek_crop",
-            new LeekCropBlock(FabricBlockSettings.copyOf(Blocks.POTATOES)));
+            new LeekCropBlock(AbstractBlock.Settings.copy(Blocks.POTATOES)));
+
+    public static final Block CLOVER = registerBlock("clover",
+            new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)));
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(ForestDwellersMain.MOD_ID, name), block);
     }
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(ForestDwellersMain.MOD_ID, name), block);
     }
 
-
-    private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, Identifier.of(ForestDwellersMain.MOD_ID, name),
+    private static void registerBlockItem(String name, Block block) {
+        Registry.register(Registries.ITEM, Identifier.of(ForestDwellersMain.MOD_ID, name),
                 new BlockItem(block, new Item.Settings()));
     }
+
     public static void registerModBlocks() {
         ForestDwellersMain.LOGGER.info("Registering ModBlocks for " + ForestDwellersMain.MOD_ID);
     }

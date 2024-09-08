@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.nathan.forest_dwellers.ForestDwellersMain;
+import net.nathan.forest_dwellers.block.ModBlocks;
 
 public class ModItemGroup {
 
@@ -17,6 +18,7 @@ public class ModItemGroup {
                     .icon(() -> new ItemStack(ModItems.PEAR)).entries((displayContext, entries) -> {
 
                         entries.add(ModItems.DWELLER_SPAWN_EGG);
+                        entries.add(ModBlocks.CLOVER);
 
                         entries.add(ModItems.CHERRIES);
                         entries.add(ModItems.BANANA);
