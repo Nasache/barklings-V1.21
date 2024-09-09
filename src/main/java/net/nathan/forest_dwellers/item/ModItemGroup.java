@@ -19,6 +19,7 @@ public class ModItemGroup {
 
                         entries.add(ModItems.DWELLER_SPAWN_EGG);
                         entries.add(ModBlocks.CLOVER);
+                        entries.add(ModItems.HIDDEN_VOICES_MUSIC_DISC);
 
                         entries.add(ModItems.CHERRIES);
                         entries.add(ModItems.BANANA);

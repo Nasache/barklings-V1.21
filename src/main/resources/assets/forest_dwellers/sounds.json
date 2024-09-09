@@ -1,0 +1,10 @@
+{
+  "hidden_voices": {
+    "sounds": [
+      {
+        "name": "forest_dwellers:hidden_voices",
+        "stream": true
+      }
+    ]
+  }
+}

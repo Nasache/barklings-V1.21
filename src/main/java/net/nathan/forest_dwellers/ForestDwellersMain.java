@@ -9,6 +9,7 @@ import net.nathan.forest_dwellers.entity.ModEntities;
 import net.nathan.forest_dwellers.entity.custom.DwellerEntity;
 import net.nathan.forest_dwellers.item.ModItemGroup;
 import net.nathan.forest_dwellers.item.ModItems;
+import net.nathan.forest_dwellers.sound.ModSounds;
 import net.nathan.forest_dwellers.util.ModLootTableModifiers;
 import net.nathan.forest_dwellers.util.ModRegistries;
 import net.nathan.forest_dwellers.world.gen.ModWorldGeneration;
@@ -39,5 +40,7 @@ public class ForestDwellersMain implements ModInitializer {
 		ModWorldGeneration.generateModWorldGeneration();
 
 		ModEntities.registerModEntities();
+
+		ModSounds.registerSounds();
 	}
 }

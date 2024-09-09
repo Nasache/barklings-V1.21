@@ -22,6 +22,18 @@
 
   "item.forest_dwellers.lettuce_leaf": "Lettuce Leaf",
 
+  "block.forest_dwellers.clover": "Clover",
 
-  "item.forest_dwellers.dweller_spawn_egg": "Dweller Spawn Egg"
+
+  "item.forest_dwellers.dweller_spawn_egg": "Dweller Spawn Egg",
+
+
+  "item.forest_dwellers.hidden_voices_music_disc": "§bMusic Disc§b",
+  "item.forest_dwellers.hidden_voices_music_disc.desc": "Nathan Stabach - hidden voices",
+
+
+  "painting.forest_dwellers.natures_palette.title": "Nature's Palette",
+  "painting.forest_dwellers.natures_palette.author": "Nathan",
+  "painting.forest_dwellers.the_forests_child.title": "The Forest's Child",
+  "painting.forest_dwellers.the_forests_child.author": "Nathan"
 }

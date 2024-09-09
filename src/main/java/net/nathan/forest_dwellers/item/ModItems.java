@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 import net.nathan.forest_dwellers.ForestDwellersMain;
 import net.nathan.forest_dwellers.block.ModBlocks;
 import net.nathan.forest_dwellers.entity.ModEntities;
+import net.nathan.forest_dwellers.sound.ModSounds;
 
 public class ModItems {
 
@@ -47,6 +48,9 @@ public class ModItems {
             new Item(new Item.Settings().food(ModFoodComponents.TOMATO)));
     public static final Item LETTUCE_LEAF = registerItem("lettuce_leaf",
             new Item(new Item.Settings().food(ModFoodComponents.LETTUCE_LEAF)));
+
+    public static final Item HIDDEN_VOICES_MUSIC_DISC = registerItem("hidden_voices_music_disc",
+            new Item(new Item.Settings().jukeboxPlayable(ModSounds.HIDDEN_VOICES_KEY)));
 
 
 
