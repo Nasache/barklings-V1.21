@@ -39,8 +39,5 @@ public class ForestDwellersMain implements ModInitializer {
 		ModWorldGeneration.generateModWorldGeneration();
 
 		ModEntities.registerModEntities();
-
-
-		FabricDefaultAttributeRegistry.register(ModEntities.DWELLER, DwellerEntity.createDwellerAttributes());
 	}
 }
