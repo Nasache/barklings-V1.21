@@ -1,6 +1,5 @@
 package net.nathan.forest_dwellers.block;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
@@ -12,7 +11,6 @@ import net.minecraft.util.Identifier;
 import net.nathan.forest_dwellers.ForestDwellersMain;
 import net.nathan.forest_dwellers.block.custom.BlueberryBush;
 import net.nathan.forest_dwellers.block.custom.GrapeBush;
-import net.nathan.forest_dwellers.block.custom.LeekCropBlock;
 import net.nathan.forest_dwellers.block.custom.StrawberryBush;
 
 public class ModBlocks {
@@ -25,12 +23,12 @@ public class ModBlocks {
     public static final Block BLUEBERRY_BUSH = registerBlockWithoutBlockItem("blueberry_bush",
             new BlueberryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
 
-    public static final Block LEEK_CROP = registerBlockWithoutBlockItem("leek_crop",
-            new LeekCropBlock(AbstractBlock.Settings.copy(Blocks.POTATOES)));
-
     public static final Block CLOVER = registerBlock("clover",
             new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)));
 
+    public static final Block LIVING_LANTERN = registerBlock("living_lantern",
+            new LanternBlock(AbstractBlock.Settings.copy(Blocks.LANTERN).mapColor(MapColor.BROWN).luminance((state) -> {
+                return 12;})));
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(ForestDwellersMain.MOD_ID, name), block);
     }

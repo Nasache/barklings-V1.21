@@ -21,6 +21,8 @@ public class ModItemGroup {
                         entries.add(ModBlocks.CLOVER);
                         entries.add(ModItems.HIDDEN_VOICES_MUSIC_DISC);
 
+                        entries.add(ModBlocks.LIVING_LANTERN);
+
                         entries.add(ModItems.CHERRIES);
                         entries.add(ModItems.BANANA);
                         entries.add(ModItems.ORANGE);
@@ -32,13 +34,6 @@ public class ModItemGroup {
                         entries.add(ModItems.STRAWBERRY);
                         entries.add(ModItems.BLUEBERRY);
                         entries.add(ModItems.GRAPES);
-
-                        entries.add(ModItems.LEEK);
-                        entries.add(ModItems.ROASTED_LEEK);
-                        entries.add(ModItems.LEEK_SEEDS);
-
-                        entries.add(ModItems.TOMATO);
-                        entries.add(ModItems.LETTUCE_LEAF);
 
                     }).build());
 

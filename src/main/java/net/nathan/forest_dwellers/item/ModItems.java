@@ -37,22 +37,8 @@ public class ModItems {
             new AliasedBlockItem(ModBlocks.BLUEBERRY_BUSH, new Item.Settings().food(ModFoodComponents.BLUEBERRY)));
 
 
-    public static final Item LEEK_SEEDS = registerItem("leek_seeds",
-            new AliasedBlockItem(ModBlocks.LEEK_CROP, new Item.Settings()));
-    public static final Item ROASTED_LEEK = registerItem("roasted_leek",
-            new Item(new Item.Settings().food(ModFoodComponents.ROASTED_LEEK)));
-    public static final Item LEEK = registerItem("leek",
-            new Item(new Item.Settings().food(ModFoodComponents.LEEK)));
-
-    public static final Item TOMATO = registerItem("tomato",
-            new Item(new Item.Settings().food(ModFoodComponents.TOMATO)));
-    public static final Item LETTUCE_LEAF = registerItem("lettuce_leaf",
-            new Item(new Item.Settings().food(ModFoodComponents.LETTUCE_LEAF)));
-
     public static final Item HIDDEN_VOICES_MUSIC_DISC = registerItem("hidden_voices_music_disc",
             new Item(new Item.Settings().jukeboxPlayable(ModSounds.HIDDEN_VOICES_KEY)));
-
-
 
 
     public static final Item DWELLER_SPAWN_EGG = registerItem("dweller_spawn_egg",

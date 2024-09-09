@@ -7,7 +7,6 @@ import net.minecraft.data.client.*;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.nathan.forest_dwellers.block.ModBlocks;
-import net.nathan.forest_dwellers.block.custom.LeekCropBlock;
 import net.nathan.forest_dwellers.item.ModItems;
 
 import java.util.Optional;
@@ -20,8 +19,9 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 
 
-        blockStateModelGenerator.registerCrop(ModBlocks.LEEK_CROP, LeekCropBlock.AGE, 0, 1, 2, 3);
         blockStateModelGenerator.registerFlowerbed(ModBlocks.CLOVER);
+
+        blockStateModelGenerator.registerLantern(ModBlocks.LIVING_LANTERN);
 
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.STRAWBERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
             return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.STRAWBERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
@@ -53,12 +53,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.STRAWBERRY, Models.GENERATED);
         itemModelGenerator.register(ModItems.GRAPES, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLUEBERRY, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.LEEK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROASTED_LEEK, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LETTUCE_LEAF, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.HIDDEN_VOICES_MUSIC_DISC, Models.GENERATED);
 

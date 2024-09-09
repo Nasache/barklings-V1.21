@@ -24,11 +24,5 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
 
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(new ItemConvertible[]{ModItems.LEEK}), RecipeCategory.FOOD, ModItems.ROASTED_LEEK, 0.35F, 200).criterion("has_leek", conditionsFromItem(ModItems.LEEK)).offerTo(exporter);
-        //offerFoodCookingRecipe(exporter, "smoking", RecipeSerializer.SMOKING, 100, ModItems.LEEK, ModItems.ROASTED_LEEK, 0.35f);
-        //offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, ModItems.LEEK, ModItems.ROASTED_LEEK, 0.35f);
-
-
-
     }
 }
