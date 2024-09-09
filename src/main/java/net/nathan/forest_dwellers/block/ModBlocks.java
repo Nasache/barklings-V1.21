@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.nathan.forest_dwellers.ForestDwellersMain;
 import net.nathan.forest_dwellers.block.custom.BlueberryBush;
 import net.nathan.forest_dwellers.block.custom.GrapeBush;
+import net.nathan.forest_dwellers.block.custom.LivingLanternBlock;
 import net.nathan.forest_dwellers.block.custom.StrawberryBush;
 
 public class ModBlocks {
@@ -27,8 +28,10 @@ public class ModBlocks {
             new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)));
 
     public static final Block LIVING_LANTERN = registerBlock("living_lantern",
-            new LanternBlock(AbstractBlock.Settings.copy(Blocks.LANTERN).mapColor(MapColor.BROWN).luminance((state) -> {
+            new LivingLanternBlock(AbstractBlock.Settings.copy(Blocks.LANTERN).mapColor(MapColor.BROWN).sounds(BlockSoundGroup.WOOD).luminance((state) -> {
                 return 12;})));
+
+
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(ForestDwellersMain.MOD_ID, name), block);
     }

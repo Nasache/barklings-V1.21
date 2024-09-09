@@ -3,9 +3,11 @@ package net.nathan.forest_dwellers.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import net.nathan.forest_dwellers.block.ModBlocks;
 import net.nathan.forest_dwellers.item.ModItems;
 
