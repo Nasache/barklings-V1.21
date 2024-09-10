@@ -15,7 +15,12 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.context.LootContextParameterSet;
+import net.minecraft.loot.context.LootContextParameters;
+import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
@@ -26,11 +31,16 @@ import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.nathan.forest_dwellers.entity.CustomLootTables;
 import net.nathan.forest_dwellers.entity.ModEntities;
 import net.nathan.forest_dwellers.entity.variant.DwellerVariant;
 import net.nathan.forest_dwellers.entity.variant.DwellerVariantCalculator;
 import net.nathan.forest_dwellers.util.ModTags;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 public class DwellerEntity extends AnimalEntity {
 
@@ -142,13 +152,15 @@ public class DwellerEntity extends AnimalEntity {
         nbt.putInt("Variant", this.getTypeVariant());
     }
 
-    private ItemStack getDropForVariant() {
+    private List<ItemStack> getDropForVariant() {
         DwellerVariant variant = getVariant();
+        RegistryKey<LootTable> lootTableIdentifier;
 
         switch (variant) {
             case OAK:
             case OAK_MOSS:
-                return new ItemStack(Items.OAK_LOG);
+                lootTableIdentifier = CustomLootTables.OAK_DWELLER_DROPS;
+                break;
             case BIRCH:
             case BIRCH_MOSS:
             case BIRCH_SMUSH:
@@ -157,7 +169,8 @@ public class DwellerEntity extends AnimalEntity {
             case BIRCH_BMUSH_MOSS:
             case BIRCH_DMUSH:
             case BIRCH_DMUSH_MOSS:
-                return new ItemStack(Items.BIRCH_LOG);
+                lootTableIdentifier = CustomLootTables.BIRCH_DWELLER_DROPS;
+                break;
             case DARK_OAK:
             case DARK_OAK_MOSS:
             case DARK_OAK_BMUSH:
@@ -166,7 +179,8 @@ public class DwellerEntity extends AnimalEntity {
             case DARK_OAK_RMUSH_MOSS:
             case DARK_OAK_DMUSH:
             case DARK_OAK_DMUSH_MOSS:
-                return new ItemStack(Items.DARK_OAK_LOG);
+                lootTableIdentifier = CustomLootTables.DARK_OAK_DWELLER_DROPS;
+                break;
             case SPRUCE:
             case SPRUCE_SNOW:
             case SPRUCE_SMUSH:
@@ -175,11 +189,13 @@ public class DwellerEntity extends AnimalEntity {
             case SPRUCE_BMUSH_SNOW:
             case SPRUCE_DMUSH:
             case SPRUCE_DMUSH_SNOW:
-                return new ItemStack(Items.SPRUCE_LOG);
+                lootTableIdentifier = CustomLootTables.SPRUCE_DWELLER_DROPS;
+                break;
             case CHERRY:
             case CHERRY_MOSS:
             case CHERRY_HONEY:
-                return new ItemStack(Items.CHERRY_LOG);
+                lootTableIdentifier = CustomLootTables.CHERRY_DWELLER_DROPS;
+                break;
             case MANGROVE:
             case MANGROVE_MOSS:
             case MANGROVE_BMUSH:
@@ -188,36 +204,60 @@ public class DwellerEntity extends AnimalEntity {
             case MANGROVE_RMUSH_MOSS:
             case MANGROVE_DMUSH:
             case MANGROVE_DMUSH_MOSS:
-                return new ItemStack(Items.MANGROVE_LOG);
+                lootTableIdentifier = CustomLootTables.MANGROVE_DWELLER_DROPS;
+                break;
             case JUNGLE:
             case JUNGLE_MOSS:
             case JUNGLE_VINES:
-                return new ItemStack(Items.JUNGLE_LOG);
+                lootTableIdentifier = CustomLootTables.JUNGLE_DWELLER_DROPS;
+                break;
             case ACACIA:
             case ACACIA_MOSS:
             case ACACIA_VINES:
-                return new ItemStack(Items.ACACIA_LOG);
+                lootTableIdentifier = CustomLootTables.ACACIA_DWELLER_DROPS;
+                break;
             case CRIMSON:
             case CRIMSON_SHROOM:
             case CRIMSON_WART:
             case CRIMSON_WART_SHROOM:
-                return new ItemStack(Items.CRIMSON_STEM);
+                lootTableIdentifier = CustomLootTables.CRIMSON_DWELLER_DROPS;
+                break;
             case WARPED:
             case WARPED_SHROOM:
             case WARPED_WART:
             case WARPED_WART_SHROOM:
-                return new ItemStack(Items.WARPED_STEM);
+                lootTableIdentifier = CustomLootTables.WARPED_DWELLER_DROPS;
+                break;
             default:
-                return ItemStack.EMPTY;
+                return Collections.emptyList();
         }
+
+        LootTable lootTable = Objects.requireNonNull(
+                Objects.requireNonNull(this.getWorld().getServer())
+                        .getReloadableRegistries()
+                        .getLootTable(lootTableIdentifier)
+        );
+
+        LootContextParameterSet lootContext = new LootContextParameterSet.Builder((ServerWorld) this.getWorld())
+                .add(LootContextParameters.THIS_ENTITY, this)
+                .add(LootContextParameters.ORIGIN, this.getPos())
+                .add(LootContextParameters.DAMAGE_SOURCE, this.getRecentDamageSource())
+                .build(LootContextTypes.ENTITY);
+
+        return lootTable.generateLoot(lootContext);
     }
+
 
     @Override
     public void onDeath(DamageSource source) {
         super.onDeath(source);
 
         if (!this.isBaby() && !this.getWorld().isClient) {
-            this.dropStack(getDropForVariant());
+            List<ItemStack> drops = getDropForVariant();
+
+            for (ItemStack drop : drops) {
+                this.dropStack(drop);
+            }
         }
     }
 

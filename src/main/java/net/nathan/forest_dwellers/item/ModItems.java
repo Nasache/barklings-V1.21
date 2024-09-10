@@ -38,7 +38,7 @@ public class ModItems {
 
 
     public static final Item HIDDEN_VOICES_MUSIC_DISC = registerItem("hidden_voices_music_disc",
-            new Item(new Item.Settings().jukeboxPlayable(ModSounds.HIDDEN_VOICES_KEY)));
+            new Item(new Item.Settings().jukeboxPlayable(ModSounds.HIDDEN_VOICES_KEY).maxCount(1)));
 
 
     public static final Item DWELLER_SPAWN_EGG = registerItem("dweller_spawn_egg",

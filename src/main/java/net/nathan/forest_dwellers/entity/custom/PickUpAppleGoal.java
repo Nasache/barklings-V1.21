@@ -197,15 +197,16 @@ public class PickUpAppleGoal extends Goal {
             double distanceSquared = this.dweller.getPos().squaredDistanceTo(targetPosition);
 
             if (hasLineOfSight(this.dweller, this.targetApple)) {
-                if (distanceSquared > 3.0D) {
+                double tradeDistanceSquared = 2.5D;
+                double stopDistanceSquared = 0.0D;
+
+                if (distanceSquared > stopDistanceSquared) {
                     this.dweller.getNavigation().startMovingTo(targetPosition.x, targetPosition.y, targetPosition.z, this.speed);
-                } else if (distanceSquared > 0.02D && distanceSquared <= 3.0D) {
-                    Vec3d direction = targetPosition.subtract(this.dweller.getPos()).normalize();
-                    double speedFactor = 0.2;
-                    Vec3d newPosition = this.dweller.getPos().add(direction.multiply(speedFactor));
-                    this.dweller.setPosition(newPosition.x, newPosition.y, newPosition.z);
-                } else if (distanceSquared <= 0.02D) {
+                } else {
                     this.dweller.getNavigation().stop();
+                }
+
+                if (distanceSquared <= tradeDistanceSquared) {
                     this.dweller.playSound(SoundEvents.ENTITY_ITEM_PICKUP, 1.0F, (this.dweller.getRandom().nextFloat() - this.dweller.getRandom().nextFloat()) * 0.2F + 1.0F);
 
                     ItemStack stack = this.targetApple.getStack();
@@ -224,6 +225,7 @@ public class PickUpAppleGoal extends Goal {
             }
         }
     }
+
 
     private boolean hasLineOfSight(DwellerEntity dweller, ItemEntity target) {
         World world = dweller.getWorld();

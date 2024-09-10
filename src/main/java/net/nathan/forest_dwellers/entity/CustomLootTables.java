@@ -25,6 +25,17 @@ public class CustomLootTables {
     public static final RegistryKey<LootTable> CRIMSON_DWELLER_BARTERING;
     public static final RegistryKey<LootTable> WARPED_DWELLER_BARTERING;
 
+    public static final RegistryKey<LootTable> OAK_DWELLER_DROPS;
+    public static final RegistryKey<LootTable> BIRCH_DWELLER_DROPS;
+    public static final RegistryKey<LootTable> SPRUCE_DWELLER_DROPS;
+    public static final RegistryKey<LootTable> DARK_OAK_DWELLER_DROPS;
+    public static final RegistryKey<LootTable> MANGROVE_DWELLER_DROPS;
+    public static final RegistryKey<LootTable> CHERRY_DWELLER_DROPS;
+    public static final RegistryKey<LootTable> JUNGLE_DWELLER_DROPS;
+    public static final RegistryKey<LootTable> ACACIA_DWELLER_DROPS;
+    public static final RegistryKey<LootTable> CRIMSON_DWELLER_DROPS;
+    public static final RegistryKey<LootTable> WARPED_DWELLER_DROPS;
+
     static {
         LOOT_TABLES_READ_ONLY = Collections.unmodifiableSet(LOOT_TABLES);
 
@@ -38,6 +49,17 @@ public class CustomLootTables {
         ACACIA_DWELLER_BARTERING = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "gameplay/dweller/acacia_dweller_bartering"));
         CRIMSON_DWELLER_BARTERING = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "gameplay/dweller/crimson_dweller_bartering"));
         WARPED_DWELLER_BARTERING = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "gameplay/dweller/warped_dweller_bartering"));
+
+        OAK_DWELLER_DROPS = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "entities/oak_dweller_drops"));
+        BIRCH_DWELLER_DROPS = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "entities/birch_dweller_drops"));
+        SPRUCE_DWELLER_DROPS = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "entities/spruce_dweller_drops"));
+        DARK_OAK_DWELLER_DROPS = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "entities/dark_oak_dweller_drops"));
+        MANGROVE_DWELLER_DROPS = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "entities/mangrove_dweller_drops"));
+        CHERRY_DWELLER_DROPS = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "entities/cherry_dweller_drops"));
+        JUNGLE_DWELLER_DROPS = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "entities/jungle_dweller_drops"));
+        ACACIA_DWELLER_DROPS = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "entities/acacia_dweller_drops"));
+        CRIMSON_DWELLER_DROPS = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "entities/crimson_dweller_drops"));
+        WARPED_DWELLER_DROPS = registerLootTable(Identifier.of(ForestDwellersMain.MOD_ID, "entities/warped_dweller_drops"));
     }
 
     private static RegistryKey<LootTable> registerLootTable(Identifier id) {

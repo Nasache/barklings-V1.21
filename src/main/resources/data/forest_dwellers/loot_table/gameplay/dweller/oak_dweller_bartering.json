@@ -4,6 +4,7 @@
     {
       "bonus_rolls": 0.0,
       "entries": [
+
         {
           "type": "minecraft:item",
           "functions": [
@@ -11,15 +12,17 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 36.0,
-                "min": 10.0
+                "max": 16.0,
+                "min": 4.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:wheat_seeds",
-          "weight": 10
+          "name": "minecraft:oak_log",
+          "weight": 50
         },
+
+
         {
           "type": "minecraft:item",
           "functions": [
@@ -27,52 +30,34 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 4.0,
+                "max": 16.0,
+                "min": 4.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:oak_leaves",
+          "weight": 30
+        },
+
+
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 8.0,
                 "min": 2.0
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "minecraft:oak_sapling",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 9.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:dirt",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 12.0,
-                "min": 5.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:birch_sapling",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:oak_log",
           "weight": 40
         },
+
         {
           "type": "minecraft:item",
           "functions": [
@@ -80,19 +65,14 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3.0,
+                "max": 4.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:birch_log",
-          "weight": 40
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:dark_oak_sapling",
-          "weight": 40
+          "name": "minecraft:birch_sapling",
+          "weight": 8
         },
         {
           "type": "minecraft:item",
@@ -102,13 +82,13 @@
               "count": {
                 "type": "minecraft:uniform",
                 "max": 4.0,
-                "min": 2.0
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:leather",
-          "weight": 40
+          "name": "minecraft:spruce_sapling",
+          "weight": 8
         },
         {
           "type": "minecraft:item",
@@ -117,15 +97,148 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 2.0
+                "max": 4.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:jungle_sapling",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:acacia_sapling",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:mangrove_propagule",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:cherry_sapling",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 6.0,
+                "min": 4.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:dark_oak_sapling",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 10
+        },
+
+
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:sugar_cane",
+          "weight": 30
+        },
+
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:beetroot_seeds",
+          "weight": 30
+        },
+
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "minecraft:carrot",
-          "weight": 40
+          "weight": 30
         },
+
         {
           "type": "minecraft:item",
           "functions": [
@@ -133,31 +246,16 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 2.0
+                "max": 4.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "minecraft:potato",
-          "weight": 40
+          "weight": 30
         },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 12.0,
-                "min": 6.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:beetroot",
-          "weight": 40
-        },
+
         {
           "type": "minecraft:item",
           "functions": [
@@ -166,14 +264,15 @@
               "count": {
                 "type": "minecraft:uniform",
                 "max": 16.0,
-                "min": 8.0
+                "min": 4.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:golden_carrot",
-          "weight": 40
+          "name": "minecraft:moss_block",
+          "weight": 20
         },
+
         {
           "type": "minecraft:item",
           "functions": [
@@ -181,14 +280,31 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 16.0,
-                "min": 8.0
+                "max": 10.0,
+                "min": 5.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:cocoa_beans",
-          "weight": 40
+          "name": "minecraft:vine",
+          "weight": 20
+        },
+
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "forest_dwellers:hidden_voices_music_disc",
+          "weight": 8
         }
       ],
       "rolls": 1.0
