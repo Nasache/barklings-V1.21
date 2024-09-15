@@ -16,7 +16,6 @@ import net.nathan.forest_dwellers.block.custom.StrawberryBush;
 
 public class ModBlocks {
 
-
     public static final Block STRAWBERRY_BUSH = registerBlockWithoutBlockItem("strawberry_bush",
             new StrawberryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block GRAPE_BUSH = registerBlockWithoutBlockItem("grape_bush",

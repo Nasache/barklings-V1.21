@@ -18,6 +18,7 @@ public class ModItemGroup {
                     .icon(() -> new ItemStack(ModItems.PEAR)).entries((displayContext, entries) -> {
 
                         entries.add(ModItems.DWELLER_SPAWN_EGG);
+
                         entries.add(ModBlocks.CLOVER);
                         entries.add(ModItems.HIDDEN_VOICES_MUSIC_DISC);
 
