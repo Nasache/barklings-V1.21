@@ -14,6 +14,8 @@ import net.nathan.forest_dwellers.item.ModItems;
 
 import java.util.Optional;
 
+import static net.minecraft.data.client.BlockStateModelGenerator.TintType.NOT_TINTED;
+
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
         super(output);
@@ -39,6 +41,29 @@ public class ModModelProvider extends FabricModelProvider {
         })));
 
 
+        BlockStateModelGenerator.BlockTexturePool gildedOakPlanksTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.GILDED_OAK_PLANKS);
+        gildedOakPlanksTexturePool.stairs(ModBlocks.GILDED_OAK_STAIRS);
+        gildedOakPlanksTexturePool.slab(ModBlocks.GILDED_OAK_SLAB);
+        gildedOakPlanksTexturePool.button(ModBlocks.GILDED_OAK_BUTTON);
+        gildedOakPlanksTexturePool.pressurePlate(ModBlocks.GILDED_OAK_PRESSURE_PLATE);
+        gildedOakPlanksTexturePool.fence(ModBlocks.GILDED_OAK_FENCE);
+        gildedOakPlanksTexturePool.fenceGate(ModBlocks.GILDED_OAK_FENCE_GATE);
+        blockStateModelGenerator.registerDoor(ModBlocks.GILDED_OAK_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.GILDED_OAK_TRAPDOOR);
+
+        //gildedOakPlanksTexturePool.family(BlockFamilies.register(ModBlocks.GILDED_OAK_PLANKS).sign(ModBlocks.GILDED_OAK_SIGN, ModBlocks.GILDED_OAK_WALL_SIGN).build());
+
+        //blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_GILDED_OAK_LOG, ModBlocks.GILDED_OAK_HANGING_SIGN, ModBlocks.GILDED_OAK_WALL_HANGING_SIGN);
+
+        blockStateModelGenerator.registerLog(ModBlocks.GILDED_OAK_LOG).log(ModBlocks.GILDED_OAK_LOG).wood(ModBlocks.GILDED_OAK_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_GILDED_OAK_LOG).log(ModBlocks.STRIPPED_GILDED_OAK_LOG).wood(ModBlocks.STRIPPED_GILDED_OAK_WOOD);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GILDED_OAK_LEAVES);
+
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.GILDED_OAK_SAPLING, ModBlocks.POTTED_GILDED_OAK_SAPLING, NOT_TINTED);
+        
+        
+        
 
     }
 

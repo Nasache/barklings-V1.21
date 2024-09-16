@@ -6,8 +6,13 @@ import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliage.CherryFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.nathan.forest_dwellers.ForestDwellersMain;
 import net.nathan.forest_dwellers.block.ModBlocks;
 import net.nathan.forest_dwellers.block.custom.BlueberryBush;
@@ -21,6 +26,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_STRAWBERRY_BUSH = registerKey("strawberry_bush");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_GRAPE_BUSH = registerKey("grape_bush");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_BLUEBERRY_BUSH = registerKey("blueberry_bush");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> GILDED_OAK_KEY = registerKey("gilded_oak");
 
 
 
@@ -40,6 +47,16 @@ public class ModConfiguredFeatures {
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig
                         (BlockStateProvider.of((BlockState) ModBlocks.BLUEBERRY_BUSH.getDefaultState()
                                 .with(BlueberryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+
+
+        register(context, GILDED_OAK_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.GILDED_OAK_LOG),
+                new StraightTrunkPlacer(5, 6, 3),
+                BlockStateProvider.of(ModBlocks.GILDED_OAK_LEAVES),
+                new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(1), ConstantIntProvider.create(5),
+                        0.25f, 0.5f, 0.15f, 0.05f),
+                new TwoLayersFeatureSize(1, 0, 2)).build());
+
 
     }
 

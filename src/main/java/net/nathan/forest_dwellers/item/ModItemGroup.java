@@ -19,6 +19,20 @@ public class ModItemGroup {
 
                         entries.add(ModItems.DWELLER_SPAWN_EGG);
 
+                        entries.add(ModBlocks.GILDED_OAK_LOG);
+                        entries.add(ModBlocks.GILDED_OAK_WOOD);
+                        entries.add(ModBlocks.STRIPPED_GILDED_OAK_LOG);
+                        entries.add(ModBlocks.STRIPPED_GILDED_OAK_WOOD);
+                        entries.add(ModBlocks.GILDED_OAK_PLANKS);
+                        entries.add(ModBlocks.GILDED_OAK_STAIRS);
+                        entries.add(ModBlocks.GILDED_OAK_SLAB);
+                        entries.add(ModBlocks.GILDED_OAK_PRESSURE_PLATE);
+                        entries.add(ModBlocks.GILDED_OAK_BUTTON);
+                        entries.add(ModItems.GILDED_OAK_SIGN);
+                        entries.add(ModItems.GILDED_OAK_HANGING_SIGN);
+                        entries.add(ModItems.GILDED_OAK_SAPLING);
+
+
                         entries.add(ModBlocks.CLOVER);
                         entries.add(ModItems.HIDDEN_VOICES_MUSIC_DISC);
 

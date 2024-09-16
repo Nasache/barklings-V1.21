@@ -23,6 +23,14 @@ public class ForestDwellersClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LIVING_LANTERN, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GILDED_OAK_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_GILDED_OAK_SAPLING, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GILDED_OAK_LEAVES, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GILDED_OAK_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GILDED_OAK_TRAPDOOR, RenderLayer.getCutout());
+
 
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.DWELLER, DwellerModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.DWELLER, DwellerRenderer::new);

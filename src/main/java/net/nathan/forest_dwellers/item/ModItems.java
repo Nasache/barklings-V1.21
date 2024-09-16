@@ -44,6 +44,15 @@ public class ModItems {
     public static final Item DWELLER_SPAWN_EGG = registerItem("dweller_spawn_egg",
             new SpawnEggItem(ModEntities.DWELLER, 0x745a36, 0xc29d62, new Item.Settings()));
 
+    public static final Item GILDED_OAK_SAPLING = registerItem("gilded_oak_sapling",
+            new AliasedBlockItem(ModBlocks.GILDED_OAK_SAPLING, new Item.Settings()));
+
+    public static final Item GILDED_OAK_SIGN = registerItem("gilded_oak_sign",
+            new AliasedBlockItem(ModBlocks.GILDED_OAK_SIGN, new Item.Settings()));
+    public static final Item GILDED_OAK_HANGING_SIGN = registerItem("gilded_oak_hanging_sign",
+            new AliasedBlockItem(ModBlocks.GILDED_OAK_HANGING_SIGN, new Item.Settings()));
+
+
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(ForestDwellersMain.MOD_ID, name), item);
