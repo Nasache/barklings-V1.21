@@ -8,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.nathan.forest_dwellers.block.entity.ModSignBlockEntity;
 
 public class ModStandingSignBlock extends SignBlock {
-    public ModStandingSignBlock(Settings settings, WoodType woodType) {
+    public ModStandingSignBlock(WoodType woodType, Settings settings) {
         super(woodType, settings);
     }
 

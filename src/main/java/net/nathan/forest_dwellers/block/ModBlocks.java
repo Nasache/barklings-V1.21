@@ -10,6 +10,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.nathan.forest_dwellers.ForestDwellersMain;
 import net.nathan.forest_dwellers.block.custom.*;
+import net.nathan.forest_dwellers.util.ModWoodTypes;
 import net.nathan.forest_dwellers.world.tree.ModSaplingGenerators;
 
 public class ModBlocks {
@@ -62,13 +63,13 @@ public class ModBlocks {
             new FlowerPotBlock(GILDED_OAK_SAPLING, AbstractBlock.Settings.copy(Blocks.POTTED_OAK_SAPLING).mapColor(MapColor.GOLD)));
 
     public static final Block GILDED_OAK_SIGN = registerBlockWithoutBlockItem("gilded_oak_sign",
-            new SignBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
+            new ModStandingSignBlock(ModWoodTypes.GILDED_OAK, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
     public static final Block GILDED_OAK_WALL_SIGN = registerBlockWithoutBlockItem("gilded_oak_wall_sign",
-            new WallSignBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
+            new ModWallSignBlock(ModWoodTypes.GILDED_OAK, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
     public static final Block GILDED_OAK_HANGING_SIGN = registerBlockWithoutBlockItem("gilded_oak_hanging_sign",
-            new HangingSignBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
+            new ModHangingSignBlock(ModWoodTypes.GILDED_OAK, AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
     public static final Block GILDED_OAK_WALL_HANGING_SIGN = registerBlockWithoutBlockItem("gilded_oak_wall_hanging_sign",
-            new WallHangingSignBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
+            new ModWallHangingSignBlock(ModWoodTypes.GILDED_OAK, AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
 
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {

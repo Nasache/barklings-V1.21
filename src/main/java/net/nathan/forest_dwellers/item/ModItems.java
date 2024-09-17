@@ -1,13 +1,13 @@
 package net.nathan.forest_dwellers.item;
 
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.SpawnEggItem;
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.nathan.forest_dwellers.ForestDwellersMain;
 import net.nathan.forest_dwellers.block.ModBlocks;
+import net.nathan.forest_dwellers.entity.ModBoats;
 import net.nathan.forest_dwellers.entity.ModEntities;
 import net.nathan.forest_dwellers.sound.ModSounds;
 
@@ -48,9 +48,12 @@ public class ModItems {
             new AliasedBlockItem(ModBlocks.GILDED_OAK_SAPLING, new Item.Settings()));
 
     public static final Item GILDED_OAK_SIGN = registerItem("gilded_oak_sign",
-            new AliasedBlockItem(ModBlocks.GILDED_OAK_SIGN, new Item.Settings()));
+            new SignItem(new Item.Settings().maxCount(16), ModBlocks.GILDED_OAK_SIGN, ModBlocks.GILDED_OAK_WALL_SIGN));
     public static final Item GILDED_OAK_HANGING_SIGN = registerItem("gilded_oak_hanging_sign",
-            new AliasedBlockItem(ModBlocks.GILDED_OAK_HANGING_SIGN, new Item.Settings()));
+            new HangingSignItem(ModBlocks.GILDED_OAK_HANGING_SIGN, ModBlocks.GILDED_OAK_WALL_HANGING_SIGN, new Item.Settings().maxCount(16)));
+
+    public static final Item GILDED_OAK_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.GILDED_OAK_BOAT_ID, ModBoats.GILDED_OAK_BOAT_KEY, false);
+    public static final Item GILDED_OAK_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.GILDED_OAK_CHEST_BOAT_ID, ModBoats.GILDED_OAK_BOAT_KEY, true);
 
 
 

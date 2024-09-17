@@ -31,6 +31,10 @@ public class ModItemGroup {
                         entries.add(ModItems.GILDED_OAK_SIGN);
                         entries.add(ModItems.GILDED_OAK_HANGING_SIGN);
                         entries.add(ModItems.GILDED_OAK_SAPLING);
+                        entries.add(ModBlocks.GILDED_OAK_LEAVES);
+
+                        entries.add(ModItems.GILDED_OAK_BOAT);
+                        entries.add(ModItems.GILDED_OAK_CHEST_BOAT);
 
 
                         entries.add(ModBlocks.CLOVER);

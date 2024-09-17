@@ -183,7 +183,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:enchanted_golden_apple",
+          "name": "forest_dwellers:gilded_oak_sapling",
           "weight": 10
         },
 

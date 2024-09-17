@@ -1,6 +1,9 @@
 package net.nathan.forest_dwellers.util;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.ComposterBlock;
 import net.nathan.forest_dwellers.block.ModBlocks;
 import net.nathan.forest_dwellers.entity.ModEntities;
@@ -10,10 +13,25 @@ import net.nathan.forest_dwellers.item.ModItems;
 public class ModRegistries {
     public static void registerModStuffs() {
         registerModCompostables();
-        registerModFlammables();
+        registerFlammables();
         registerAttributes();
+        registerFuels();
+        registerStrippables();
     }
 
+    private static void registerFuels() {
+        FuelRegistry registry = FuelRegistry.INSTANCE;
+
+        registry.add(ModBlocks.GILDED_OAK_PLANKS, 300);
+        registry.add(ModBlocks.GILDED_OAK_STAIRS, 300);
+        registry.add(ModBlocks.GILDED_OAK_SLAB, 300);
+        registry.add(ModBlocks.GILDED_OAK_BUTTON, 300);
+        registry.add(ModBlocks.GILDED_OAK_PRESSURE_PLATE, 300);
+        registry.add(ModBlocks.GILDED_OAK_FENCE, 300);
+        registry.add(ModBlocks.GILDED_OAK_FENCE_GATE, 300);
+        registry.add(ModBlocks.GILDED_OAK_DOOR, 300);
+        registry.add(ModBlocks.GILDED_OAK_TRAPDOOR, 300);
+    }
 
     private static void registerModCompostables () {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.CHERRIES, 0.65f);
@@ -31,7 +49,19 @@ public class ModRegistries {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.CLOVER.asItem(), 0.3f);
     }
 
-    private static void registerModFlammables() {
+    private static void registerFlammables() {
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GILDED_OAK_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GILDED_OAK_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_GILDED_OAK_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_GILDED_OAK_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GILDED_OAK_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GILDED_OAK_LEAVES, 30, 60);
+    }
+
+    private static void registerStrippables() {
+        StrippableBlockRegistry.register(ModBlocks.GILDED_OAK_LOG, ModBlocks.STRIPPED_GILDED_OAK_LOG);
+        StrippableBlockRegistry.register(ModBlocks.GILDED_OAK_WOOD, ModBlocks.STRIPPED_GILDED_OAK_WOOD);
+        
     }
 
     private static void registerAttributes() {

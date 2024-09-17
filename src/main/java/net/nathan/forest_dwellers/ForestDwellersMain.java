@@ -4,7 +4,9 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.nathan.forest_dwellers.block.ModBlocks;
+import net.nathan.forest_dwellers.block.entity.ModBlockEntities;
 import net.nathan.forest_dwellers.effect.ModEffects;
+import net.nathan.forest_dwellers.entity.ModBoats;
 import net.nathan.forest_dwellers.entity.ModEntities;
 import net.nathan.forest_dwellers.entity.custom.DwellerEntity;
 import net.nathan.forest_dwellers.item.ModItemGroup;
@@ -42,5 +44,8 @@ public class ForestDwellersMain implements ModInitializer {
 		ModEntities.registerModEntities();
 
 		ModSounds.registerSounds();
+
+		ModBlockEntities.registerBlockEntities();
+		ModBoats.registerBoats();
 	}
 }

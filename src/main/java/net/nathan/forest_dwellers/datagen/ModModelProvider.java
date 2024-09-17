@@ -51,9 +51,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerDoor(ModBlocks.GILDED_OAK_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.GILDED_OAK_TRAPDOOR);
 
-        //gildedOakPlanksTexturePool.family(BlockFamilies.register(ModBlocks.GILDED_OAK_PLANKS).sign(ModBlocks.GILDED_OAK_SIGN, ModBlocks.GILDED_OAK_WALL_SIGN).build());
+        gildedOakPlanksTexturePool.family(BlockFamilies.register(ModBlocks.GILDED_OAK_PLANKS).sign(ModBlocks.GILDED_OAK_SIGN, ModBlocks.GILDED_OAK_WALL_SIGN).build());
 
-        //blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_GILDED_OAK_LOG, ModBlocks.GILDED_OAK_HANGING_SIGN, ModBlocks.GILDED_OAK_WALL_HANGING_SIGN);
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_GILDED_OAK_LOG, ModBlocks.GILDED_OAK_HANGING_SIGN, ModBlocks.GILDED_OAK_WALL_HANGING_SIGN);
 
         blockStateModelGenerator.registerLog(ModBlocks.GILDED_OAK_LOG).log(ModBlocks.GILDED_OAK_LOG).wood(ModBlocks.GILDED_OAK_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_GILDED_OAK_LOG).log(ModBlocks.STRIPPED_GILDED_OAK_LOG).wood(ModBlocks.STRIPPED_GILDED_OAK_WOOD);
@@ -83,6 +83,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BLUEBERRY, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.HIDDEN_VOICES_MUSIC_DISC, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.GILDED_OAK_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GILDED_OAK_CHEST_BOAT, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.DWELLER_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
