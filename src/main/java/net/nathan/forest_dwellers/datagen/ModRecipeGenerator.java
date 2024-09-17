@@ -67,5 +67,8 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.GILDED_OAK_PLANKS), conditionsFromItem(ModBlocks.GILDED_OAK_PLANKS))
                 .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.GILDED_OAK_SIGN)));
 
+        offerBoatRecipe(exporter, ModItems.GILDED_OAK_BOAT, ModBlocks.GILDED_OAK_PLANKS);
+        offerChestBoatRecipe(exporter, ModItems.GILDED_OAK_CHEST_BOAT, ModItems.GILDED_OAK_BOAT);
+
     }
 }

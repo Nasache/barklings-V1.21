@@ -1,6 +1,29 @@
 {
   "itemgroup.forest_dwellers": "Forest Dwellers",
 
+  "block.forest_dwellers.gilded_oak_planks": "Gilded Oak Planks",
+  "block.forest_dwellers.gilded_oak_stairs": "Gilded Oak Stairs",
+  "block.forest_dwellers.gilded_oak_slab": "Gilded Oak Slab",
+  "block.forest_dwellers.gilded_oak_button": "Gilded Oak Button",
+  "block.forest_dwellers.gilded_oak_pressure_plate": "Gilded Oak Pressure Plate",
+  "block.forest_dwellers.gilded_oak_fence": "Gilded Oak Fence",
+  "block.forest_dwellers.gilded_oak_fence_gate": "Gilded Oak Fence Gate",
+  "block.forest_dwellers.gilded_oak_door": "Gilded Oak Door",
+  "block.forest_dwellers.gilded_oak_trapdoor": "Gilded Oak Trapdoor",
+  "block.forest_dwellers.gilded_oak_log": "Gilded Oak Log",
+  "block.forest_dwellers.gilded_oak_wood": "Gilded Oak Wood",
+  "block.forest_dwellers.stripped_gilded_oak_log": "Stripped Gilded Oak Log",
+  "block.forest_dwellers.stripped_gilded_oak_wood": "Stripped Gilded Oak Wood",
+
+  "block.forest_dwellers.gilded_oak_sign": "Gilded Oak Sign",
+  "block.forest_dwellers.gilded_oak_hanging_sign": "Gilded Oak Hanging Sign",
+
+  "item.forest_dwellers.gilded_oak_boat": "Gilded Oak Boat",
+  "item.forest_dwellers.gilded_oak_chest_boat": "Gilded Oak Chest Boat",
+
+  "block.forest_dwellers.gilded_oak_leaves": "Gilded Oak Leaves",
+
+  "item.forest_dwellers.gilded_oak_sapling": "Gilded Oak Sapling",
 
   "item.forest_dwellers.cherries": "Cherries",
   "item.forest_dwellers.orange": "Orange",
@@ -9,6 +32,8 @@
   "item.forest_dwellers.pomegranate": "Pomegranate",
   "item.forest_dwellers.starfruit": "Starfruit",
   "item.forest_dwellers.pear": "Pear",
+  "item.forest_dwellers.warped_mango": "Warped Mango",
+  "item.forest_dwellers.crimson_durian": "Crimson Durian",
 
   "item.forest_dwellers.strawberry": "Strawberry",
   "item.forest_dwellers.grapes": "Grapes",
@@ -32,6 +57,7 @@
   "item.forest_dwellers.hidden_voices_music_disc": "§bMusic Disc§b",
   "item.forest_dwellers.hidden_voices_music_disc.desc": "Nathan Stabach - hidden voices",
 
+  "item.tag.forest_dwellers.fruit": "Fruit",
 
   "painting.forest_dwellers.natures_palette.title": "Nature's Palette",
   "painting.forest_dwellers.natures_palette.author": "Nathan",

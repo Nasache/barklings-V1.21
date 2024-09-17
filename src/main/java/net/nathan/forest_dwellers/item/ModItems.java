@@ -29,6 +29,11 @@ public class ModItems {
     public static final Item STARFRUIT = registerItem("starfruit",
             new Item(new Item.Settings().food(ModFoodComponents.STARFRUIT)));
 
+    public static final Item WARPED_MANGO = registerItem("warped_mango",
+            new Item(new Item.Settings().food(ModFoodComponents.WARPED_MANGO)));
+    public static final Item CRIMSON_DURIAN = registerItem("crimson_durian",
+            new Item(new Item.Settings().food(ModFoodComponents.CRIMSON_DURIAN)));
+
     public static final Item STRAWBERRY = registerItem("strawberry",
             new AliasedBlockItem(ModBlocks.STRAWBERRY_BUSH, new Item.Settings().food(ModFoodComponents.STRAWBERRY)));
     public static final Item GRAPES = registerItem("grapes",

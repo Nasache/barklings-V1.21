@@ -28,6 +28,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                         ModItems.POMEGRANATE,
                         ModItems.STARFRUIT,
                         ModItems.STRAWBERRY,
+                        ModItems.WARPED_MANGO,
+                        ModItems.CRIMSON_DURIAN,
                         ModItems.GRAPES,
                         ModItems.BLUEBERRY,
                         Items.GLOW_BERRIES,

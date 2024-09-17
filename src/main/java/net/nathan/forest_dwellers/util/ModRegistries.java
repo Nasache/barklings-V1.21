@@ -31,6 +31,11 @@ public class ModRegistries {
         registry.add(ModBlocks.GILDED_OAK_FENCE_GATE, 300);
         registry.add(ModBlocks.GILDED_OAK_DOOR, 300);
         registry.add(ModBlocks.GILDED_OAK_TRAPDOOR, 300);
+        registry.add(ModItems.GILDED_OAK_BOAT, 300);
+        registry.add(ModItems.GILDED_OAK_CHEST_BOAT, 300);
+        registry.add(ModItems.GILDED_OAK_SIGN, 300);
+        registry.add(ModItems.GILDED_OAK_HANGING_SIGN, 300);
+        registry.add(ModItems.GILDED_OAK_SAPLING, 300);
     }
 
     private static void registerModCompostables () {
@@ -47,6 +52,10 @@ public class ModRegistries {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.GRAPES, 0.3f);
 
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.CLOVER.asItem(), 0.3f);
+
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.GILDED_OAK_SAPLING, 0.3f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.GILDED_OAK_LEAVES, 0.3f);
+
     }
 
     private static void registerFlammables() {
