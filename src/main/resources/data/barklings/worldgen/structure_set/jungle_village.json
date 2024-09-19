@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "barklings:jungle_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 9375649173,
+
+    "spacing": 40,
+
+    "separation": 5,
+
+    "type": "minecraft:random_spread"
+  }
+}

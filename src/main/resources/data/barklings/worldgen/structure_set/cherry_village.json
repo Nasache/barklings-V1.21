@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "barklings:cherry_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 5273094637,
+
+    "spacing": 30,
+
+    "separation": 5,
+
+    "type": "minecraft:random_spread"
+  }
+}

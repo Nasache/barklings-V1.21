@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "forest_dwellers",
+	"id": "barklings",
 	"version": "${version}",
-	"name": "forest_dwellers",
+	"name": "barklings",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
@@ -12,21 +12,21 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/forest_dwellers/icon.png",
+	"icon": "assets/barklings/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.nathan.forest_dwellers.ForestDwellersMain"
+			"net.nathan.barklings.BarklingsMain"
 		],
 		"fabric-datagen": [
-			"net.nathan.forest_dwellers.ForestDwellersDataGenerator"
+			"net.nathan.barklings.BarklingsDataGenerator"
 		],
 		"client": [
-			"net.nathan.forest_dwellers.ForestDwellersClient"
+			"net.nathan.barklings.BarklingsClient"
 		]
 	},
 	"mixins": [
-		"forest_dwellers.mixins.json"
+		"barklings.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.15.11",

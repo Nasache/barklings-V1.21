@@ -1,0 +1,10 @@
+{
+  "hidden_voices": {
+    "sounds": [
+      {
+        "name": "barklings:hidden_voices",
+        "stream": true
+      }
+    ]
+  }
+}

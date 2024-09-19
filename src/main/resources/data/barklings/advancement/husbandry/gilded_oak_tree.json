@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "gilded_oak_sapling": {
+      "conditions": {
+        "items": [
+          {
+            "items": "barklings:gilded_oak_sapling"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.barklings.gilded_oak_sapling.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "barklings:gilded_oak_sapling"
+    },
+    "title": {
+      "translate": "advancements.barklings.gilded_oak_sapling.title"
+    }
+  },
+  "requirements": [
+    [
+      "gilded_oak_sapling"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "barklings:dark_oak_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 9115278348,
+
+    "spacing": 30,
+
+    "separation": 5,
+
+    "type": "minecraft:random_spread"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "barklings:mangrove_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 8816229304,
+
+    "spacing": 30,
+
+    "separation": 5,
+
+    "type": "minecraft:random_spread"
+  }
+}

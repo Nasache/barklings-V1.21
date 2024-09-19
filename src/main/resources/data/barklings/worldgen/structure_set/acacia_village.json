@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "barklings:acacia_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1629384650,
+
+    "spacing": 30,
+
+    "separation": 5,
+
+    "type": "minecraft:random_spread"
+  }
+}

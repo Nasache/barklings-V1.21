@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "barklings:spruce_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 8126210328236541329,
+
+    "spacing": 30,
+
+    "separation": 5,
+
+    "type": "minecraft:random_spread"
+  }
+}

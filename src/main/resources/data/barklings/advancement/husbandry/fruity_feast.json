@@ -1,0 +1,222 @@
+{
+  "parent": "minecraft:husbandry/plant_seed",
+  "criteria": {
+    "apple": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:apple"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "banana": {
+      "conditions": {
+        "item": {
+          "items": "barklings:banana"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "blueberry": {
+      "conditions": {
+        "item": {
+          "items": "barklings:blueberry"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "cherries": {
+      "conditions": {
+        "item": {
+          "items": "barklings:cherries"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "grapes": {
+      "conditions": {
+        "item": {
+          "items": "barklings:grapes"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "orange": {
+      "conditions": {
+        "item": {
+          "items": "barklings:orange"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "pear": {
+      "conditions": {
+        "item": {
+          "items": "barklings:pear"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "plum": {
+      "conditions": {
+        "item": {
+          "items": "barklings:plum"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "pomegranate": {
+      "conditions": {
+        "item": {
+          "items": "barklings:pomegranate"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "starfruit": {
+      "conditions": {
+        "item": {
+          "items": "barklings:starfruit"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "strawberry": {
+      "conditions": {
+        "item": {
+          "items": "barklings:strawberry"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "chorus_fruit": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:chorus_fruit"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "enchanted_golden_apple": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:enchanted_golden_apple"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "glow_berries": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:glow_berries"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "golden_apple": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:golden_apple"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "melon_slice": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:melon_slice"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "pumpkin_pie": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:pumpkin_pie"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "sweet_berries": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:sweet_berries"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.barklings.fruity_feast.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "barklings:pear"
+    },
+    "title": {
+      "translate": "advancements.barklings.fruity_feast.title"
+    }
+  },
+  "requirements": [
+    [
+      "apple"
+    ],
+    [
+      "banana"
+    ],
+    [
+      "blueberry"
+    ],
+    [
+      "cherries"
+    ],
+    [
+      "chorus_fruit"
+    ],
+    [
+      "glow_berries"
+    ],
+    [
+      "golden_apple"
+    ],
+    [
+      "enchanted_golden_apple"
+    ],
+    [
+      "grapes"
+    ],
+    [
+      "melon_slice"
+    ],
+    [
+      "orange"
+    ],
+    [
+      "pear"
+    ],
+    [
+      "plum"
+    ],
+    [
+      "pomegranate"
+    ],
+    [
+      "pumpkin_pie"
+    ],
+    [
+      "starfruit"
+    ],
+    [
+      "strawberry"
+    ],
+    [
+      "sweet_berries"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}

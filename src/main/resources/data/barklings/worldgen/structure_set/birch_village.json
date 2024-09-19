@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "barklings:birch_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 8127291272146,
+
+    "spacing": 30,
+
+    "separation": 5,
+
+    "type": "minecraft:random_spread"
+  }
+}
