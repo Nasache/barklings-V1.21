@@ -9,7 +9,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.CherryFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
@@ -51,11 +50,11 @@ public class ModConfiguredFeatures {
 
         register(context, GILDED_OAK_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.GILDED_OAK_LOG),
-                new StraightTrunkPlacer(5, 6, 3),
+                new StraightTrunkPlacer(3, 4, 3),
                 BlockStateProvider.of(ModBlocks.GILDED_OAK_LEAVES),
                 new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(1), ConstantIntProvider.create(5),
-                        0.25f, 0.5f, 0.15f, 0.05f),
-                new TwoLayersFeatureSize(1, 0, 2)).build());
+                        0.25f, 0.5f, 0.5f, 0.25f),
+                new TwoLayersFeatureSize(1, 0, 1)).build());
 
 
     }

@@ -44,12 +44,11 @@ public class LivingLanternBlock extends Block implements Waterloggable {
         Direction[] var3 = ctx.getPlacementDirections();
         int var4 = var3.length;
 
-        for(int var5 = 0; var5 < var4; ++var5) {
-            Direction direction = var3[var5];
+        for (Direction direction : var3) {
             if (direction.getAxis() == Axis.Y) {
-                BlockState blockState = (BlockState)this.getDefaultState().with(HANGING, direction == Direction.UP);
+                BlockState blockState = (BlockState) this.getDefaultState().with(HANGING, direction == Direction.UP);
                 if (blockState.canPlaceAt(ctx.getWorld(), ctx.getBlockPos())) {
-                    return (BlockState)blockState.with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+                    return (BlockState) blockState.with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
                 }
             }
         }

@@ -1,5 +1,5 @@
 {
-  "itemgroup.forest_dwellers": "Forest Dwellers",
+  "itemgroup.forest_dwellers": "Children of the Forest",
 
   "block.forest_dwellers.gilded_oak_planks": "Gilded Oak Planks",
   "block.forest_dwellers.gilded_oak_stairs": "Gilded Oak Stairs",
@@ -51,16 +51,30 @@
 
   "block.forest_dwellers.living_lantern": "Living Lantern",
 
-  "item.forest_dwellers.dweller_spawn_egg": "Dweller Spawn Egg",
+  "item.forest_dwellers.dweller_spawn_egg": "Barkling Spawn Egg",
 
 
   "item.forest_dwellers.hidden_voices_music_disc": "§bMusic Disc§b",
-  "item.forest_dwellers.hidden_voices_music_disc.desc": "Nathan Stabach - hidden voices",
+  "item.forest_dwellers.hidden_voices_music_disc.desc": "Nathan - hidden voices",
 
   "item.tag.forest_dwellers.fruit": "Fruit",
+  "item.tag.forest_dwellers.gilded_oak_logs": "Gilded Oak Logs",
 
   "painting.forest_dwellers.natures_palette.title": "Nature's Palette",
   "painting.forest_dwellers.natures_palette.author": "Nathan",
   "painting.forest_dwellers.the_forests_child.title": "The Forest's Child",
-  "painting.forest_dwellers.the_forests_child.author": "Nathan"
+  "painting.forest_dwellers.the_forests_child.author": "Nathan",
+
+  "advancements.forest_dwellers.fruity_feast.title": "Fruity Feast",
+  "advancements.forest_dwellers.fruity_feast.description": "Eat every fruit!",
+
+  "advancements.forest_dwellers.find_forest_village.title": "Hidden Hamlet",
+  "advancements.forest_dwellers.find_forest_village.description": "Stumble Upon the Home of the Barklings",
+
+  "advancements.forest_dwellers.find_every_forest_village.title": "Woodland Explorer",
+  "advancements.forest_dwellers.find_every_forest_village.description": "Discover Every Type of Barkling Village",
+
+  "advancements.forest_dwellers.gilded_oak_sapling.title": "Tree of Legends",
+  "advancements.forest_dwellers.gilded_oak_sapling.description": "Be Gifted a Gilded Sapling"
+
 }

@@ -49,8 +49,8 @@ public class ModItemGroup {
                         entries.add(ModItems.POMEGRANATE);
                         entries.add(ModItems.PEAR);
                         entries.add(ModItems.STARFRUIT);
-                        entries.add(ModItems.WARPED_MANGO);
-                        entries.add(ModItems.CRIMSON_DURIAN);
+                        //entries.add(ModItems.WARPED_MANGO);
+                        //entries.add(ModItems.CRIMSON_DURIAN);
 
                         entries.add(ModItems.STRAWBERRY);
                         entries.add(ModItems.BLUEBERRY);

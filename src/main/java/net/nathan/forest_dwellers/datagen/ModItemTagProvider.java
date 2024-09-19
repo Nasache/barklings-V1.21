@@ -33,7 +33,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                         ModItems.GRAPES,
                         ModItems.BLUEBERRY,
                         Items.GLOW_BERRIES,
-                        Items.SWEET_BERRIES);
+                        Items.SWEET_BERRIES,
+                        Items.CHORUS_FRUIT,
+                        Items.MELON_SLICE,
+                        Items.PUMPKIN_PIE);
 
         getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
                 .add(ModBlocks.GILDED_OAK_LOG.asItem(), ModBlocks.GILDED_OAK_WOOD.asItem(),
@@ -45,5 +48,12 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ModTags.Items.GILDED_OAK_LOGS)
                 .add(ModBlocks.GILDED_OAK_LOG.asItem(), ModBlocks.GILDED_OAK_WOOD.asItem(),
                         ModBlocks.STRIPPED_GILDED_OAK_LOG.asItem(), ModBlocks.STRIPPED_GILDED_OAK_WOOD.asItem());
+
+        getOrCreateTagBuilder(ItemTags.LOGS)
+                .add(ModBlocks.GILDED_OAK_LOG.asItem(), ModBlocks.GILDED_OAK_WOOD.asItem(),
+                        ModBlocks.STRIPPED_GILDED_OAK_LOG.asItem(), ModBlocks.STRIPPED_GILDED_OAK_WOOD.asItem());
+
+        getOrCreateTagBuilder(ItemTags.LEAVES)
+                .add(ModBlocks.GILDED_OAK_LEAVES.asItem());
     }
 }

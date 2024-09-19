@@ -27,9 +27,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.LocalDifficulty;
-import net.minecraft.world.ServerWorldAccess;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 import net.minecraft.world.biome.Biome;
 import net.nathan.forest_dwellers.entity.CustomLootTables;
 import net.nathan.forest_dwellers.entity.ModEntities;
@@ -260,12 +258,6 @@ public class DwellerEntity extends AnimalEntity {
             }
         }
     }
-
-    //@Nullable
-    //@Override
-    //protected SoundEvent getAmbientSound() {
-    //    return SoundEvents.ENTITY_ALLAY_AMBIENT_WITH_ITEM;
-    //}
 
     protected SoundEvent getStepSound() {
         return SoundEvents.BLOCK_WOOD_STEP;

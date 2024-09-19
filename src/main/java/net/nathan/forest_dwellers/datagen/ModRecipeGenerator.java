@@ -2,18 +2,14 @@ package net.nathan.forest_dwellers.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.block.Blocks;
-import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 import net.nathan.forest_dwellers.block.ModBlocks;
 import net.nathan.forest_dwellers.item.ModItems;
@@ -70,5 +66,14 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         offerBoatRecipe(exporter, ModItems.GILDED_OAK_BOAT, ModBlocks.GILDED_OAK_PLANKS);
         offerChestBoatRecipe(exporter, ModItems.GILDED_OAK_CHEST_BOAT, ModItems.GILDED_OAK_BOAT);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.LIVING_LANTERN)
+                .pattern("#L#")
+                .pattern("LTL")
+                .pattern("#L#")
+                .input('#', Ingredient.fromTag(ItemTags.LEAVES))
+                .input('L', Ingredient.fromTag(ItemTags.LOGS))
+                .input('T', Items.TORCH)
+                .criterion(hasItem(Items.TORCH), conditionsFromItem(Items.TORCH))
+                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.LIVING_LANTERN)));
     }
 }

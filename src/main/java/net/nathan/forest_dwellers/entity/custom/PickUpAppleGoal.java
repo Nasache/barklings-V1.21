@@ -3,9 +3,7 @@ package net.nathan.forest_dwellers.entity.custom;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.loot.LootTable;
-import net.minecraft.loot.LootTables;
 import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.context.LootContextTypes;
@@ -129,13 +127,11 @@ public class PickUpAppleGoal extends Goal {
                         .getLootTable(lootTableIdentifier)
         );
 
-        List<ItemStack> lootList = lootTable.generateLoot(
+        return lootTable.generateLoot(
                 new LootContextParameterSet.Builder((ServerWorld) dweller.getWorld())
                         .add(LootContextParameters.THIS_ENTITY, dweller)
                         .build(LootContextTypes.BARTER)
         );
-
-        return lootList;
     }
 
     private ItemStack getRandomItem(List<ItemStack> loot) {
@@ -165,7 +161,7 @@ public class PickUpAppleGoal extends Goal {
         List<ItemEntity> list = this.dweller.getWorld().getEntitiesByClass(ItemEntity.class,
                 this.dweller.getBoundingBox().expand(8.0D, 4.0D, 8.0D), (item) -> item.getStack().isIn(ModTags.Items.FRUIT));
         if (!list.isEmpty()) {
-            this.targetApple = list.get(0);
+            this.targetApple = list.getFirst();
             return true;
         }
         return false;
