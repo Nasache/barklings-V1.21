@@ -39,19 +39,11 @@
   "item.barklings.grapes": "Grapes",
   "item.barklings.blueberry": "Blueberry",
 
-  "item.barklings.leek": "Leek",
-  "item.barklings.leek_seeds": "Leek Seeds",
-  "item.barklings.roasted_leek": "Roasted Leek",
-
-  "item.barklings.tomato": "Tomato",
-
-  "item.barklings.lettuce_leaf": "Lettuce Leaf",
-
   "block.barklings.clover": "Clover",
 
   "block.barklings.living_lantern": "Living Lantern",
 
-  "item.barklings.dweller_spawn_egg": "Barkling Spawn Egg",
+  "item.barklings.barkling_spawn_egg": "Barkling Spawn Egg",
 
 
   "item.barklings.hidden_voices_music_disc": "§bMusic Disc§b",
@@ -69,12 +61,12 @@
   "advancements.barklings.fruity_feast.description": "Eat every fruit!",
 
   "advancements.barklings.find_forest_village.title": "Hidden Hamlet",
-  "advancements.barklings.find_forest_village.description": "Stumble Upon the Home of the Barklings",
+  "advancements.barklings.find_forest_village.description": "Stumble upon the home of the Barklings",
 
   "advancements.barklings.find_every_forest_village.title": "Woodland Explorer",
-  "advancements.barklings.find_every_forest_village.description": "Discover Every Type of Barkling Village",
+  "advancements.barklings.find_every_forest_village.description": "Discover every type of Barkling village",
 
-  "advancements.barklings.gilded_oak_sapling.title": "Tree of Legends",
-  "advancements.barklings.gilded_oak_sapling.description": "Be Gifted a Gilded Sapling"
+  "advancements.barklings.gilded_oak_sapling.title": "Nature's Gold",
+  "advancements.barklings.gilded_oak_sapling.description": "Be gifted a Gilded Sapling"
 
 }
