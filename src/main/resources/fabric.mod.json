@@ -2,17 +2,17 @@
 	"schemaVersion": 1,
 	"id": "barklings",
 	"version": "${version}",
-	"name": "barklings",
-	"description": "Barklings adds little forest creatures, called Barklings, to each wooded biome in Minecraft. Each forest has it's own new type of fruit, from birch-grown pears, to spruce plums, and the Barklings love them all! These little guys are more than happy to part with some of nature's bounty for any fruit tossed their way.",
+	"name": "Barklings",
+	"description": "Barklings adds little fruit-loving forest creatures, called Barklings, to each wooded biome in Minecraft.",
 	"authors": [
 		"Nathan"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Nasache/barklings-V1.21",
+		"sources": "https://github.com/Nasache/barklings-V1.21"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/barklings/icon.png",
+	"license": "MIT",
+	"icon": "assets/barklings/barklings_icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -30,7 +30,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.21",
+		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*"
 	},
