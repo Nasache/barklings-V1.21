@@ -3,9 +3,9 @@
 	"id": "barklings",
 	"version": "${version}",
 	"name": "barklings",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Barklings adds little forest creatures, called Barklings, to each wooded biome in Minecraft. Each forest has it's own new type of fruit, from birch-grown pears, to spruce plums, and the Barklings love them all! These little guys are more than happy to part with some of nature's bounty for any fruit tossed their way.",
 	"authors": [
-		"Me!"
+		"Nathan"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

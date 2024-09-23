@@ -74,6 +74,6 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('L', Ingredient.fromTag(ItemTags.LOGS))
                 .input('T', Items.TORCH)
                 .criterion(hasItem(Items.TORCH), conditionsFromItem(Items.TORCH))
-                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.LIVING_LANTERN)));
+                .offerTo(exporter);
     }
 }
