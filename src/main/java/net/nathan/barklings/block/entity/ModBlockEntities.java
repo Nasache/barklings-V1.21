@@ -19,8 +19,6 @@ public class ModBlockEntities {
                     ModBlocks.GILDED_OAK_HANGING_SIGN, ModBlocks.GILDED_OAK_WALL_HANGING_SIGN).build());
 
 
-
-
     public static void registerBlockEntities() {
         BarklingsMain.LOGGER.info("Registering Block Entities for " + BarklingsMain.MOD_ID);
     }

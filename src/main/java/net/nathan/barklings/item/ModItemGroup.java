@@ -28,6 +28,8 @@ public class ModItemGroup {
                         entries.add(ModBlocks.GILDED_OAK_SLAB);
                         entries.add(ModBlocks.GILDED_OAK_PRESSURE_PLATE);
                         entries.add(ModBlocks.GILDED_OAK_BUTTON);
+                        entries.add(ModBlocks.GILDED_OAK_FENCE);
+                        entries.add(ModBlocks.GILDED_OAK_FENCE_GATE);
                         entries.add(ModItems.GILDED_OAK_SIGN);
                         entries.add(ModItems.GILDED_OAK_HANGING_SIGN);
                         entries.add(ModItems.GILDED_OAK_SAPLING);
