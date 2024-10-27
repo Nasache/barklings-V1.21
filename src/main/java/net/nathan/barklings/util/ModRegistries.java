@@ -24,18 +24,18 @@ public class ModRegistries {
 
         registry.add(ModBlocks.GILDED_OAK_PLANKS, 300);
         registry.add(ModBlocks.GILDED_OAK_STAIRS, 300);
-        registry.add(ModBlocks.GILDED_OAK_SLAB, 300);
-        registry.add(ModBlocks.GILDED_OAK_BUTTON, 300);
+        registry.add(ModBlocks.GILDED_OAK_SLAB, 150);
+        registry.add(ModBlocks.GILDED_OAK_BUTTON, 100);
         registry.add(ModBlocks.GILDED_OAK_PRESSURE_PLATE, 300);
         registry.add(ModBlocks.GILDED_OAK_FENCE, 300);
         registry.add(ModBlocks.GILDED_OAK_FENCE_GATE, 300);
-        registry.add(ModBlocks.GILDED_OAK_DOOR, 300);
+        registry.add(ModBlocks.GILDED_OAK_DOOR, 200);
         registry.add(ModBlocks.GILDED_OAK_TRAPDOOR, 300);
-        registry.add(ModItems.GILDED_OAK_BOAT, 300);
-        registry.add(ModItems.GILDED_OAK_CHEST_BOAT, 300);
-        registry.add(ModItems.GILDED_OAK_SIGN, 300);
-        registry.add(ModItems.GILDED_OAK_HANGING_SIGN, 300);
-        registry.add(ModItems.GILDED_OAK_SAPLING, 300);
+        registry.add(ModItems.GILDED_OAK_BOAT, 1200);
+        registry.add(ModItems.GILDED_OAK_CHEST_BOAT, 1200);
+        registry.add(ModItems.GILDED_OAK_SIGN, 200);
+        registry.add(ModItems.GILDED_OAK_HANGING_SIGN, 800);
+        registry.add(ModBlocks.GILDED_OAK_SAPLING, 100);
     }
 
     private static void registerModCompostables () {
@@ -64,6 +64,10 @@ public class ModRegistries {
         FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_GILDED_OAK_LOG, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_GILDED_OAK_WOOD, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GILDED_OAK_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GILDED_OAK_STAIRS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GILDED_OAK_SLAB, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GILDED_OAK_FENCE, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GILDED_OAK_FENCE_GATE, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GILDED_OAK_LEAVES, 30, 60);
     }
 

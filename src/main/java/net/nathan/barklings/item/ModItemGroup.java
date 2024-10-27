@@ -30,14 +30,14 @@ public class ModItemGroup {
                         entries.add(ModBlocks.GILDED_OAK_BUTTON);
                         entries.add(ModBlocks.GILDED_OAK_FENCE);
                         entries.add(ModBlocks.GILDED_OAK_FENCE_GATE);
+                        entries.add(ModBlocks.GILDED_OAK_DOOR);
+                        entries.add(ModBlocks.GILDED_OAK_TRAPDOOR);
                         entries.add(ModItems.GILDED_OAK_SIGN);
                         entries.add(ModItems.GILDED_OAK_HANGING_SIGN);
-                        entries.add(ModItems.GILDED_OAK_SAPLING);
-                        entries.add(ModBlocks.GILDED_OAK_LEAVES);
-
                         entries.add(ModItems.GILDED_OAK_BOAT);
                         entries.add(ModItems.GILDED_OAK_CHEST_BOAT);
-
+                        entries.add(ModBlocks.GILDED_OAK_SAPLING);
+                        entries.add(ModBlocks.GILDED_OAK_LEAVES);
 
                         entries.add(ModBlocks.CLOVER);
                         entries.add(ModItems.HIDDEN_VOICES_MUSIC_DISC);

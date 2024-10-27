@@ -67,6 +67,8 @@
   "advancements.barklings.find_every_forest_village.description": "Discover every type of Barkling village",
 
   "advancements.barklings.gilded_oak_sapling.title": "Nature's Gold",
-  "advancements.barklings.gilded_oak_sapling.description": "Be gifted a Gilded Sapling"
+  "advancements.barklings.gilded_oak_sapling.description": "Be gifted a Gilded Sapling",
+
+  "entity.barklings.barkling": "Barkling"
 
 }

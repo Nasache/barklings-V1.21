@@ -9,13 +9,19 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.TableBonusLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.nathan.barklings.block.ModBlocks;
+import net.nathan.barklings.block.custom.BlueberryBush;
+import net.nathan.barklings.block.custom.GrapeBush;
+import net.nathan.barklings.block.custom.StrawberryBush;
 import net.nathan.barklings.item.ModItems;
 
 
@@ -61,6 +67,15 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LIVING_LANTERN);
         addDrop(ModBlocks.CLOVER, flowerbedDrops(ModBlocks.CLOVER));
 
+        LootCondition.Builder builder1 = BlockStatePropertyLootCondition.builder(ModBlocks.BLUEBERRY_BUSH)
+                .properties(StatePredicate.Builder.create().exactMatch(BlueberryBush.AGE, 3));
+        this.addDrop(ModBlocks.BLUEBERRY_BUSH, this.cropDrops(ModBlocks.BLUEBERRY_BUSH, ModItems.BLUEBERRY, Items.AIR, builder1));
+        LootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.GRAPE_BUSH)
+                .properties(StatePredicate.Builder.create().exactMatch(GrapeBush.AGE, 3));
+        this.addDrop(ModBlocks.GRAPE_BUSH, this.cropDrops(ModBlocks.GRAPE_BUSH, ModItems.GRAPES, Items.AIR, builder2));
+        LootCondition.Builder builder3 = BlockStatePropertyLootCondition.builder(ModBlocks.STRAWBERRY_BUSH)
+                .properties(StatePredicate.Builder.create().exactMatch(StrawberryBush.AGE, 3));
+        this.addDrop(ModBlocks.STRAWBERRY_BUSH, this.cropDrops(ModBlocks.STRAWBERRY_BUSH, ModItems.STRAWBERRY, Items.AIR, builder3));
 
     }
 
