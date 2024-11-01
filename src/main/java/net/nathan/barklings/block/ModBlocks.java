@@ -38,7 +38,7 @@ public class ModBlocks {
     public static final Block GILDED_OAK_BUTTON = registerBlock("gilded_oak_button",
             new ButtonBlock(BlockSetType.OAK, 30, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)));
     public static final Block GILDED_OAK_PRESSURE_PLATE = registerBlock("gilded_oak_pressure_plate",
-            new PressurePlateBlock( BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
+            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
     public static final Block GILDED_OAK_FENCE = registerBlock("gilded_oak_fence",
             new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE)));
     public static final Block GILDED_OAK_FENCE_GATE = registerBlock("gilded_oak_fence_gate",

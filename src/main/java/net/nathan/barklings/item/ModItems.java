@@ -49,9 +49,6 @@ public class ModItems {
     public static final Item BARKLING_SPAWN_EGG = registerItem("barkling_spawn_egg",
             new SpawnEggItem(ModEntities.BARKLING, 0x745a36, 0xc29d62, new Item.Settings()));
 
-    public static final Item GILDED_OAK_SAPLING = registerItem("gilded_oak_sapling",
-            new AliasedBlockItem(ModBlocks.GILDED_OAK_SAPLING, new Item.Settings()));
-
     public static final Item GILDED_OAK_SIGN = registerItem("gilded_oak_sign",
             new SignItem(new Item.Settings().maxCount(16), ModBlocks.GILDED_OAK_SIGN, ModBlocks.GILDED_OAK_WALL_SIGN));
     public static final Item GILDED_OAK_HANGING_SIGN = registerItem("gilded_oak_hanging_sign",
