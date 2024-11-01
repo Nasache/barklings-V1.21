@@ -9,7 +9,6 @@ import net.nathan.barklings.entity.ModEntities;
 import net.nathan.barklings.item.ModItemGroup;
 import net.nathan.barklings.item.ModItems;
 import net.nathan.barklings.sound.ModSounds;
-import net.nathan.barklings.util.ModLootTableModifiers;
 import net.nathan.barklings.util.ModRegistries;
 import net.nathan.barklings.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -29,8 +28,6 @@ public class BarklingsMain implements ModInitializer {
 		ModRegistries.registerModStuffs();
 
 		ModEntities.registerModEntities();
-
-		ModLootTableModifiers.modifyLootTables();
 
 		ModWorldGeneration.generateModWorldGeneration();
 
