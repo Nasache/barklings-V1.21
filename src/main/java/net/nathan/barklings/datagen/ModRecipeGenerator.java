@@ -75,5 +75,10 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('T', Items.TORCH)
                 .criterion(hasItem(Items.TORCH), conditionsFromItem(Items.TORCH))
                 .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, Items.LIME_DYE)
+                .input(ModBlocks.CLOVER)
+                .criterion(hasItem(ModBlocks.CLOVER), conditionsFromItem(ModBlocks.CLOVER))
+                .offerTo(exporter);
     }
 }
