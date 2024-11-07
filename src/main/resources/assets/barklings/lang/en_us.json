@@ -23,7 +23,10 @@
 
   "block.barklings.gilded_oak_leaves": "Gilded Oak Leaves",
 
-  "item.barklings.gilded_oak_sapling": "Gilded Oak Sapling",
+  "block.barklings.gilded_oak_sapling": "Gilded Oak Sapling",
+  "block.barklings.strawberry_bush": "Strawberry Bush",
+  "block.barklings.blueberry_bush": "Blueberry Bush",
+  "block.barklings.grape_bush": "Grape Bush",
 
   "item.barklings.cherries": "Cherries",
   "item.barklings.orange": "Orange",
