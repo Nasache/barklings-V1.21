@@ -117,6 +117,13 @@ public class PickUpAppleGoal extends Goal {
             case WARPED_WART_SHROOM:
                 lootTableIdentifier = CustomLootTables.WARPED_BARKLING_BARTERING;
                 break;
+            case MUSHROOM:
+            case RED_MUSHROOM:
+            case BROWN_MUSHROOM:
+            case MUSHROOM_RMUSH:
+            case MUSHROOM_BMUSH:
+                lootTableIdentifier = CustomLootTables.MUSHROOM_BARKLING_BARTERING;
+                break;
             default:
                 return Collections.emptyList();
         }

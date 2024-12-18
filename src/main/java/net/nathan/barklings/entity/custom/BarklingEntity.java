@@ -226,6 +226,13 @@ public class BarklingEntity extends AnimalEntity {
             case WARPED_WART_SHROOM:
                 lootTableIdentifier = CustomLootTables.WARPED_BARKLING_DROPS;
                 break;
+            case MUSHROOM:
+            case RED_MUSHROOM:
+            case BROWN_MUSHROOM:
+            case MUSHROOM_RMUSH:
+            case MUSHROOM_BMUSH:
+                lootTableIdentifier = CustomLootTables.MUSHROOM_BARKLING_DROPS;
+                break;
             default:
                 return Collections.emptyList();
         }

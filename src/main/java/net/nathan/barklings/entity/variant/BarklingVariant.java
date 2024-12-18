@@ -63,7 +63,13 @@ public enum BarklingVariant {
     WARPED(47),
     WARPED_SHROOM(48),
     WARPED_WART(49),
-    WARPED_WART_SHROOM(50);
+    WARPED_WART_SHROOM(50),
+
+    MUSHROOM(51),
+    RED_MUSHROOM(52),
+    BROWN_MUSHROOM(53),
+    MUSHROOM_RMUSH(54),
+    MUSHROOM_BMUSH(55);
 
     private static final BarklingVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.comparingInt(
             BarklingVariant::getId)).toArray(BarklingVariant[]::new);

@@ -78,6 +78,11 @@ public class BarklingRenderer extends MobEntityRenderer<BarklingEntity, Barkling
                 map.put(BarklingVariant.WARPED_WART, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/warped/warped_dweller_wart.png"));
                 map.put(BarklingVariant.WARPED_WART_SHROOM, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/warped/warped_dweller_wart_shroom.png"));
 
+                map.put(BarklingVariant.MUSHROOM, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/mushroom/mushroom_dweller.png"));
+                map.put(BarklingVariant.RED_MUSHROOM, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/mushroom/rmushroom_dweller.png"));
+                map.put(BarklingVariant.BROWN_MUSHROOM, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/mushroom/bmushroom_dweller.png"));
+                map.put(BarklingVariant.MUSHROOM_RMUSH, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/mushroom/mushroom_dweller_rmush.png"));
+                map.put(BarklingVariant.MUSHROOM_BMUSH, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/mushroom/mushroom_dweller_bmush.png"));
             });
 
     public BarklingRenderer(EntityRendererFactory.Context context) {
