@@ -52,6 +52,11 @@ public class ModItemGroup {
                         entries.add(ModItems.PEAR);
                         entries.add(ModItems.STARFRUIT);
 
+                        entries.add(ModItems.RED_CAPAYA);
+                        entries.add(ModItems.BROWN_SPORSIMMON);
+                        entries.add(ModItems.CRIMSON_DURIAN);
+                        entries.add(ModItems.WARPED_MANGO);
+
                         entries.add(ModItems.STRAWBERRY);
                         entries.add(ModItems.BLUEBERRY);
                         entries.add(ModItems.GRAPES);

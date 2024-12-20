@@ -17,4 +17,7 @@ public class ModFoodComponents {
     public static final FoodComponent STRAWBERRY = new FoodComponent.Builder().nutrition(3).saturationModifier(0.1f).build();
     public static final FoodComponent GRAPES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.3f).build();
     public static final FoodComponent BLUEBERRY = new FoodComponent.Builder().nutrition(1).saturationModifier(0.1f).build();
+
+    public static final FoodComponent RED_CAPAYA = new FoodComponent.Builder().nutrition(2).saturationModifier(0.4f).build();
+    public static final FoodComponent BROWN_SPORSIMMON = new FoodComponent.Builder().nutrition(2).saturationModifier(0.4f).build();
 }

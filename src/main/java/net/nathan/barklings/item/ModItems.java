@@ -34,6 +34,11 @@ public class ModItems {
     public static final Item CRIMSON_DURIAN = registerItem("crimson_durian",
             new Item(new Item.Settings().food(ModFoodComponents.CRIMSON_DURIAN)));
 
+    public static final Item RED_CAPAYA = registerItem("red_capaya",
+            new Item(new Item.Settings().food(ModFoodComponents.RED_CAPAYA)));
+    public static final Item BROWN_SPORSIMMON = registerItem("brown_sporsimmon",
+            new Item(new Item.Settings().food(ModFoodComponents.BROWN_SPORSIMMON)));
+
     public static final Item STRAWBERRY = registerItem("strawberry",
             new AliasedBlockItem(ModBlocks.STRAWBERRY_BUSH, new Item.Settings().food(ModFoodComponents.STRAWBERRY)));
     public static final Item GRAPES = registerItem("grapes",
