@@ -83,6 +83,11 @@ public class BarklingRenderer extends MobEntityRenderer<BarklingEntity, Barkling
                 map.put(BarklingVariant.BROWN_MUSHROOM, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/mushroom/bmushroom_dweller.png"));
                 map.put(BarklingVariant.MUSHROOM_RMUSH, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/mushroom/mushroom_dweller_rmush.png"));
                 map.put(BarklingVariant.MUSHROOM_BMUSH, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/mushroom/mushroom_dweller_bmush.png"));
+
+                map.put(BarklingVariant.AZALEA, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/azalea/azalea_dweller.png"));
+                map.put(BarklingVariant.FLOWER_AZALEA, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/azalea/flowering_azalea_dweller.png"));
+                map.put(BarklingVariant.AZALEA_TREE, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/azalea/azalea_dweller_sap.png"));
+                map.put(BarklingVariant.FLOWER_AZALEA_TREE, Identifier.of(BarklingsMain.MOD_ID, "textures/entity/dwellers/azalea/flowering_azalea_dweller_sap.png"));
             });
 
     public BarklingRenderer(EntityRendererFactory.Context context) {

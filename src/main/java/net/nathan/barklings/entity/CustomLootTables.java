@@ -25,6 +25,7 @@ public class CustomLootTables {
     public static final RegistryKey<LootTable> CRIMSON_BARKLING_BARTERING;
     public static final RegistryKey<LootTable> WARPED_BARKLING_BARTERING;
     public static final RegistryKey<LootTable> MUSHROOM_BARKLING_BARTERING;
+    public static final RegistryKey<LootTable> AZALEA_BARKLING_BARTERING;
 
     public static final RegistryKey<LootTable> OAK_BARKLING_DROPS;
     public static final RegistryKey<LootTable> BIRCH_BARKLING_DROPS;
@@ -37,6 +38,7 @@ public class CustomLootTables {
     public static final RegistryKey<LootTable> CRIMSON_BARKLING_DROPS;
     public static final RegistryKey<LootTable> WARPED_BARKLING_DROPS;
     public static final RegistryKey<LootTable> MUSHROOM_BARKLING_DROPS;
+    public static final RegistryKey<LootTable> AZALEA_BARKLING_DROPS;
 
     static {
         LOOT_TABLES_READ_ONLY = Collections.unmodifiableSet(LOOT_TABLES);
@@ -52,6 +54,7 @@ public class CustomLootTables {
         CRIMSON_BARKLING_BARTERING = registerLootTable(Identifier.of(BarklingsMain.MOD_ID, "gameplay/dweller/crimson_dweller_bartering"));
         WARPED_BARKLING_BARTERING = registerLootTable(Identifier.of(BarklingsMain.MOD_ID, "gameplay/dweller/warped_dweller_bartering"));
         MUSHROOM_BARKLING_BARTERING = registerLootTable(Identifier.of(BarklingsMain.MOD_ID, "gameplay/dweller/mushroom_dweller_bartering"));
+        AZALEA_BARKLING_BARTERING = registerLootTable(Identifier.of(BarklingsMain.MOD_ID, "gameplay/dweller/azalea_dweller_bartering"));
 
         OAK_BARKLING_DROPS = registerLootTable(Identifier.of(BarklingsMain.MOD_ID, "entities/oak_dweller_drops"));
         BIRCH_BARKLING_DROPS = registerLootTable(Identifier.of(BarklingsMain.MOD_ID, "entities/birch_dweller_drops"));
@@ -64,6 +67,7 @@ public class CustomLootTables {
         CRIMSON_BARKLING_DROPS = registerLootTable(Identifier.of(BarklingsMain.MOD_ID, "entities/crimson_dweller_drops"));
         WARPED_BARKLING_DROPS = registerLootTable(Identifier.of(BarklingsMain.MOD_ID, "entities/warped_dweller_drops"));
         MUSHROOM_BARKLING_DROPS = registerLootTable(Identifier.of(BarklingsMain.MOD_ID, "entities/mushroom_dweller_drops"));
+        AZALEA_BARKLING_DROPS = registerLootTable(Identifier.of(BarklingsMain.MOD_ID, "entities/azalea_dweller_drops"));
     }
 
     private static RegistryKey<LootTable> registerLootTable(Identifier id) {

@@ -124,6 +124,12 @@ public class PickUpAppleGoal extends Goal {
             case MUSHROOM_BMUSH:
                 lootTableIdentifier = CustomLootTables.MUSHROOM_BARKLING_BARTERING;
                 break;
+            case AZALEA:
+            case FLOWER_AZALEA:
+            case AZALEA_TREE:
+            case FLOWER_AZALEA_TREE:
+                lootTableIdentifier = CustomLootTables.AZALEA_BARKLING_BARTERING;
+                break;
             default:
                 return Collections.emptyList();
         }

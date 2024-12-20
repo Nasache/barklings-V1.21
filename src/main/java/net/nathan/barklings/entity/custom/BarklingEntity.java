@@ -233,6 +233,12 @@ public class BarklingEntity extends AnimalEntity {
             case MUSHROOM_BMUSH:
                 lootTableIdentifier = CustomLootTables.MUSHROOM_BARKLING_DROPS;
                 break;
+            case AZALEA:
+            case FLOWER_AZALEA:
+            case AZALEA_TREE:
+            case FLOWER_AZALEA_TREE:
+                lootTableIdentifier = CustomLootTables.AZALEA_BARKLING_DROPS;
+                break;
             default:
                 return Collections.emptyList();
         }

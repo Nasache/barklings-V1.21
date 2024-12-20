@@ -69,7 +69,12 @@ public enum BarklingVariant {
     RED_MUSHROOM(52),
     BROWN_MUSHROOM(53),
     MUSHROOM_RMUSH(54),
-    MUSHROOM_BMUSH(55);
+    MUSHROOM_BMUSH(55),
+
+    AZALEA(56),
+    FLOWER_AZALEA(57),
+    AZALEA_TREE(58),
+    FLOWER_AZALEA_TREE(59);
 
     private static final BarklingVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.comparingInt(
             BarklingVariant::getId)).toArray(BarklingVariant[]::new);

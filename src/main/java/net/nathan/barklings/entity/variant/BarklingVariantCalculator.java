@@ -56,6 +56,8 @@ public class BarklingVariantCalculator {
             return BarklingVariant.byId(40 + random.nextInt(3));
         } else if (registryEntry.matchesKey(BiomeKeys.MUSHROOM_FIELDS)) {
             return BarklingVariant.byId(51 + random.nextInt(5));
+        } else if (registryEntry.matchesKey(BiomeKeys.LUSH_CAVES)) {
+            return BarklingVariant.byId(56 + random.nextInt(4));
         } else {
             return BarklingVariant.byId(random.nextInt(4));
         }
