@@ -24,7 +24,7 @@ public class ModItems {
             new Item(new Item.Settings().food(ModFoodComponents.POMEGRANATE)));
     public static final Item PEAR = registerItem("pear",
             new Item(new Item.Settings().food(ModFoodComponents.PEAR)));
-    public static final Item PLUM = registerItem("plum",
+    public static final Item SNOWY_PLUM = registerItem("snowy_plum",
             new Item(new Item.Settings().food(ModFoodComponents.PLUM)));
     public static final Item STARFRUIT = registerItem("starfruit",
             new Item(new Item.Settings().food(ModFoodComponents.STARFRUIT)));

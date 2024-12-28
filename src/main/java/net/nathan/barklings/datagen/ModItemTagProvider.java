@@ -24,7 +24,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                         ModItems.CHERRIES,
                         ModItems.ORANGE,
                         ModItems.PEAR,
-                        ModItems.PLUM,
+                        ModItems.SNOWY_PLUM,
                         ModItems.POMEGRANATE,
                         ModItems.STARFRUIT,
                         ModItems.STRAWBERRY,

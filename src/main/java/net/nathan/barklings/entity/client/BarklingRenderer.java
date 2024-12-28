@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
@@ -92,6 +93,8 @@ public class BarklingRenderer extends MobEntityRenderer<BarklingEntity, Barkling
 
     public BarklingRenderer(EntityRendererFactory.Context context) {
         super(context, new BarklingModel(context.getPart(ModEntityModelLayers.BARKLING)), 0.4f);
+        this.addFeature(new HeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+
     }
 
     @Override

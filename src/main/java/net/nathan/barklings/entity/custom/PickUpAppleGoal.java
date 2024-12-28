@@ -10,11 +10,7 @@ import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.hit.HitResult;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.RaycastContext;
-import net.minecraft.world.World;
 import net.nathan.barklings.entity.CustomLootTables;
 import net.nathan.barklings.entity.variant.BarklingVariant;
 import net.nathan.barklings.util.ModTags;
@@ -28,20 +24,22 @@ public class PickUpAppleGoal extends Goal {
     private final BarklingEntity barkling;
     private final double speed;
     private ItemEntity targetApple;
-    private int cooldown;
+    private int admireTimer;
+    private boolean isAdmiring;
+
+    private static final int ADMIRING_TIME = 40;
 
     public PickUpAppleGoal(BarklingEntity barkling, double speed) {
         this.barkling = barkling;
         this.speed = speed;
-        this.cooldown = 0;
         this.setControls(EnumSet.of(Control.MOVE));
     }
 
-    public BarklingVariant getVariant() {
+    private BarklingVariant getVariant() {
         return BarklingVariant.byId(barkling.getTypeVariant() & 255);
     }
 
-    public List<ItemStack> dropLoot() {
+    private List<ItemStack> dropLoot() {
         BarklingVariant variant = getVariant();
 
         RegistryKey<LootTable> lootTableIdentifier;
@@ -147,101 +145,114 @@ public class PickUpAppleGoal extends Goal {
         );
     }
 
-    private ItemStack getRandomItem(List<ItemStack> loot) {
-        if (loot.isEmpty()) {
-            return ItemStack.EMPTY;
-        }
-        return loot.get(barkling.getRandom().nextInt(loot.size()));
-    }
-
     private void dropRandomLoot() {
         List<ItemStack> loot = dropLoot();
-        ItemStack randomItem = getRandomItem(loot);
-        if (!randomItem.isEmpty()) {
-            World world = barkling.getWorld();
-            Vec3d pos = barkling.getPos();
-            ItemEntity itemEntity = new ItemEntity(world, pos.x, pos.y, pos.z, randomItem);
-            world.spawnEntity(itemEntity);
-        }
+        loot.forEach(itemStack -> {
+            if (!itemStack.isEmpty()) {
+                Vec3d pos = barkling.getPos();
+                ItemEntity itemEntity = new ItemEntity(barkling.getWorld(), pos.x, pos.y, pos.z, itemStack);
+                barkling.getWorld().spawnEntity(itemEntity);
+            }
+        });
     }
 
     @Override
     public boolean canStart() {
-        if (this.barkling.isBaby()) {
-            return false;
-        }
-
-        List<ItemEntity> list = this.barkling.getWorld().getEntitiesByClass(ItemEntity.class,
-                this.barkling.getBoundingBox().expand(8.0D, 4.0D, 8.0D), (item) -> item.getStack().isIn(ModTags.Items.FRUIT));
-        if (!list.isEmpty()) {
-            this.targetApple = list.getFirst();
+        if (isAdmiring) {
             return true;
         }
+
+        List<ItemEntity> apples = barkling.getWorld().getEntitiesByClass(
+                ItemEntity.class,
+                barkling.getBoundingBox().expand(8.0D, 4.0D, 8.0D),
+                (item) -> item.getStack().isIn(ModTags.Items.FRUIT)
+        );
+
+        if (!apples.isEmpty()) {
+            targetApple = apples.get(0);
+            return true;
+        }
+
         return false;
     }
 
     @Override
     public void start() {
-        BlockPos applePos = this.targetApple.getBlockPos();
-        Vec3d targetPosition = new Vec3d(applePos.getX(), applePos.getY(), applePos.getZ());
-        this.barkling.getNavigation().startMovingTo(targetPosition.x, targetPosition.y, targetPosition.z, this.speed);
+        if (targetApple != null) {
+            barkling.getNavigation().startMovingTo(targetApple, speed);
+        } else if (!isAdmiring) {
+            stop();
+        }
     }
 
     @Override
     public void stop() {
-        this.barkling.getNavigation().stop();
-        this.targetApple = null;
-        this.cooldown = 0;
+        admireTimer = 0;
+        isAdmiring = false;
+        targetApple = null;
+        barkling.getNavigation().stop();
+        barkling.equipItemInHand(ItemStack.EMPTY);
     }
 
     @Override
     public void tick() {
-        if (this.cooldown > 0) {
-            this.cooldown--;
+        if (isAdmiring) {
+            handleAdmiration();
             return;
         }
 
-        if (this.targetApple != null && this.targetApple.isAlive()) {
-            Vec3d targetPosition = new Vec3d(this.targetApple.getX(), this.targetApple.getY(), this.targetApple.getZ());
-            double distanceSquared = this.barkling.getPos().squaredDistanceTo(targetPosition);
-
-            if (hasLineOfSight(this.barkling, this.targetApple)) {
-                double tradeDistanceSquared = 2.5D;
-                double stopDistanceSquared = 0.0D;
-
-                if (distanceSquared > stopDistanceSquared) {
-                    this.barkling.getNavigation().startMovingTo(targetPosition.x, targetPosition.y, targetPosition.z, this.speed);
-                } else {
-                    this.barkling.getNavigation().stop();
-                }
-
-                if (distanceSquared <= tradeDistanceSquared) {
-                    this.barkling.playSound(SoundEvents.ENTITY_ITEM_PICKUP, 1.0F, (this.barkling.getRandom().nextFloat() - this.barkling.getRandom().nextFloat()) * 0.2F + 1.0F);
-
-                    ItemStack stack = this.targetApple.getStack();
-                    if (stack.getCount() > 1) {
-                        stack.decrement(1);
-                        this.targetApple.setStack(stack);
-                    } else {
-                        this.targetApple.discard();
-                    }
-
-                    this.dropRandomLoot();
-                    this.cooldown = 30;
-                }
+        if (targetApple == null || !targetApple.isAlive()) {
+            if (barkling.getMainHandStack().isEmpty() && canStart()) {
+                start();
             } else {
-                this.barkling.getNavigation().startMovingTo(targetPosition.x, targetPosition.y, targetPosition.z, this.speed);
+                stop();
             }
+            return;
+        }
+
+        double distance = barkling.squaredDistanceTo(targetApple);
+        if (distance <= 2.5D) {
+            barkling.getNavigation().stop();
+
+            if (barkling.getMainHandStack().isEmpty()) {
+                barkling.playSound(SoundEvents.ENTITY_ITEM_PICKUP, 1.0F, 1.0F);
+                ItemStack stack = targetApple.getStack();
+
+                ItemStack singleItem = stack.split(1);
+                barkling.equipItemInHand(singleItem);
+
+                if (stack.isEmpty()) {
+                    targetApple.discard();
+                }
+
+                isAdmiring = true;
+                admireTimer = 0;
+            }
+        } else {
+            barkling.getNavigation().startMovingTo(targetApple, speed);
         }
     }
 
+    private void handleAdmiration() {
+        if (admireTimer < ADMIRING_TIME) {
+            admireTimer++;
 
-    private boolean hasLineOfSight(BarklingEntity barkling, ItemEntity target) {
-        World world = barkling.getWorld();
-        Vec3d barklingPos = barkling.getEyePos();
-        Vec3d targetPos = target.getPos();
+            if (admireTimer % 5 == 0) {
+                barkling.playSound(SoundEvents.ENTITY_GENERIC_EAT, 0.8F, 1.0F);
+            }
+        } else {
+            barkling.playSound(SoundEvents.ENTITY_GENERIC_EAT, 1.0F, 1.0F);
+            dropRandomLoot();
+            barkling.equipItemInHand(ItemStack.EMPTY);
 
-        return world.raycast(new RaycastContext(barklingPos, targetPos, RaycastContext.ShapeType.COLLIDER,
-                RaycastContext.FluidHandling.NONE, barkling)).getType() == HitResult.Type.MISS;
+            isAdmiring = false;
+            admireTimer = 0;
+
+            if (canStart()) {
+                start();
+            } else {
+                stop();
+            }
+        }
     }
 }

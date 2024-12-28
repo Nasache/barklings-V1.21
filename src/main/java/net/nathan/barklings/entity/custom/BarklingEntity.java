@@ -13,6 +13,7 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootTable;
@@ -25,6 +26,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.*;
@@ -40,10 +42,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class BarklingEntity extends AnimalEntity {
-
+public class BarklingEntity extends AnimalEntity implements InventoryOwner {
     public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
             DataTracker.registerData(BarklingEntity.class, TrackedDataHandlerRegistry.INTEGER);
+
+    private final SimpleInventory inventory = new SimpleInventory(8); // Add inventory for the Barkling
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
@@ -142,12 +145,14 @@ public class BarklingEntity extends AnimalEntity {
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
         this.dataTracker.set(DATA_ID_TYPE_VARIANT, nbt.getInt("Variant"));
+        this.readInventory(nbt, this.getRegistryManager());
     }
 
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
         nbt.putInt("Variant", this.getTypeVariant());
+        this.writeInventory(nbt, this.getRegistryManager());
     }
 
     private List<ItemStack> getDropForVariant() {
@@ -258,6 +263,15 @@ public class BarklingEntity extends AnimalEntity {
         return lootTable.generateLoot(lootContext);
     }
 
+
+    @Override
+    public SimpleInventory getInventory() {
+        return this.inventory;
+    }
+
+    public void equipItemInHand(ItemStack stack) {
+        this.equipStack(EquipmentSlot.MAINHAND, stack);
+    }
 
     @Override
     public void onDeath(DamageSource source) {

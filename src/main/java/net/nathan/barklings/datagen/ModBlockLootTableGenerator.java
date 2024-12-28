@@ -36,7 +36,6 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(Blocks.BIRCH_LEAVES, birchLeavesDrops(Blocks.BIRCH_LEAVES, Blocks.BIRCH_SAPLING, .05f));
-        addDrop(Blocks.SPRUCE_LEAVES, spruceLeavesDrops(Blocks.SPRUCE_LEAVES, Blocks.SPRUCE_SAPLING, .05f));
         addDrop(Blocks.ACACIA_LEAVES, acaciaLeavesDrops(Blocks.ACACIA_LEAVES, Blocks.ACACIA_SAPLING, .05f));
         addDrop(Blocks.JUNGLE_LEAVES, jungleLeavesDrops(Blocks.JUNGLE_LEAVES, Blocks.JUNGLE_SAPLING, .05f));
         addDrop(Blocks.DARK_OAK_LEAVES, darkOakLeavesDrops(Blocks.DARK_OAK_LEAVES, Blocks.DARK_OAK_SAPLING, .05f));
@@ -83,10 +82,6 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
     public LootTable.Builder birchLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
         return this.leavesDrops(leaves, sapling, saplingChance).pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).conditionally(this.createWithoutShearsOrSilkTouchCondition()).with(((LeafEntry.Builder)this.addSurvivesExplosionCondition(leaves, ItemEntry.builder(ModItems.PEAR))).conditionally(TableBonusLootCondition.builder(impl.getOrThrow(Enchantments.FORTUNE), new float[]{0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F}))));
-    }
-    public LootTable.Builder spruceLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.leavesDrops(leaves, sapling, saplingChance).pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).conditionally(this.createWithoutShearsOrSilkTouchCondition()).with(((LeafEntry.Builder)this.addSurvivesExplosionCondition(leaves, ItemEntry.builder(ModItems.PLUM))).conditionally(TableBonusLootCondition.builder(impl.getOrThrow(Enchantments.FORTUNE), new float[]{0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F}))));
     }
     public LootTable.Builder acaciaLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
