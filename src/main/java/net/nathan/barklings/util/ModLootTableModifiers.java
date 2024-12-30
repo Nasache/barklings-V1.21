@@ -26,7 +26,8 @@ public class ModLootTableModifiers {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(InvertedLootCondition.builder(
                                 MatchToolLootCondition.builder(
-                                        ItemPredicate.Builder.create().items(Items.SHEARS)
+                                        ItemPredicate.Builder.create()
+                                                .items(Items.SHEARS)
                                 )
                         ))
                         .conditionally(RandomChanceLootCondition.builder(0.005f))
