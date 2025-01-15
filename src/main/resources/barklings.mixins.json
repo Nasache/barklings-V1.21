@@ -3,7 +3,9 @@
   "package": "net.nathan.barklings.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "SweetBerryBushBlockMixin"
+    "SweetBerryBushBlockMixin",
+    "BlockMixin",
+    "LeavesBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

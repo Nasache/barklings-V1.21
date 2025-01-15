@@ -35,12 +35,6 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(Blocks.BIRCH_LEAVES, birchLeavesDrops(Blocks.BIRCH_LEAVES, Blocks.BIRCH_SAPLING, .05f));
-        addDrop(Blocks.ACACIA_LEAVES, acaciaLeavesDrops(Blocks.ACACIA_LEAVES, Blocks.ACACIA_SAPLING, .05f));
-        addDrop(Blocks.JUNGLE_LEAVES, jungleLeavesDrops(Blocks.JUNGLE_LEAVES, Blocks.JUNGLE_SAPLING, .05f));
-        addDrop(Blocks.DARK_OAK_LEAVES, darkOakLeavesDrops(Blocks.DARK_OAK_LEAVES, Blocks.DARK_OAK_SAPLING, .05f));
-        addDrop(Blocks.CHERRY_LEAVES, cherryLeavesDrops(Blocks.CHERRY_LEAVES, Blocks.CHERRY_SAPLING, .05f));
-        addDrop(Blocks.MANGROVE_LEAVES, mangroveLeavesDrops(Blocks.MANGROVE_LEAVES, Blocks.MANGROVE_PROPAGULE, .05f));
         addDrop(ModBlocks.GILDED_OAK_LEAVES, gildedOakLeavesDrops(ModBlocks.GILDED_OAK_LEAVES, ModBlocks.GILDED_OAK_SAPLING, .05f));
 
         addDrop(ModBlocks.GILDED_OAK_PLANKS);
@@ -78,31 +72,6 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
 
     }
 
-
-    public LootTable.Builder birchLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.leavesDrops(leaves, sapling, saplingChance).pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).conditionally(this.createWithoutShearsOrSilkTouchCondition()).with(((LeafEntry.Builder)this.addSurvivesExplosionCondition(leaves, ItemEntry.builder(ModItems.PEAR))).conditionally(TableBonusLootCondition.builder(impl.getOrThrow(Enchantments.FORTUNE), new float[]{0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F}))));
-    }
-    public LootTable.Builder acaciaLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.leavesDrops(leaves, sapling, saplingChance).pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).conditionally(this.createWithoutShearsOrSilkTouchCondition()).with(((LeafEntry.Builder)this.addSurvivesExplosionCondition(leaves, ItemEntry.builder(ModItems.ORANGE))).conditionally(TableBonusLootCondition.builder(impl.getOrThrow(Enchantments.FORTUNE), new float[]{0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F}))));
-    }
-    public LootTable.Builder jungleLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.leavesDrops(leaves, sapling, saplingChance).pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).conditionally(this.createWithoutShearsOrSilkTouchCondition()).with(((LeafEntry.Builder)this.addSurvivesExplosionCondition(leaves, ItemEntry.builder(ModItems.BANANA))).conditionally(TableBonusLootCondition.builder(impl.getOrThrow(Enchantments.FORTUNE), new float[]{0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F}))));
-    }
-    public LootTable.Builder darkOakLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.leavesDrops(leaves, sapling, saplingChance).pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).conditionally(this.createWithoutShearsOrSilkTouchCondition()).with(((LeafEntry.Builder)this.addSurvivesExplosionCondition(leaves, ItemEntry.builder(ModItems.POMEGRANATE))).conditionally(TableBonusLootCondition.builder(impl.getOrThrow(Enchantments.FORTUNE), new float[]{0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F}))));
-    }
-    public LootTable.Builder cherryLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.leavesDrops(leaves, sapling, saplingChance).pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).conditionally(this.createWithoutShearsOrSilkTouchCondition()).with(((LeafEntry.Builder)this.addSurvivesExplosionCondition(leaves, ItemEntry.builder(ModItems.CHERRIES))).conditionally(TableBonusLootCondition.builder(impl.getOrThrow(Enchantments.FORTUNE), new float[]{0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F}))));
-    }
-    public LootTable.Builder mangroveLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.leavesDrops(leaves, sapling, saplingChance).pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).conditionally(this.createWithoutShearsOrSilkTouchCondition()).with(((LeafEntry.Builder)this.addSurvivesExplosionCondition(leaves, ItemEntry.builder(ModItems.STARFRUIT))).conditionally(TableBonusLootCondition.builder(impl.getOrThrow(Enchantments.FORTUNE), new float[]{0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F}))));
-    }
 
     public LootTable.Builder gildedOakLeavesDrops(Block leaves, Block sapling, float... saplingChance) {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
