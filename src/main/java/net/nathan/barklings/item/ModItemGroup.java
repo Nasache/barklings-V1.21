@@ -15,7 +15,7 @@ public class ModItemGroup {
     public static final ItemGroup BARKLINGS = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(BarklingsMain.MOD_ID, "barklings"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.barklings"))
-                    .icon(() -> new ItemStack(ModItems.PEAR)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModItems.WAX_PEAR)).entries((displayContext, entries) -> {
 
                         entries.add(ModItems.BARKLING_SPAWN_EGG);
 
@@ -45,11 +45,11 @@ public class ModItemGroup {
                         entries.add(ModBlocks.LIVING_LANTERN);
 
                         entries.add(ModItems.CHERRIES);
-                        entries.add(ModItems.BANANA);
+                        entries.add(ModItems.VINANA);
                         entries.add(ModItems.ORANGE);
                         entries.add(ModItems.SNOWY_PLUM);
                         entries.add(ModItems.POMEGRANATE);
-                        entries.add(ModItems.PEAR);
+                        entries.add(ModItems.WAX_PEAR);
                         entries.add(ModItems.STARFRUIT);
 
                         entries.add(ModItems.RED_CAPAYA);

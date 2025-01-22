@@ -24,8 +24,6 @@ public class PickUpAppleGoal extends Goal {
     private final BarklingEntity barkling;
     private final double speed;
     private ItemEntity targetApple;
-    private int admireTimer;
-    private boolean isAdmiring;
 
     private static final int ADMIRING_TIME = 40;
 
@@ -158,7 +156,7 @@ public class PickUpAppleGoal extends Goal {
 
     @Override
     public boolean canStart() {
-        if (isAdmiring) {
+        if (barkling.getDataTracker().get(BarklingEntity.IS_ADMIRING)) {
             return true;
         }
 
@@ -169,34 +167,36 @@ public class PickUpAppleGoal extends Goal {
         );
 
         if (!apples.isEmpty()) {
-            targetApple = apples.get(0);
+            targetApple = apples.getFirst();
             return true;
         }
 
         return false;
     }
 
+
     @Override
     public void start() {
         if (targetApple != null) {
             barkling.getNavigation().startMovingTo(targetApple, speed);
-        } else if (!isAdmiring) {
+        } else if (!barkling.getDataTracker().get(BarklingEntity.IS_ADMIRING)) {
             stop();
         }
     }
 
     @Override
     public void stop() {
-        admireTimer = 0;
-        isAdmiring = false;
+        barkling.getDataTracker().set(BarklingEntity.ADMIRE_TIMER, 0);
+        barkling.getDataTracker().set(BarklingEntity.IS_ADMIRING, false);
         targetApple = null;
         barkling.getNavigation().stop();
         barkling.equipItemInHand(ItemStack.EMPTY);
     }
 
+
     @Override
     public void tick() {
-        if (isAdmiring) {
+        if (barkling.getDataTracker().get(BarklingEntity.IS_ADMIRING)) {
             handleAdmiration();
             return;
         }
@@ -225,8 +225,8 @@ public class PickUpAppleGoal extends Goal {
                     targetApple.discard();
                 }
 
-                isAdmiring = true;
-                admireTimer = 0;
+                barkling.getDataTracker().set(BarklingEntity.IS_ADMIRING, true);
+                barkling.getDataTracker().set(BarklingEntity.ADMIRE_TIMER, 0);
             }
         } else {
             barkling.getNavigation().startMovingTo(targetApple, speed);
@@ -234,8 +234,10 @@ public class PickUpAppleGoal extends Goal {
     }
 
     private void handleAdmiration() {
+        int admireTimer = barkling.getDataTracker().get(BarklingEntity.ADMIRE_TIMER);
+
         if (admireTimer < ADMIRING_TIME) {
-            admireTimer++;
+            barkling.getDataTracker().set(BarklingEntity.ADMIRE_TIMER, admireTimer + 1);
 
             if (admireTimer % 5 == 0) {
                 barkling.playSound(SoundEvents.ENTITY_GENERIC_EAT, 0.8F, 1.0F);
@@ -245,8 +247,8 @@ public class PickUpAppleGoal extends Goal {
             dropRandomLoot();
             barkling.equipItemInHand(ItemStack.EMPTY);
 
-            isAdmiring = false;
-            admireTimer = 0;
+            barkling.getDataTracker().set(BarklingEntity.IS_ADMIRING, false);
+            barkling.getDataTracker().set(BarklingEntity.ADMIRE_TIMER, 0);
 
             if (canStart()) {
                 start();
@@ -255,4 +257,5 @@ public class PickUpAppleGoal extends Goal {
             }
         }
     }
+
 }

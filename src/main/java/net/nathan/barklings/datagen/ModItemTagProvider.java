@@ -20,10 +20,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModTags.Items.FRUIT)
                 .add(Items.APPLE,
-                        ModItems.BANANA,
+                        ModItems.VINANA,
                         ModItems.CHERRIES,
                         ModItems.ORANGE,
-                        ModItems.PEAR,
+                        ModItems.WAX_PEAR,
                         ModItems.SNOWY_PLUM,
                         ModItems.POMEGRANATE,
                         ModItems.STARFRUIT,

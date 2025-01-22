@@ -26,7 +26,6 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.*;
@@ -50,6 +49,12 @@ public class BarklingEntity extends AnimalEntity implements InventoryOwner {
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+
+    public static final TrackedData<Boolean> IS_ADMIRING =
+            DataTracker.registerData(BarklingEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    public static final TrackedData<Integer> ADMIRE_TIMER =
+            DataTracker.registerData(BarklingEntity.class, TrackedDataHandlerRegistry.INTEGER);
+
 
     public BarklingEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
@@ -116,7 +121,10 @@ public class BarklingEntity extends AnimalEntity implements InventoryOwner {
     protected void initDataTracker(DataTracker.Builder builder) {
         super.initDataTracker(builder);
         builder.add(DATA_ID_TYPE_VARIANT, 0);
+        builder.add(IS_ADMIRING, false);
+        builder.add(ADMIRE_TIMER, 0);
     }
+
 
     int getTypeVariant() {
         return this.dataTracker.get(DATA_ID_TYPE_VARIANT);
@@ -146,14 +154,23 @@ public class BarklingEntity extends AnimalEntity implements InventoryOwner {
         super.readCustomDataFromNbt(nbt);
         this.dataTracker.set(DATA_ID_TYPE_VARIANT, nbt.getInt("Variant"));
         this.readInventory(nbt, this.getRegistryManager());
+
+        this.dataTracker.set(IS_ADMIRING, nbt.getBoolean("IsAdmiring"));
+        this.dataTracker.set(ADMIRE_TIMER, nbt.getInt("AdmireTimer"));
     }
+
 
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
         nbt.putInt("Variant", this.getTypeVariant());
         this.writeInventory(nbt, this.getRegistryManager());
+
+        nbt.putBoolean("IsAdmiring", this.dataTracker.get(IS_ADMIRING));
+        nbt.putInt("AdmireTimer", this.dataTracker.get(ADMIRE_TIMER));
     }
+
+
 
     private List<ItemStack> getDropForVariant() {
         BarklingVariant variant = getVariant();

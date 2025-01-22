@@ -45,10 +45,10 @@ public class ModDropHandler {
             drop = new ItemStack(ModItems.SNOWY_PLUM);
             dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.BIRCH_LEAVES)) {
-            drop = new ItemStack(ModItems.PEAR);
+            drop = new ItemStack(ModItems.WAX_PEAR);
             dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.JUNGLE_LEAVES)) {
-            drop = new ItemStack(ModItems.BANANA);
+            drop = new ItemStack(ModItems.VINANA);
             dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.CHERRY_LEAVES)) {
             drop = new ItemStack(ModItems.CHERRIES);
@@ -63,16 +63,16 @@ public class ModDropHandler {
             drop = new ItemStack(ModItems.STARFRUIT);
             dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.AZALEA_LEAVES)) {
-            drop = new ItemStack(ModItems.BANANA);
+            drop = new ItemStack(ModItems.VINANA);
             dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.FLOWERING_AZALEA_LEAVES)) {
-            drop = new ItemStack(ModItems.BANANA);
+            drop = new ItemStack(ModItems.VINANA);
             dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.BROWN_MUSHROOM_BLOCK)) {
-            drop = new ItemStack(ModItems.BANANA);
+            drop = new ItemStack(ModItems.VINANA);
             dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.RED_MUSHROOM_BLOCK)) {
-            drop = new ItemStack(ModItems.BANANA);
+            drop = new ItemStack(ModItems.VINANA);
             dropChance = 0.5f; //TEST
         }
 

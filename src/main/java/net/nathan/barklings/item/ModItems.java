@@ -16,16 +16,16 @@ public class ModItems {
 
     public static final Item CHERRIES = registerItem("cherries",
             new Item(new Item.Settings().food(ModFoodComponents.CHERRIES)));
-    public static final Item BANANA = registerItem("banana",
-            new Item(new Item.Settings().food(ModFoodComponents.BANANA)));
+    public static final Item VINANA = registerItem("vinana",
+            new Item(new Item.Settings().food(ModFoodComponents.VINANA)));
     public static final Item ORANGE = registerItem("orange",
             new Item(new Item.Settings().food(ModFoodComponents.ORANGE)));
     public static final Item POMEGRANATE = registerItem("pomegranate",
             new Item(new Item.Settings().food(ModFoodComponents.POMEGRANATE)));
-    public static final Item PEAR = registerItem("pear",
-            new Item(new Item.Settings().food(ModFoodComponents.PEAR)));
+    public static final Item WAX_PEAR = registerItem("wax_pear",
+            new Item(new Item.Settings().food(ModFoodComponents.WAX_PEAR)));
     public static final Item SNOWY_PLUM = registerItem("snowy_plum",
-            new Item(new Item.Settings().food(ModFoodComponents.PLUM)));
+            new Item(new Item.Settings().food(ModFoodComponents.SNOWY_PLUM)));
     public static final Item STARFRUIT = registerItem("starfruit",
             new Item(new Item.Settings().food(ModFoodComponents.STARFRUIT)));
 
