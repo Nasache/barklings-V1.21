@@ -77,8 +77,8 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, Items.LIME_DYE)
-                .input(ModBlocks.CLOVER)
-                .criterion(hasItem(ModBlocks.CLOVER), conditionsFromItem(ModBlocks.CLOVER))
+                .input(ModBlocks.CLOVER_CARPET)
+                .criterion(hasItem(ModBlocks.CLOVER_CARPET), conditionsFromItem(ModBlocks.CLOVER_CARPET))
                 .offerTo(exporter);
     }
 }

@@ -74,7 +74,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                         Blocks.RED_MUSHROOM_BLOCK, Blocks.BROWN_MUSHROOM_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.FLOWERS)
-                .add(ModBlocks.CLOVER);
+                .add(ModBlocks.CLOVER_CARPET);
 
     }
 }

@@ -3,7 +3,6 @@ package net.nathan.barklings.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
@@ -21,7 +20,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.nathan.barklings.block.ModBlocks;
 import net.nathan.barklings.block.custom.BlueberryBush;
 import net.nathan.barklings.block.custom.GrapeBush;
-import net.nathan.barklings.block.custom.StrawberryBush;
+import net.nathan.barklings.block.custom.BloomberryBush;
 import net.nathan.barklings.item.ModItems;
 
 
@@ -58,7 +57,7 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.POTTED_GILDED_OAK_SAPLING, pottedPlantDrops(ModBlocks.GILDED_OAK_SAPLING));
 
         addDrop(ModBlocks.LIVING_LANTERN);
-        addDrop(ModBlocks.CLOVER, flowerbedDrops(ModBlocks.CLOVER));
+        addDrop(ModBlocks.CLOVER_CARPET, flowerbedDrops(ModBlocks.CLOVER_CARPET));
 
         LootCondition.Builder builder1 = BlockStatePropertyLootCondition.builder(ModBlocks.BLUEBERRY_BUSH)
                 .properties(StatePredicate.Builder.create().exactMatch(BlueberryBush.AGE, 3));
@@ -66,9 +65,9 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
         LootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.GRAPE_BUSH)
                 .properties(StatePredicate.Builder.create().exactMatch(GrapeBush.AGE, 3));
         this.addDrop(ModBlocks.GRAPE_BUSH, this.cropDrops(ModBlocks.GRAPE_BUSH, ModItems.GRAPES, Items.AIR, builder2));
-        LootCondition.Builder builder3 = BlockStatePropertyLootCondition.builder(ModBlocks.STRAWBERRY_BUSH)
-                .properties(StatePredicate.Builder.create().exactMatch(StrawberryBush.AGE, 3));
-        this.addDrop(ModBlocks.STRAWBERRY_BUSH, this.cropDrops(ModBlocks.STRAWBERRY_BUSH, ModItems.STRAWBERRY, Items.AIR, builder3));
+        LootCondition.Builder builder3 = BlockStatePropertyLootCondition.builder(ModBlocks.BLOOMBERRY_BUSH)
+                .properties(StatePredicate.Builder.create().exactMatch(BloomberryBush.AGE, 3));
+        this.addDrop(ModBlocks.BLOOMBERRY_BUSH, this.cropDrops(ModBlocks.BLOOMBERRY_BUSH, ModItems.BLOOMBERRY, Items.AIR, builder3));
 
     }
 

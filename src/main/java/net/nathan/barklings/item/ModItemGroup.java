@@ -39,7 +39,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.GILDED_OAK_SAPLING);
                         entries.add(ModBlocks.GILDED_OAK_LEAVES);
 
-                        entries.add(ModBlocks.CLOVER);
+                        entries.add(ModBlocks.CLOVER_CARPET);
                         entries.add(ModItems.HIDDEN_VOICES_MUSIC_DISC);
 
                         entries.add(ModBlocks.LIVING_LANTERN);
@@ -48,7 +48,7 @@ public class ModItemGroup {
                         entries.add(ModItems.VINANA);
                         entries.add(ModItems.ORANGE);
                         entries.add(ModItems.SNOWY_PLUM);
-                        entries.add(ModItems.POMEGRANATE);
+                        entries.add(ModItems.TWILIGHT_POMEGRANATE);
                         entries.add(ModItems.WAX_PEAR);
                         entries.add(ModItems.STARFRUIT);
 
@@ -57,7 +57,7 @@ public class ModItemGroup {
                         entries.add(ModItems.CRIMSON_DURIAN);
                         entries.add(ModItems.WARPED_MANGO);
 
-                        entries.add(ModItems.STRAWBERRY);
+                        entries.add(ModItems.BLOOMBERRY);
                         entries.add(ModItems.BLUEBERRY);
                         entries.add(ModItems.GRAPES);
 

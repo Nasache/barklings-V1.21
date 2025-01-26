@@ -15,14 +15,14 @@ import net.nathan.barklings.world.tree.ModSaplingGenerators;
 
 public class ModBlocks {
 
-    public static final Block STRAWBERRY_BUSH = registerBlockWithoutBlockItem("strawberry_bush",
-            new StrawberryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block BLOOMBERRY_BUSH = registerBlockWithoutBlockItem("bloomberry_bush",
+            new BloomberryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block GRAPE_BUSH = registerBlockWithoutBlockItem("grape_bush",
             new GrapeBush(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block BLUEBERRY_BUSH = registerBlockWithoutBlockItem("blueberry_bush",
             new BlueberryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
 
-    public static final Block CLOVER = registerBlock("clover",
+    public static final Block CLOVER_CARPET = registerBlock("clover_carpet",
             new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)));
 
     public static final Block LIVING_LANTERN = registerBlock("living_lantern",

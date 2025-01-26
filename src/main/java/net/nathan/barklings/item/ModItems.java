@@ -20,8 +20,8 @@ public class ModItems {
             new Item(new Item.Settings().food(ModFoodComponents.VINANA)));
     public static final Item ORANGE = registerItem("orange",
             new Item(new Item.Settings().food(ModFoodComponents.ORANGE)));
-    public static final Item POMEGRANATE = registerItem("pomegranate",
-            new Item(new Item.Settings().food(ModFoodComponents.POMEGRANATE)));
+    public static final Item TWILIGHT_POMEGRANATE = registerItem("twilight_pomegranate",
+            new Item(new Item.Settings().food(ModFoodComponents.TWILIGHT_POMEGRANATE)));
     public static final Item WAX_PEAR = registerItem("wax_pear",
             new Item(new Item.Settings().food(ModFoodComponents.WAX_PEAR)));
     public static final Item SNOWY_PLUM = registerItem("snowy_plum",
@@ -39,8 +39,8 @@ public class ModItems {
     public static final Item BROWN_SPORSIMMON = registerItem("brown_sporsimmon",
             new Item(new Item.Settings().food(ModFoodComponents.BROWN_SPORSIMMON)));
 
-    public static final Item STRAWBERRY = registerItem("strawberry",
-            new AliasedBlockItem(ModBlocks.STRAWBERRY_BUSH, new Item.Settings().food(ModFoodComponents.STRAWBERRY)));
+    public static final Item BLOOMBERRY = registerItem("bloomberry",
+            new AliasedBlockItem(ModBlocks.BLOOMBERRY_BUSH, new Item.Settings().food(ModFoodComponents.BLOOMBERRY)));
     public static final Item GRAPES = registerItem("grapes",
             new AliasedBlockItem(ModBlocks.GRAPE_BUSH, new Item.Settings().food(ModFoodComponents.GRAPES)));
     public static final Item BLUEBERRY = registerItem("blueberry",

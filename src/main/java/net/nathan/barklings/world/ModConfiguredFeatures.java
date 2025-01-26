@@ -16,7 +16,7 @@ import net.nathan.barklings.BarklingsMain;
 import net.nathan.barklings.block.ModBlocks;
 import net.nathan.barklings.block.custom.BlueberryBush;
 import net.nathan.barklings.block.custom.GrapeBush;
-import net.nathan.barklings.block.custom.StrawberryBush;
+import net.nathan.barklings.block.custom.BloomberryBush;
 
 import java.util.List;
 
@@ -34,8 +34,8 @@ public class ModConfiguredFeatures {
 
         ConfiguredFeatures.register(context, PATCH_STRAWBERRY_BUSH, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig
-                        (BlockStateProvider.of((BlockState) ModBlocks.STRAWBERRY_BUSH.getDefaultState()
-                                .with(StrawberryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+                        (BlockStateProvider.of((BlockState) ModBlocks.BLOOMBERRY_BUSH.getDefaultState()
+                                .with(BloomberryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
 
         ConfiguredFeatures.register(context, PATCH_GRAPE_BUSH, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig

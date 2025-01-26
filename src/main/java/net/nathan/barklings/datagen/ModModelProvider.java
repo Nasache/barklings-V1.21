@@ -22,12 +22,12 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 
 
-        blockStateModelGenerator.registerFlowerbed(ModBlocks.CLOVER);
+        blockStateModelGenerator.registerFlowerbed(ModBlocks.CLOVER_CARPET);
 
         blockStateModelGenerator.registerLantern(ModBlocks.LIVING_LANTERN);
 
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.STRAWBERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
-            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.STRAWBERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLOOMBERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
+            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.BLOOMBERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
         })));
 
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.GRAPE_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
@@ -71,7 +71,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CHERRIES, Models.GENERATED);
         itemModelGenerator.register(ModItems.VINANA, Models.GENERATED);
         itemModelGenerator.register(ModItems.ORANGE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POMEGRANATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TWILIGHT_POMEGRANATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.WAX_PEAR, Models.GENERATED);
         itemModelGenerator.register(ModItems.SNOWY_PLUM, Models.GENERATED);
         itemModelGenerator.register(ModItems.STARFRUIT, Models.GENERATED);
@@ -80,7 +80,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.RED_CAPAYA, Models.GENERATED);
         itemModelGenerator.register(ModItems.BROWN_SPORSIMMON, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.STRAWBERRY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLOOMBERRY, Models.GENERATED);
         itemModelGenerator.register(ModItems.GRAPES, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLUEBERRY, Models.GENERATED);
 

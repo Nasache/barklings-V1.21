@@ -24,27 +24,27 @@
   "block.barklings.gilded_oak_leaves": "Gilded Oak Leaves",
 
   "block.barklings.gilded_oak_sapling": "Gilded Oak Sapling",
-  "block.barklings.strawberry_bush": "Strawberry Bush",
-  "block.barklings.blueberry_bush": "Blueberry Bush",
-  "block.barklings.grape_bush": "Grape Bush",
+  "block.barklings.bloomberry_bush": "Bloomberry Bush",
+  "block.barklings.blueberry_bush": "Blueberry Bush", //
+  "block.barklings.grape_bush": "Grape Bush", //
 
-  "item.barklings.cherries": "Cherries",
-  "item.barklings.orange": "Orange",
+  "item.barklings.cherries": "Cherries", //
+  "item.barklings.orange": "Orange", //
   "item.barklings.vinana": "Vinana",
   "item.barklings.snowy_plum": "Snowy Plum",
-  "item.barklings.pomegranate": "Pomegranate",
-  "item.barklings.starfruit": "Starfruit",
+  "item.barklings.twilight_pomegranate": "Twilight Pomegranate",
+  "item.barklings.starfruit": "Starfruit", //
   "item.barklings.wax_pear": "Wax Pear",
   "item.barklings.warped_mango": "Warped Mango",
   "item.barklings.crimson_durian": "Crimson Durian",
   "item.barklings.red_capaya": "Red Capaya",
   "item.barklings.brown_sporsimmon": "Brown Sporsimmon",
 
-  "item.barklings.strawberry": "Strawberry",
-  "item.barklings.grapes": "Grapes",
-  "item.barklings.blueberry": "Blueberry",
+  "item.barklings.bloomberry": "Bloomberry",
+  "item.barklings.grapes": "Grapes", //
+  "item.barklings.blueberry": "Blueberry", //
 
-  "block.barklings.clover": "Clover",
+  "block.barklings.clover": "Clover Carpet",
 
   "block.barklings.living_lantern": "Living Lantern",
 

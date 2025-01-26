@@ -45,7 +45,7 @@ public class BarklingEntity extends AnimalEntity implements InventoryOwner {
     public static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
             DataTracker.registerData(BarklingEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
-    private final SimpleInventory inventory = new SimpleInventory(8); // Add inventory for the Barkling
+    private final SimpleInventory inventory = new SimpleInventory(8);
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
