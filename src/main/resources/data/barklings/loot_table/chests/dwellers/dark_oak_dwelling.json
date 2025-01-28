@@ -113,7 +113,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:pomegranate",
+          "name": "barklings:nocturnate",
           "weight": 7
         },
         {
@@ -129,7 +129,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:blueberry",
+          "name": "barklings:dusk_berry",
           "weight": 7
         },
         {
@@ -145,7 +145,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:clover",
+          "name": "barklings:clover_carpet",
           "weight": 2
         }
       ],

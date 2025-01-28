@@ -9,82 +9,82 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "banana": {
+    "virana": {
       "conditions": {
         "item": {
-          "items": "barklings:banana"
+          "items": "barklings:virana"
         }
       },
       "trigger": "minecraft:consume_item"
     },
-    "blueberry": {
+    "dusk_berry": {
       "conditions": {
         "item": {
-          "items": "barklings:blueberry"
+          "items": "barklings:dusk_berry"
         }
       },
       "trigger": "minecraft:consume_item"
     },
-    "cherries": {
+    "aurora_cherries": {
       "conditions": {
         "item": {
-          "items": "barklings:cherries"
+          "items": "barklings:aurora_cherries"
         }
       },
       "trigger": "minecraft:consume_item"
     },
-    "grapes": {
+    "dry_berries": {
       "conditions": {
         "item": {
-          "items": "barklings:grapes"
+          "items": "barklings:dry_berries"
         }
       },
       "trigger": "minecraft:consume_item"
     },
-    "orange": {
+    "solind": {
       "conditions": {
         "item": {
-          "items": "barklings:orange"
+          "items": "barklings:solind"
         }
       },
       "trigger": "minecraft:consume_item"
     },
-    "pear": {
+    "wax_pear": {
       "conditions": {
         "item": {
-          "items": "barklings:pear"
+          "items": "barklings:wax_pear"
         }
       },
       "trigger": "minecraft:consume_item"
     },
-    "plum": {
+    "snowy_plum": {
       "conditions": {
         "item": {
-          "items": "barklings:plum"
+          "items": "barklings:snowy_plum"
         }
       },
       "trigger": "minecraft:consume_item"
     },
-    "pomegranate": {
+    "nocturnate": {
       "conditions": {
         "item": {
-          "items": "barklings:pomegranate"
+          "items": "barklings:nocturnate"
         }
       },
       "trigger": "minecraft:consume_item"
     },
-    "starfruit": {
+    "marsh_star": {
       "conditions": {
         "item": {
-          "items": "barklings:starfruit"
+          "items": "barklings:marsh_star"
         }
       },
       "trigger": "minecraft:consume_item"
     },
-    "strawberry": {
+    "bloom_berry": {
       "conditions": {
         "item": {
-          "items": "barklings:strawberry"
+          "items": "barklings:bloom_berry"
         }
       },
       "trigger": "minecraft:consume_item"
@@ -153,7 +153,7 @@
     "frame": "goal",
     "icon": {
       "count": 1,
-      "id": "barklings:pear"
+      "id": "barklings:wax_pear"
     },
     "title": {
       "translate": "advancements.barklings.fruity_feast.title"
@@ -164,16 +164,22 @@
       "apple"
     ],
     [
-      "banana"
+      "aurora_cherries"
     ],
     [
-      "blueberry"
-    ],
-    [
-      "cherries"
+      "bloom_berry"
     ],
     [
       "chorus_fruit"
+    ],
+    [
+      "dusk_berry"
+    ],
+    [
+      "dry_berries"
+    ],
+    [
+      "enchanted_golden_apple"
     ],
     [
       "glow_berries"
@@ -182,37 +188,31 @@
       "golden_apple"
     ],
     [
-      "enchanted_golden_apple"
-    ],
-    [
-      "grapes"
+      "marsh_star"
     ],
     [
       "melon_slice"
     ],
     [
-      "orange"
-    ],
-    [
-      "pear"
-    ],
-    [
-      "plum"
-    ],
-    [
-      "pomegranate"
+      "nocturnate"
     ],
     [
       "pumpkin_pie"
     ],
     [
-      "starfruit"
+      "snowy_plum"
     ],
     [
-      "strawberry"
+      "solind"
     ],
     [
       "sweet_berries"
+    ],
+    [
+      "wax_pear"
+    ],
+    [
+      "virana"
     ]
   ],
   "rewards": {

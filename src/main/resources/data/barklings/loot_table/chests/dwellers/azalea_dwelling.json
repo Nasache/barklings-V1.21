@@ -17,7 +17,23 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:oak_sapling",
+          "name": "minecraft:azalea",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 6.0,
+                "min": 2.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:flowering_azalea",
           "weight": 10
         },
         {
@@ -49,7 +65,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:carrot",
+          "name": "minecraft:moss_block",
           "weight": 5
         },
         {
@@ -65,7 +81,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:potato",
+          "name": "minecraft:small_dripleaf",
           "weight": 5
         },
         {
@@ -81,40 +97,8 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:poppy",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:rose_bush",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:dandelion",
-          "weight": 10
+          "name": "minecraft:big_dripleaf",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
@@ -129,7 +113,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:apple",
+          "name": "barklings:flowering_lychee",
           "weight": 7
         },
         {
@@ -145,7 +129,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:bloom_berry",
+          "name": "minecraft:glow_berries",
           "weight": 7
         },
         {
@@ -161,7 +145,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:clover_carpet",
+          "name": "minecraft:moss_carpet",
           "weight": 2
         }
       ],
@@ -172,5 +156,5 @@
       }
     }
   ],
-  "random_sequence": "barklings:chests/dwellers/oak_dwelling"
+  "random_sequence": "barklings:chests/dwellers/azalea_dwelling"
 }

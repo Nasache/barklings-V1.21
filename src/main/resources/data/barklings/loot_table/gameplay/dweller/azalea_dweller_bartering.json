@@ -36,8 +36,24 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:oak_leaves",
-          "weight": 30
+          "name": "minecraft:azalea_leaves",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 16.0,
+                "min": 4.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:flowering_azalea_leaves",
+          "weight": 15
         },
 
 
@@ -48,14 +64,30 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 2.0
+                "max": 6.0,
+                "min": 4.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:oak_sapling",
-          "weight": 40
+          "name": "minecraft:azalea",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 6.0,
+                "min": 4.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:flowering_azalea",
+          "weight": 20
         },
 
         {
@@ -71,7 +103,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:birch_sapling",
+          "name": "minecraft:oak_sapling",
           "weight": 8
         },
         {
@@ -119,7 +151,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:acacia_sapling",
+          "name": "minecraft:birch_sapling",
           "weight": 8
         },
         {
@@ -177,30 +209,14 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 6.0,
-                "min": 4.0
+                "max": 4.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:azalea",
-          "weight": 4
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 6.0,
-                "min": 4.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:flowering_azalea",
-          "weight": 4
+          "name": "minecraft:acacia_sapling",
+          "weight": 8
         },
         {
           "type": "minecraft:item",
@@ -342,5 +358,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "barklings:gameplay/dweller/oak_dweller_bartering"
+  "random_sequence": "barklings:gameplay/dweller/acacia_dweller_bartering"
 }

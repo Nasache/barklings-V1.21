@@ -39,6 +39,9 @@ public class ModItems {
     public static final Item BROWN_SPORSIMMON = registerItem("brown_sporsimmon",
             new Item(new Item.Settings().food(ModFoodComponents.BROWN_SPORSIMMON)));
 
+    public static final Item FLOWERING_LYCHEE = registerItem("flowering_lychee",
+            new Item(new Item.Settings().food(ModFoodComponents.FLOWERING_LYCHEE)));
+
     public static final Item BLOOM_BERRY = registerItem("bloom_berry",
             new AliasedBlockItem(ModBlocks.BLOOM_BERRY_BUSH, new Item.Settings().food(ModFoodComponents.BLOOM_BERRY)));
     public static final Item DRY_BERRIES = registerItem("dry_berries",

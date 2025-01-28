@@ -11,29 +11,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 6.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:oak_sapling",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
                 "max": 8.0,
                 "min": 2.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:oak_log",
+          "name": "minecraft:mushroom_stem",
           "weight": 4
         },
         {
@@ -49,7 +33,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:carrot",
+          "name": "minecraft:red_mushroom",
           "weight": 5
         },
         {
@@ -65,56 +49,8 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:potato",
+          "name": "minecraft:brown_mushroom",
           "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:poppy",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:rose_bush",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:dandelion",
-          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -129,7 +65,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:apple",
+          "name": "barklings:red_capaya",
           "weight": 7
         },
         {
@@ -145,7 +81,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:bloom_berry",
+          "name": "barklings:brown_sporsimmon",
           "weight": 7
         },
         {
@@ -172,5 +108,5 @@
       }
     }
   ],
-  "random_sequence": "barklings:chests/dwellers/oak_dwelling"
+  "random_sequence": "barklings:chests/dwellers/mushroom_dwelling"
 }

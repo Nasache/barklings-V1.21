@@ -97,7 +97,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:starfruit",
+          "name": "barklings:marsh_star",
           "weight": 7
         },
         {
@@ -113,7 +113,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:clover",
+          "name": "barklings:clover_carpet",
           "weight": 2
         }
       ],

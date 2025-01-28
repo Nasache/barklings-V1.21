@@ -52,6 +52,8 @@ public class ModItemGroup {
                         entries.add(ModItems.WAX_PEAR);
                         entries.add(ModItems.MARSH_STAR);
 
+                        entries.add(ModItems.FLOWERING_LYCHEE);
+
                         entries.add(ModItems.RED_CAPAYA);
                         entries.add(ModItems.BROWN_SPORSIMMON);
                         entries.add(ModItems.CRIMSON_DURIAN);

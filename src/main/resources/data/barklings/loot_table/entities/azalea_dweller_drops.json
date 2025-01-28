@@ -26,7 +26,7 @@
               "function": "minecraft:enchanted_count_increase"
             }
           ],
-          "name": "minecraft:cherry_log"
+          "name": "minecraft:oak_log"
         }
       ],
       "rolls": 1.0
@@ -56,7 +56,7 @@
               "function": "minecraft:enchanted_count_increase"
             }
           ],
-          "name": "barklings:aurora_cherries"
+          "name": "barklings:flowering_lychee"
         }
       ],
       "rolls": 1.0
@@ -87,5 +87,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "barklings:entities/cherry_dweller_drops"
+  "random_sequence": "barklings:entities/azalea_dweller_drops"
 }

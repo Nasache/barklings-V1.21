@@ -56,7 +56,7 @@
               "function": "minecraft:enchanted_count_increase"
             }
           ],
-          "name": "minecraft:red_mushroom"
+          "name": "barklings:brown_sporsimmon"
         }
       ],
       "rolls": 1.0
@@ -86,7 +86,7 @@
               "function": "minecraft:enchanted_count_increase"
             }
           ],
-          "name": "minecraft:brown_mushroom"
+          "name": "barklings:red_capaya"
         }
       ],
       "rolls": 1.0

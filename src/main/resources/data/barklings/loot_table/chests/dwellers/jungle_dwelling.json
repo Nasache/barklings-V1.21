@@ -113,7 +113,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:banana",
+          "name": "barklings:virana",
           "weight": 7
         },
         {
@@ -129,7 +129,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:grapes",
+          "name": "barklings:dry_berries",
           "weight": 7
         },
         {
@@ -145,7 +145,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "barklings:clover",
+          "name": "barklings:clover_carpet",
           "weight": 2
         }
       ],

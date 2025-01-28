@@ -32,6 +32,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                         ModItems.CRIMSON_DURIAN,
                         ModItems.RED_CAPAYA,
                         ModItems.BROWN_SPORSIMMON,
+                        ModItems.FLOWERING_LYCHEE,
                         ModItems.DRY_BERRIES,
                         ModItems.DUSK_BERRY,
                         Items.GLOW_BERRIES,

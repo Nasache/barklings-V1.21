@@ -63,10 +63,10 @@ public class ModDropHandler {
             drop = new ItemStack(ModItems.MARSH_STAR);
             dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.AZALEA_LEAVES)) {
-            drop = new ItemStack(ModItems.VIRANA);
+            drop = new ItemStack(ModItems.FLOWERING_LYCHEE);
             dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.FLOWERING_AZALEA_LEAVES)) {
-            drop = new ItemStack(ModItems.VIRANA);
+            drop = new ItemStack(ModItems.FLOWERING_LYCHEE);
             dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.BROWN_MUSHROOM_BLOCK)) {
             drop = new ItemStack(ModItems.BROWN_SPORSIMMON);
