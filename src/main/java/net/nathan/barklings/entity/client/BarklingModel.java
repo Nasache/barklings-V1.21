@@ -50,7 +50,7 @@ public class BarklingModel extends SinglePartEntityModel<BarklingEntity> impleme
                 .uv(27, 18).cuboid(-5.0F, -8.0F, -4.0F, 3.0F, 1.0F, 5.0F, new Dilation(0.001F))
                 .uv(29, 27).cuboid(-6.0F, -8.0F, -3.0F, 5.0F, 1.0F, 3.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-        ModelPartData heldItem = head.addChild("heldItem", ModelPartBuilder.create(), ModelTransform.pivot(1.0F, 3.75F, -1.0F));
+        ModelPartData heldItem = head.addChild("heldItem", ModelPartBuilder.create(), ModelTransform.pivot(-1.0F, 3.75F, -1.0F));
 
         ModelPartData legs = body.addChild("legs", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 

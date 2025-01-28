@@ -14,9 +14,9 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.nathan.barklings.BarklingsMain;
 import net.nathan.barklings.block.ModBlocks;
-import net.nathan.barklings.block.custom.BlueberryBush;
-import net.nathan.barklings.block.custom.GrapeBush;
-import net.nathan.barklings.block.custom.BloomberryBush;
+import net.nathan.barklings.block.custom.DuskBerryBush;
+import net.nathan.barklings.block.custom.DryBerryBush;
+import net.nathan.barklings.block.custom.BloomBerryBush;
 
 import java.util.List;
 
@@ -34,18 +34,18 @@ public class ModConfiguredFeatures {
 
         ConfiguredFeatures.register(context, PATCH_STRAWBERRY_BUSH, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig
-                        (BlockStateProvider.of((BlockState) ModBlocks.BLOOMBERRY_BUSH.getDefaultState()
-                                .with(BloomberryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+                        (BlockStateProvider.of((BlockState) ModBlocks.BLOOM_BERRY_BUSH.getDefaultState()
+                                .with(BloomBerryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
 
         ConfiguredFeatures.register(context, PATCH_GRAPE_BUSH, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig
-                        (BlockStateProvider.of((BlockState) ModBlocks.GRAPE_BUSH.getDefaultState()
-                                .with(GrapeBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+                        (BlockStateProvider.of((BlockState) ModBlocks.DRY_BERRY_BUSH.getDefaultState()
+                                .with(DryBerryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
 
         ConfiguredFeatures.register(context, PATCH_BLUEBERRY_BUSH, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig
-                        (BlockStateProvider.of((BlockState) ModBlocks.BLUEBERRY_BUSH.getDefaultState()
-                                .with(BlueberryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+                        (BlockStateProvider.of((BlockState) ModBlocks.DUSK_BERRY_BUSH.getDefaultState()
+                                .with(DuskBerryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
 
 
         register(context, GILDED_OAK_KEY, Feature.TREE, new TreeFeatureConfig.Builder(

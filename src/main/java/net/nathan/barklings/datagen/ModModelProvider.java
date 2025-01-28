@@ -26,16 +26,16 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerLantern(ModBlocks.LIVING_LANTERN);
 
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLOOMBERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
-            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.BLOOMBERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLOOM_BERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
+            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.BLOOM_BERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
         })));
 
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.GRAPE_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
-            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.GRAPE_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.DRY_BERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
+            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.DRY_BERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
         })));
 
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLUEBERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
-            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.BLUEBERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.DUSK_BERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
+            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.DUSK_BERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross));
         })));
 
 
@@ -68,21 +68,21 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 
-        itemModelGenerator.register(ModItems.CHERRIES, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VINANA, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ORANGE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TWILIGHT_POMEGRANATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.AURORA_CHERRIES, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VIRANA, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOLIND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NOCTURNATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.WAX_PEAR, Models.GENERATED);
         itemModelGenerator.register(ModItems.SNOWY_PLUM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.STARFRUIT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MARSH_STAR, Models.GENERATED);
         itemModelGenerator.register(ModItems.WARPED_MANGO, Models.GENERATED);
         itemModelGenerator.register(ModItems.CRIMSON_DURIAN, Models.GENERATED);
         itemModelGenerator.register(ModItems.RED_CAPAYA, Models.GENERATED);
         itemModelGenerator.register(ModItems.BROWN_SPORSIMMON, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.BLOOMBERRY, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GRAPES, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BLUEBERRY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLOOM_BERRY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DRY_BERRIES, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DUSK_BERRY, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.HIDDEN_VOICES_MUSIC_DISC, Models.GENERATED);
 

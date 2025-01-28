@@ -15,12 +15,12 @@ import net.nathan.barklings.world.tree.ModSaplingGenerators;
 
 public class ModBlocks {
 
-    public static final Block BLOOMBERRY_BUSH = registerBlockWithoutBlockItem("bloomberry_bush",
-            new BloomberryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block GRAPE_BUSH = registerBlockWithoutBlockItem("grape_bush",
-            new GrapeBush(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block BLUEBERRY_BUSH = registerBlockWithoutBlockItem("blueberry_bush",
-            new BlueberryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block BLOOM_BERRY_BUSH = registerBlockWithoutBlockItem("bloom_berry_bush",
+            new BloomBerryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block DRY_BERRY_BUSH = registerBlockWithoutBlockItem("dry_berry_bush",
+            new DryBerryBush(AbstractBlock.Settings.create().mapColor(MapColor.LIME).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block DUSK_BERRY_BUSH = registerBlockWithoutBlockItem("dusk_berry_bush",
+            new DuskBerryBush(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
 
     public static final Block CLOVER_CARPET = registerBlock("clover_carpet",
             new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)));

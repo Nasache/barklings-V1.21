@@ -39,13 +39,13 @@ public class ModRegistries {
     }
 
     private static void registerModCompostables () {
-        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.CHERRIES, 0.65f);
-        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.VINANA, 0.65f);
-        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.ORANGE, 0.65f);
-        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.TWILIGHT_POMEGRANATE, 0.65f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.AURORA_CHERRIES, 0.65f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.VIRANA, 0.65f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.SOLIND, 0.65f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.NOCTURNATE, 0.65f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.WAX_PEAR, 0.65f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.SNOWY_PLUM, 0.65f);
-        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.STARFRUIT, 0.65f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.MARSH_STAR, 0.65f);
 
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.CRIMSON_DURIAN, 0.65f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.WARPED_MANGO, 0.65f);
@@ -53,9 +53,9 @@ public class ModRegistries {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.RED_CAPAYA, 0.65f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.BROWN_SPORSIMMON, 0.65f);
 
-        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.BLUEBERRY, 0.3f);
-        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.BLOOMBERRY, 0.3f);
-        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.GRAPES, 0.3f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.DUSK_BERRY, 0.3f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.BLOOM_BERRY, 0.3f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.DRY_BERRIES, 0.3f);
 
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.CLOVER_CARPET.asItem(), 0.3f);
 

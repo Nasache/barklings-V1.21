@@ -23,9 +23,9 @@ public class BarklingsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLOOMBERRY_BUSH, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUEBERRY_BUSH, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GRAPE_BUSH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLOOM_BERRY_BUSH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DUSK_BERRY_BUSH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DRY_BERRY_BUSH, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CLOVER_CARPET, RenderLayer.getCutout());
 

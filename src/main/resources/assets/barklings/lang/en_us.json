@@ -24,25 +24,25 @@
   "block.barklings.gilded_oak_leaves": "Gilded Oak Leaves",
 
   "block.barklings.gilded_oak_sapling": "Gilded Oak Sapling",
-  "block.barklings.bloomberry_bush": "Bloomberry Bush",
-  "block.barklings.blueberry_bush": "Blueberry Bush", //
-  "block.barklings.grape_bush": "Grape Bush", //
+  "block.barklings.bloom_berry_bush": "Bloom Berry Bush",
+  "block.barklings.dusk_berry_bush": "Dusk Berry Bush",
+  "block.barklings.dry_berry_bush": "Dry Berry Bush",
 
-  "item.barklings.cherries": "Cherries", //
-  "item.barklings.orange": "Orange", //
-  "item.barklings.vinana": "Vinana",
+  "item.barklings.aurora_cherries": "Aurora Cherries",
+  "item.barklings.solind": "Solind",
+  "item.barklings.virana": "Virana",
   "item.barklings.snowy_plum": "Snowy Plum",
-  "item.barklings.twilight_pomegranate": "Twilight Pomegranate",
-  "item.barklings.starfruit": "Starfruit", //
+  "item.barklings.nocturnate": "Nocturnate",
+  "item.barklings.marsh_star": "Marsh Star",
   "item.barklings.wax_pear": "Wax Pear",
   "item.barklings.warped_mango": "Warped Mango",
   "item.barklings.crimson_durian": "Crimson Durian",
   "item.barklings.red_capaya": "Red Capaya",
   "item.barklings.brown_sporsimmon": "Brown Sporsimmon",
 
-  "item.barklings.bloomberry": "Bloomberry",
-  "item.barklings.grapes": "Grapes", //
-  "item.barklings.blueberry": "Blueberry", //
+  "item.barklings.bloom_berry": "Bloom Berry",
+  "item.barklings.dry_berries": "Dry Berries",
+  "item.barklings.dusk_berry": "Dusk Berry",
 
   "block.barklings.clover": "Clover Carpet",
 

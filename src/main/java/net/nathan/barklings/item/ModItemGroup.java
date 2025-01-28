@@ -44,22 +44,22 @@ public class ModItemGroup {
 
                         entries.add(ModBlocks.LIVING_LANTERN);
 
-                        entries.add(ModItems.CHERRIES);
-                        entries.add(ModItems.VINANA);
-                        entries.add(ModItems.ORANGE);
+                        entries.add(ModItems.AURORA_CHERRIES);
+                        entries.add(ModItems.VIRANA);
+                        entries.add(ModItems.SOLIND);
                         entries.add(ModItems.SNOWY_PLUM);
-                        entries.add(ModItems.TWILIGHT_POMEGRANATE);
+                        entries.add(ModItems.NOCTURNATE);
                         entries.add(ModItems.WAX_PEAR);
-                        entries.add(ModItems.STARFRUIT);
+                        entries.add(ModItems.MARSH_STAR);
 
                         entries.add(ModItems.RED_CAPAYA);
                         entries.add(ModItems.BROWN_SPORSIMMON);
                         entries.add(ModItems.CRIMSON_DURIAN);
                         entries.add(ModItems.WARPED_MANGO);
 
-                        entries.add(ModItems.BLOOMBERRY);
-                        entries.add(ModItems.BLUEBERRY);
-                        entries.add(ModItems.GRAPES);
+                        entries.add(ModItems.BLOOM_BERRY);
+                        entries.add(ModItems.DUSK_BERRY);
+                        entries.add(ModItems.DRY_BERRIES);
 
                     }).build());
 
