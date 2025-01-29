@@ -22,7 +22,7 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 
 
-        blockStateModelGenerator.registerFlowerbed(ModBlocks.CLOVER_CARPET);
+        //blockStateModelGenerator.registerFlowerbed(ModBlocks.CLOVER_CARPET);
 
         blockStateModelGenerator.registerLantern(ModBlocks.LIVING_LANTERN);
 

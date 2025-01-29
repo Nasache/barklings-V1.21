@@ -6,7 +6,7 @@
     {
       "weight": 4,
       "element": {
-        "location": "barklings:birch_line",
+        "location": "barklings:birch_i",
         "processors": "minecraft:empty",
         "projection": "terrain_matching",
         "element_type": "minecraft:single_pool_element"
@@ -15,7 +15,7 @@
     {
       "weight": 3,
       "element": {
-        "location": "barklings:birch_corner",
+        "location": "barklings:birch_l",
         "processors": "minecraft:empty",
         "projection": "terrain_matching",
         "element_type": "minecraft:single_pool_element"
@@ -24,7 +24,7 @@
     {
       "weight": 4,
       "element": {
-        "location": "barklings:birch_triple",
+        "location": "barklings:birch_t",
         "processors": "minecraft:empty",
         "projection": "terrain_matching",
         "element_type": "minecraft:single_pool_element"
@@ -33,7 +33,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "barklings:birch_small_house1",
+        "location": "barklings:birch_house1",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -42,7 +42,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "barklings:birch_small_house2",
+        "location": "barklings:birch_house2",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -51,7 +51,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "barklings:birch_tall_house",
+        "location": "barklings:birch_house3",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -60,7 +60,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "barklings:birch_wide_house",
+        "location": "barklings:birch_house4",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
