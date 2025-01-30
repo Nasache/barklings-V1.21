@@ -5,7 +5,7 @@
     {
       "weight": 4,
       "element": {
-        "location": "barklings:cherry_line",
+        "location": "barklings:cherry_i",
         "processors": "minecraft:empty",
         "projection": "terrain_matching",
         "element_type": "minecraft:single_pool_element"
@@ -14,7 +14,7 @@
     {
       "weight": 3,
       "element": {
-        "location": "barklings:cherry_corner",
+        "location": "barklings:cherry_l",
         "processors": "minecraft:empty",
         "projection": "terrain_matching",
         "element_type": "minecraft:single_pool_element"
@@ -23,7 +23,7 @@
     {
       "weight": 4,
       "element": {
-        "location": "barklings:cherry_triple",
+        "location": "barklings:cherry_t",
         "processors": "minecraft:empty",
         "projection": "terrain_matching",
         "element_type": "minecraft:single_pool_element"
@@ -32,7 +32,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "barklings:cherry_small_house1",
+        "location": "barklings:cherry_house1",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -41,7 +41,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "barklings:cherry_small_house2",
+        "location": "barklings:cherry_house2",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -50,7 +50,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "barklings:cherry_tall_house",
+        "location": "barklings:cherry_house3",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -59,7 +59,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "barklings:cherry_wide_house",
+        "location": "barklings:cherry_house4",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
