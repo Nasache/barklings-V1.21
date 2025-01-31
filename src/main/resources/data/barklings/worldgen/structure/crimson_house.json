@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:jigsaw",
+
+  "start_pool": "barklings:crimson_house/start_pool",
+
+  "size": 5,
+
+  "max_distance_from_center": 80,
+
+  "biomes": "#barklings:has_structure/crimson_house",
+
+  "step": "underground_structures",
+
+  "start_height": {
+    "type": "minecraft:uniform",
+    "min_inclusive": {
+      "absolute": 40
+    },
+    "max_inclusive": {
+      "absolute": 90
+    }
+  },
+
+  "use_expansion_hack": false,
+
+  "spawn_overrides": {},
+
+  "terrain_adaptation": "beard_thin",
+
+  "cannot_spawn_in_liquid": true
+}

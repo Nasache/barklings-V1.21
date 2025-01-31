@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "barklings:azalea_house",
+      "weight": 20
+    }
+  ],
+  "placement": {
+    "salt": 1629384786,
+
+    "spacing": 25,
+
+    "separation": 10,
+
+    "type": "minecraft:random_spread"
+  }
+}

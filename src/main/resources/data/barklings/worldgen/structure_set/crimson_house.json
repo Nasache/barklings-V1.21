@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "barklings:crimson_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1629338926,
+
+    "spacing": 30,
+
+    "separation": 5,
+
+    "type": "minecraft:random_spread"
+  }
+}
