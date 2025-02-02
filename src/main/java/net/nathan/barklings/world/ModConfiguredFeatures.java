@@ -17,6 +17,7 @@ import net.nathan.barklings.block.ModBlocks;
 import net.nathan.barklings.block.custom.DuskBerryBush;
 import net.nathan.barklings.block.custom.DryBerryBush;
 import net.nathan.barklings.block.custom.BloomBerryBush;
+import net.nathan.barklings.world.features.ModFeatures;
 
 import java.util.List;
 
@@ -25,6 +26,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_STRAWBERRY_BUSH = registerKey("strawberry_bush");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_GRAPE_BUSH = registerKey("grape_bush");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_BLUEBERRY_BUSH = registerKey("blueberry_bush");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_MANGO_POD = registerKey("mango_pod");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> GILDED_OAK_KEY = registerKey("gilded_oak");
 
@@ -46,6 +49,9 @@ public class ModConfiguredFeatures {
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig
                         (BlockStateProvider.of((BlockState) ModBlocks.DUSK_BERRY_BUSH.getDefaultState()
                                 .with(DuskBerryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+
+        register(context, PATCH_MANGO_POD, ModFeatures.WARPED_MANGO_FEATURE,
+                new DefaultFeatureConfig());
 
 
         register(context, GILDED_OAK_KEY, Feature.TREE, new TreeFeatureConfig.Builder(

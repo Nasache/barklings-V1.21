@@ -69,6 +69,10 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
                 .properties(StatePredicate.Builder.create().exactMatch(BloomBerryBush.AGE, 3));
         this.addDrop(ModBlocks.BLOOM_BERRY_BUSH, this.cropDrops(ModBlocks.BLOOM_BERRY_BUSH, ModItems.BLOOM_BERRY, Items.AIR, builder3));
 
+        LootCondition.Builder builder4 = BlockStatePropertyLootCondition.builder(ModBlocks.WARPED_MANGO_POD)
+                .properties(StatePredicate.Builder.create().exactMatch(BloomBerryBush.AGE, 3));
+        this.addDrop(ModBlocks.WARPED_MANGO_POD, this.cropDrops(ModBlocks.WARPED_MANGO_POD, ModItems.WARPED_MANGO, Items.AIR, builder4));
+
     }
 
 

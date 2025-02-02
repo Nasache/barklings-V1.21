@@ -18,5 +18,8 @@ public class ModFlowerGeneration {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DARK_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_BLUEBERRY_PLACED_KEY);
 
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.WARPED_FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_MANGO_PLACED_KEY);
+
     }
 }

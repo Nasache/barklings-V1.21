@@ -22,6 +22,10 @@ public class ModBlocks {
     public static final Block DUSK_BERRY_BUSH = registerBlockWithoutBlockItem("dusk_berry_bush",
             new DuskBerryBush(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
 
+    public static final Block WARPED_MANGO_POD = registerBlockWithoutBlockItem("warped_mango_pod",
+            new WarpedMangoPod(AbstractBlock.Settings.create().mapColor(MapColor.CYAN).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
+
+
     public static final Block CLOVER_CARPET = registerBlock("clover_carpet",
             new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)));
 

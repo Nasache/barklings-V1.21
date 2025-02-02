@@ -30,7 +30,7 @@ public class ModItems {
             new Item(new Item.Settings().food(ModFoodComponents.MARSH_STAR)));
 
     public static final Item WARPED_MANGO = registerItem("warped_mango",
-            new Item(new Item.Settings().food(ModFoodComponents.WARPED_MANGO)));
+            new AliasedBlockItem(ModBlocks.WARPED_MANGO_POD, new Item.Settings().food(ModFoodComponents.WARPED_MANGO)));
     public static final Item CRIMSON_DURIAN = registerItem("crimson_durian",
             new Item(new Item.Settings().food(ModFoodComponents.CRIMSON_DURIAN)));
 

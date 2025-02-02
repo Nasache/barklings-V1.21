@@ -39,6 +39,11 @@ public class ModModelProvider extends FabricModelProvider {
         })));
 
 
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.WARPED_MANGO_POD).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {
+            return BlockStateVariant.create().put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.WARPED_MANGO_POD, "_stage" + stage, Models.CROSS, TextureMap::cross));
+        })));
+
+
         BlockStateModelGenerator.BlockTexturePool gildedOakPlanksTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.GILDED_OAK_PLANKS);
         gildedOakPlanksTexturePool.stairs(ModBlocks.GILDED_OAK_STAIRS);
         gildedOakPlanksTexturePool.slab(ModBlocks.GILDED_OAK_SLAB);

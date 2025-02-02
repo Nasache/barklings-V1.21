@@ -19,7 +19,7 @@ public class BarklingVariantCalculator {
             return BarklingVariant.byId(random.nextInt(4));
         } else if (registryEntry.matchesKey(BiomeKeys.BIRCH_FOREST) || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_BIRCH_FOREST)) {
             return BarklingVariant.byId(2 + random.nextInt(8));
-        } else if (registryEntry.matchesKey(BiomeKeys.DARK_FOREST) || registryEntry.matchesKey(BiomeKeys.DEEP_DARK)) {
+        } else if (registryEntry.matchesKey(BiomeKeys.DARK_FOREST)) {
             return BarklingVariant.byId(10 + random.nextInt(8));
         } else if (registryEntry.matchesKey(BiomeKeys.TAIGA) || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_PINE_TAIGA)
                 || registryEntry.matchesKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA) || registryEntry.matchesKey(BiomeKeys.SNOWY_TAIGA)
@@ -56,7 +56,8 @@ public class BarklingVariantCalculator {
             return BarklingVariant.byId(40 + random.nextInt(3));
         } else if (registryEntry.matchesKey(BiomeKeys.MUSHROOM_FIELDS)) {
             return BarklingVariant.byId(51 + random.nextInt(5));
-        } else if (registryEntry.matchesKey(BiomeKeys.LUSH_CAVES)) {
+        } else if (registryEntry.matchesKey(BiomeKeys.LUSH_CAVES) || registryEntry.matchesKey(BiomeKeys.DRIPSTONE_CAVES)
+                || registryEntry.matchesKey(BiomeKeys.DEEP_DARK)) {
             return BarklingVariant.byId(56 + random.nextInt(4));
         } else {
             return BarklingVariant.byId(random.nextInt(4));

@@ -10,6 +10,7 @@ import net.nathan.barklings.item.ModItemGroup;
 import net.nathan.barklings.item.ModItems;
 import net.nathan.barklings.sound.ModSounds;
 import net.nathan.barklings.util.ModRegistries;
+import net.nathan.barklings.world.features.ModFeatures;
 import net.nathan.barklings.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,5 +36,7 @@ public class BarklingsMain implements ModInitializer {
 
 		ModBlockEntities.registerBlockEntities();
 		ModBoats.registerBoats();
+
+		ModFeatures.registerFeatures();
 	}
 }
