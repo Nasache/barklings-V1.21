@@ -21,5 +21,7 @@ public class ModFlowerGeneration {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.WARPED_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_MANGO_PLACED_KEY);
 
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.CRIMSON_FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_DURIAN_PLACED_KEY);
     }
 }

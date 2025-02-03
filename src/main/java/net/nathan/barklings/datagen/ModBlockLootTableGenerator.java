@@ -18,9 +18,7 @@ import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.nathan.barklings.block.ModBlocks;
-import net.nathan.barklings.block.custom.DuskBerryBush;
-import net.nathan.barklings.block.custom.DryBerryBush;
-import net.nathan.barklings.block.custom.BloomBerryBush;
+import net.nathan.barklings.block.custom.*;
 import net.nathan.barklings.item.ModItems;
 
 
@@ -70,8 +68,12 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
         this.addDrop(ModBlocks.BLOOM_BERRY_BUSH, this.cropDrops(ModBlocks.BLOOM_BERRY_BUSH, ModItems.BLOOM_BERRY, Items.AIR, builder3));
 
         LootCondition.Builder builder4 = BlockStatePropertyLootCondition.builder(ModBlocks.WARPED_MANGO_POD)
-                .properties(StatePredicate.Builder.create().exactMatch(BloomBerryBush.AGE, 3));
+                .properties(StatePredicate.Builder.create().exactMatch(WarpedMangoPod.AGE, 3));
         this.addDrop(ModBlocks.WARPED_MANGO_POD, this.cropDrops(ModBlocks.WARPED_MANGO_POD, ModItems.WARPED_MANGO, Items.AIR, builder4));
+
+        LootCondition.Builder builder5 = BlockStatePropertyLootCondition.builder(ModBlocks.CRIMSON_DURIAN_POD)
+                .properties(StatePredicate.Builder.create().exactMatch(CrimsonDurianPod.AGE, 3));
+        this.addDrop(ModBlocks.CRIMSON_DURIAN_POD, this.cropDrops(ModBlocks.CRIMSON_DURIAN_POD, ModItems.CRIMSON_DURIAN, Items.AIR, builder5));
 
     }
 

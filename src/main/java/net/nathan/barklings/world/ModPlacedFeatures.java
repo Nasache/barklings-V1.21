@@ -7,6 +7,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
@@ -21,6 +22,7 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> PATCH_BLUEBERRY_PLACED_KEY = registerKey("blueberry_placed");
 
     public static final RegistryKey<PlacedFeature> PATCH_MANGO_PLACED_KEY = registerKey("mango_placed");
+    public static final RegistryKey<PlacedFeature> PATCH_DURIAN_PLACED_KEY = registerKey("durian_placed");
 
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
@@ -38,23 +40,17 @@ public class ModPlacedFeatures {
                 new PlacementModifier[]{RarityFilterPlacementModifier.of(75), SquarePlacementModifier.of(),
                         PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of()});
 
-        register(context, PATCH_MANGO_PLACED_KEY,
-                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PATCH_MANGO_POD),
-                new PlacementModifier[]{
-                        CountPlacementModifier.of(3),
-                        SquarePlacementModifier.of(),
-                        HeightRangePlacementModifier.uniform(
-                                YOffset.getBottom(),
-                                YOffset.fixed(120)
-                        ), EnvironmentScanPlacementModifier.of(
-                        Direction.DOWN,
-                        BlockPredicate.bothOf(
-                                BlockPredicate.not(BlockPredicate.IS_AIR),
-                                BlockPredicate.matchingBlocks(Blocks.WARPED_WART_BLOCK)
-                        ),
-                        3
-                ),
-                        BiomePlacementModifier.of()});
+        register(context, PATCH_MANGO_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PATCH_MANGO_POD),
+                new PlacementModifier[]{CountPlacementModifier.of(20), SquarePlacementModifier.of(),
+                        PlacedFeatures.BOTTOM_TO_TOP_RANGE, EnvironmentScanPlacementModifier.of(Direction.UP,
+                        BlockPredicate.solid(), BlockPredicate.IS_AIR, 12),
+                        RandomOffsetPlacementModifier.vertically(ConstantIntProvider.create(-1)), BiomePlacementModifier.of()});
+
+        register(context, PATCH_DURIAN_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PATCH_DURIAN_POD),
+                new PlacementModifier[]{CountPlacementModifier.of(20), SquarePlacementModifier.of(),
+                        PlacedFeatures.BOTTOM_TO_TOP_RANGE, EnvironmentScanPlacementModifier.of(Direction.UP,
+                        BlockPredicate.solid(), BlockPredicate.IS_AIR, 12),
+                        RandomOffsetPlacementModifier.vertically(ConstantIntProvider.create(-1)), BiomePlacementModifier.of()});
     }
 
 

@@ -14,10 +14,7 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.nathan.barklings.BarklingsMain;
 import net.nathan.barklings.block.ModBlocks;
-import net.nathan.barklings.block.custom.DuskBerryBush;
-import net.nathan.barklings.block.custom.DryBerryBush;
-import net.nathan.barklings.block.custom.BloomBerryBush;
-import net.nathan.barklings.world.features.ModFeatures;
+import net.nathan.barklings.block.custom.*;
 
 import java.util.List;
 
@@ -28,6 +25,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_BLUEBERRY_BUSH = registerKey("blueberry_bush");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_MANGO_POD = registerKey("mango_pod");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_DURIAN_POD = registerKey("durian_pod");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> GILDED_OAK_KEY = registerKey("gilded_oak");
 
@@ -50,8 +48,13 @@ public class ModConfiguredFeatures {
                         (BlockStateProvider.of((BlockState) ModBlocks.DUSK_BERRY_BUSH.getDefaultState()
                                 .with(DuskBerryBush.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
 
-        register(context, PATCH_MANGO_POD, ModFeatures.WARPED_MANGO_FEATURE,
-                new DefaultFeatureConfig());
+        ConfiguredFeatures.register(context, PATCH_MANGO_POD, Feature.SIMPLE_BLOCK,
+                new SimpleBlockFeatureConfig(BlockStateProvider.of((BlockState) ModBlocks.WARPED_MANGO_POD.getDefaultState()
+                        .with(WarpedMangoPod.AGE, 3))));
+
+        ConfiguredFeatures.register(context, PATCH_DURIAN_POD, Feature.SIMPLE_BLOCK,
+                new SimpleBlockFeatureConfig(BlockStateProvider.of((BlockState) ModBlocks.CRIMSON_DURIAN_POD.getDefaultState()
+                        .with(CrimsonDurianPod.AGE, 3))));
 
 
         register(context, GILDED_OAK_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
