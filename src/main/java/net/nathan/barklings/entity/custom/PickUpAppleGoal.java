@@ -156,6 +156,10 @@ public class PickUpAppleGoal extends Goal {
 
     @Override
     public boolean canStart() {
+        if (barkling.isBaby()) {
+            return false;
+        }
+
         if (barkling.getDataTracker().get(BarklingEntity.IS_ADMIRING)) {
             return true;
         }

@@ -79,7 +79,7 @@ public class CrimsonDurianPod extends PlantBlock implements Fertilizable {
 
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         int i = (Integer)state.get(AGE);
-        if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
+        if (i < 3 && random.nextInt(5) == 0) {
             BlockState blockState = (BlockState)state.with(AGE, i + 1);
             world.setBlockState(pos, blockState, 2);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, Emitter.of(blockState));
@@ -133,9 +133,9 @@ public class CrimsonDurianPod extends PlantBlock implements Fertilizable {
 
     static {
         AGE = Properties.AGE_3;
-        SMALL_SHAPE = Block.createCuboidShape(5.0, 12.0, 5.0, 11.0, 16.0, 11.0);
-        MEDIUM_SHAPE = Block.createCuboidShape(4.0, 6.0, 4.0, 12.0, 16.0, 12.0);
-        LARGE_SHAPE = Block.createCuboidShape(3.0, 2.0, 3.0, 13.0, 16.0, 13.0);
+        SMALL_SHAPE = Block.createCuboidShape(4.0, 12.0, 4.0, 12.0, 16.0, 12.0);
+        MEDIUM_SHAPE = Block.createCuboidShape(3.0, 8.0, 3.0, 13.0, 16.0, 13.0);
+        LARGE_SHAPE = Block.createCuboidShape(3.0, 3.0, 3.0, 13.0, 16.0, 13.0);
         FULL_SHAPE = Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
     }
 }

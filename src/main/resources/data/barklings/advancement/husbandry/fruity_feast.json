@@ -17,6 +17,46 @@
       },
       "trigger": "minecraft:consume_item"
     },
+    "flowering_lychee": {
+      "conditions": {
+        "item": {
+          "items": "barklings:flowering_lychee"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "red_capaya": {
+      "conditions": {
+        "item": {
+          "items": "barklings:red_capaya"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "brown_sporsimmon": {
+      "conditions": {
+        "item": {
+          "items": "barklings:brown_sporsimmon"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "crimson_durian": {
+      "conditions": {
+        "item": {
+          "items": "barklings:crimson_durian"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "warped_mango": {
+      "conditions": {
+        "item": {
+          "items": "barklings:warped_mango"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
     "dusk_berry": {
       "conditions": {
         "item": {
@@ -170,7 +210,13 @@
       "bloom_berry"
     ],
     [
+      "brown_sporsimmon"
+    ],
+    [
       "chorus_fruit"
+    ],
+    [
+      "crimson_durian"
     ],
     [
       "dusk_berry"
@@ -180,6 +226,9 @@
     ],
     [
       "enchanted_golden_apple"
+    ],
+    [
+      "flowering_lychee"
     ],
     [
       "glow_berries"
@@ -200,6 +249,9 @@
       "pumpkin_pie"
     ],
     [
+      "red_capaya"
+    ],
+    [
       "snowy_plum"
     ],
     [
@@ -207,6 +259,9 @@
     ],
     [
       "sweet_berries"
+    ],
+    [
+      "warped_mango"
     ],
     [
       "wax_pear"

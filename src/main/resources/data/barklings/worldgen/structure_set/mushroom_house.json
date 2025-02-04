@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "barklings:mushroom_house",
+      "weight": 40
+    }
+  ],
+  "placement": {
+    "salt": 1629318256,
+
+    "spacing": 20,
+
+    "separation": 5,
+
+    "type": "minecraft:random_spread"
+  }
+}

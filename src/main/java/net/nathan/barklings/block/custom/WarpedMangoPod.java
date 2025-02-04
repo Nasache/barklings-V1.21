@@ -79,7 +79,7 @@ public class WarpedMangoPod extends PlantBlock implements Fertilizable {
 
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         int i = (Integer)state.get(AGE);
-        if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
+        if (i < 3 && random.nextInt(5) == 0) {
             BlockState blockState = (BlockState)state.with(AGE, i + 1);
             world.setBlockState(pos, blockState, 2);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, Emitter.of(blockState));

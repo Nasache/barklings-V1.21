@@ -36,44 +36,37 @@ public class ModDropHandler {
             isShears = toolStack.isOf(Items.SHEARS);
         }
 
-        if (includesSilkTouch || isShears) return;
+        boolean isMushroomBlock = state.isOf(Blocks.BROWN_MUSHROOM_BLOCK) || state.isOf(Blocks.RED_MUSHROOM_BLOCK);
+
+        if (includesSilkTouch || (isShears && !isMushroomBlock)) {
+            return;
+        }
 
         ItemStack drop = null;
         float dropChance = 0.005f;
 
         if (state.isOf(Blocks.SPRUCE_LEAVES)) {
             drop = new ItemStack(ModItems.SNOWY_PLUM);
-            dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.BIRCH_LEAVES)) {
             drop = new ItemStack(ModItems.WAX_PEAR);
-            dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.JUNGLE_LEAVES)) {
             drop = new ItemStack(ModItems.VIRANA);
-            dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.CHERRY_LEAVES)) {
             drop = new ItemStack(ModItems.AURORA_CHERRIES);
-            dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.DARK_OAK_LEAVES)) {
             drop = new ItemStack(ModItems.NOCTURNATE);
-            dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.ACACIA_LEAVES)) {
             drop = new ItemStack(ModItems.SOLIND);
-            dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.MANGROVE_LEAVES)) {
             drop = new ItemStack(ModItems.MARSH_STAR);
-            dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.AZALEA_LEAVES)) {
             drop = new ItemStack(ModItems.FLOWERING_LYCHEE);
-            dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.FLOWERING_AZALEA_LEAVES)) {
             drop = new ItemStack(ModItems.FLOWERING_LYCHEE);
-            dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.BROWN_MUSHROOM_BLOCK)) {
             drop = new ItemStack(ModItems.BROWN_SPORSIMMON);
-            dropChance = 0.5f; //TEST
         } else if (state.isOf(Blocks.RED_MUSHROOM_BLOCK)) {
             drop = new ItemStack(ModItems.RED_CAPAYA);
-            dropChance = 0.5f; //TEST
         }
 
         if (drop != null && world.getRandom().nextFloat() < dropChance) {
