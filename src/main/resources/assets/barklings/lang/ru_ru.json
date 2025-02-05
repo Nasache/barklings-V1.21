@@ -1,0 +1,87 @@
+{
+  "itemgroup.barklings": "Barklings",
+
+  "block.barklings.gilded_oak_planks": "Доски из Золочёного Дуба",
+  "block.barklings.gilded_oak_stairs": "Ступеньки из Золочёного Дуба",
+  "block.barklings.gilded_oak_slab": "Плита из Золочёного Дуба",
+  "block.barklings.gilded_oak_button": "Кнопка из Золочёного Дуба",
+  "block.barklings.gilded_oak_pressure_plate": "Нажимная Плита из Золочёного Дуба",
+  "block.barklings.gilded_oak_fence": "Забор из Золочёного Дуба",
+  "block.barklings.gilded_oak_fence_gate": "Калитка из Золочёного Дуба",
+  "block.barklings.gilded_oak_door": "Дверь из Золочёного Дуба",
+  "block.barklings.gilded_oak_trapdoor": "Люк из Золочёного Дуба",
+  "block.barklings.gilded_oak_log": "Бревно Золочёного Дуба",
+  "block.barklings.gilded_oak_wood": "Золочёный Дуб",
+  "block.barklings.stripped_gilded_oak_log": "Обтёсанное Бревно Золочёного Дуба",
+  "block.barklings.stripped_gilded_oak_wood": "Обтёсанная Древесина Золочёного Дуба",
+
+  "block.barklings.gilded_oak_sign": "Табличка из Золочёного Дуба",
+  "block.barklings.gilded_oak_hanging_sign": "Подвесная Табличка из Золочёного Дуба",
+
+  "item.barklings.gilded_oak_boat": "Лодка из Золочёного Дуба",
+  "item.barklings.gilded_oak_chest_boat": "Грузовая Лодка из Золочёного Дуба",
+
+  "block.barklings.gilded_oak_leaves": "Листья Золочёного Дуба",
+
+  "block.barklings.gilded_oak_sapling": "Саженец Золочёного Дуба",
+  "block.barklings.bloom_berry_bush": "Куст Цветущих Ягод",
+  "block.barklings.dusk_berry_bush": "Куст Сумеречных Ягод",
+  "block.barklings.dry_berry_bush": "Куст Сухих Ягод",
+
+  "item.barklings.aurora_cherries": "Вишни Авроры",
+  "item.barklings.solind": "Солинд",
+  "item.barklings.virana": "Виран",
+  "item.barklings.snowy_plum": "Снежная Слива",
+  "item.barklings.nocturnate": "Ноктурнат",
+  "item.barklings.marsh_star": "Болотная Звезда",
+  "item.barklings.wax_pear": "Восковая Груша",
+  "item.barklings.warped_mango": "Искажённый Манго",
+  "item.barklings.crimson_durian": "Багровый Дуриан",
+  "item.barklings.red_capaya": "Красная Капайя",
+  "item.barklings.brown_sporsimmon": "Коричневый Спорсиммон",
+  "item.barklings.flowering_lychee": "Цветущий Личи",
+
+  "item.barklings.bloom_berry": "Цветущая Ягода",
+  "item.barklings.dry_berries": "Сухие Ягоды",
+  "item.barklings.dusk_berry": "Сумеречная Ягода",
+
+  "block.barklings.warped_mango_pod": "Стручок Искажённого Манго",
+  "block.barklings.crimson_durian_pod": "Коробочка Багрового Дуриана",
+
+  "block.barklings.clover_carpet": "Ковёр из Клевера",
+
+  "block.barklings.living_lantern": "Живой Фонарь",
+
+  "item.barklings.barkling_spawn_egg": "Яйцо Призыва Барклинга",
+
+  "item.barklings.hidden_voices_music_disc": "§bМузыкальная Пластинка§b",
+  "item.barklings.hidden_voices_music_disc.desc": "Nathan - Скрытые Голоса",
+
+  "item.tag.barklings.fruit": "Фрукты",
+  "item.tag.barklings.gilded_oak_logs": "Брёвна Золочёного Дуба",
+
+  "painting.barklings.natures_palette.title": "Палитра Природы",
+  "painting.barklings.natures_palette.author": "Nathan",
+  "painting.barklings.the_forests_child.title": "Дитя Леса",
+  "painting.barklings.the_forests_child.author": "Nathan",
+
+  "advancements.barklings.fruity_feast.title": "Фруктовый Праздник",
+  "advancements.barklings.fruity_feast.description": "Съешьте Каждый Фрукт!",
+
+  "advancements.barklings.find_forest_village.title": "Скрытая Деревушка",
+  "advancements.barklings.find_forest_village.description": "Найдите Деревню Барклингов",
+
+  "advancements.barklings.find_every_forest_village.title": "Лесной Исследователь",
+  "advancements.barklings.find_every_forest_village.description": "Откройте Все Виды Деревень Барклингов",
+
+  "advancements.barklings.find_forest_hermit.title": "Укрытие Отшельника",
+  "advancements.barklings.find_forest_hermit.description": "Обнаружьте Жилище Отшельника-Барклинга",
+
+  "advancements.barklings.find_every_forest_hermit.title": "Чемпион по Пряткам",
+  "advancements.barklings.find_every_forest_hermit.description": "Найдите Все Виды Жилищ Отшельников-Барклингов",
+
+  "advancements.barklings.gilded_oak_sapling.title": "Золото Природы",
+  "advancements.barklings.gilded_oak_sapling.description": "Получите в Подарок Золочёный Саженец",
+
+  "entity.barklings.barkling": "Барклинг"
+}

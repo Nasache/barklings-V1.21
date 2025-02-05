@@ -1,0 +1,89 @@
+{
+  "itemgroup.barklings": "Barklings",
+
+  "block.barklings.gilded_oak_planks": "Gilded Oak Planks",
+  "block.barklings.gilded_oak_stairs": "Gilded Oak Stairs",
+  "block.barklings.gilded_oak_slab": "Gilded Oak Slab",
+  "block.barklings.gilded_oak_button": "Gilded Oak Button",
+  "block.barklings.gilded_oak_pressure_plate": "Gilded Oak Pressure Plate",
+  "block.barklings.gilded_oak_fence": "Gilded Oak Fence",
+  "block.barklings.gilded_oak_fence_gate": "Gilded Oak Fence Gate",
+  "block.barklings.gilded_oak_door": "Gilded Oak Door",
+  "block.barklings.gilded_oak_trapdoor": "Gilded Oak Trapdoor",
+  "block.barklings.gilded_oak_log": "Gilded Oak Log",
+  "block.barklings.gilded_oak_wood": "Gilded Oak Wood",
+  "block.barklings.stripped_gilded_oak_log": "Stripped Gilded Oak Log",
+  "block.barklings.stripped_gilded_oak_wood": "Stripped Gilded Oak Wood",
+
+  "block.barklings.gilded_oak_sign": "Gilded Oak Sign",
+  "block.barklings.gilded_oak_hanging_sign": "Gilded Oak Hanging Sign",
+
+  "item.barklings.gilded_oak_boat": "Gilded Oak Boat",
+  "item.barklings.gilded_oak_chest_boat": "Gilded Oak Chest Boat",
+
+  "block.barklings.gilded_oak_leaves": "Gilded Oak Leaves",
+
+  "block.barklings.gilded_oak_sapling": "Gilded Oak Sapling",
+  "block.barklings.bloom_berry_bush": "Bloom Berry Bush",
+  "block.barklings.dusk_berry_bush": "Dusk Berry Bush",
+  "block.barklings.dry_berry_bush": "Dry Berry Bush",
+
+  "item.barklings.aurora_cherries": "Aurora Cherries",
+  "item.barklings.solind": "Solind",
+  "item.barklings.virana": "Virana",
+  "item.barklings.snowy_plum": "Snowy Plum",
+  "item.barklings.nocturnate": "Nocturnate",
+  "item.barklings.marsh_star": "Marsh Star",
+  "item.barklings.wax_pear": "Wax Pear",
+  "item.barklings.warped_mango": "Warped Mango",
+  "item.barklings.crimson_durian": "Crimson Durian",
+  "item.barklings.red_capaya": "Red Capaya",
+  "item.barklings.brown_sporsimmon": "Brown Sporsimmon",
+  "item.barklings.flowering_lychee": "Flowering Lychee",
+
+  "item.barklings.bloom_berry": "Bloom Berry",
+  "item.barklings.dry_berries": "Dry Berries",
+  "item.barklings.dusk_berry": "Dusk Berry",
+
+  "block.barklings.warped_mango_pod": "Warped Mango Pod",
+  "block.barklings.crimson_durian_pod": "Crimson Durian Pod",
+
+
+  "block.barklings.clover_carpet": "Clover Carpet",
+
+  "block.barklings.living_lantern": "Living Lantern",
+
+  "item.barklings.barkling_spawn_egg": "Barkling Spawn Egg",
+
+
+  "item.barklings.hidden_voices_music_disc": "§bMusic Disc§b",
+  "item.barklings.hidden_voices_music_disc.desc": "Nathan - hidden voices",
+
+  "item.tag.barklings.fruit": "Fruit",
+  "item.tag.barklings.gilded_oak_logs": "Gilded Oak Logs",
+
+  "painting.barklings.natures_palette.title": "Nature's Palette",
+  "painting.barklings.natures_palette.author": "Nathan",
+  "painting.barklings.the_forests_child.title": "The Forest's Child",
+  "painting.barklings.the_forests_child.author": "Nathan",
+
+  "advancements.barklings.fruity_feast.title": "Fruity Feast",
+  "advancements.barklings.fruity_feast.description": "Eat every fruit!",
+
+  "advancements.barklings.find_forest_village.title": "Hidden Hamlet",
+  "advancements.barklings.find_forest_village.description": "Stumble upon a Barkling village",
+
+  "advancements.barklings.find_every_forest_village.title": "Woodland Explorer",
+  "advancements.barklings.find_every_forest_village.description": "Discover every type of Barkling village",
+
+  "advancements.barklings.find_forest_hermit.title": "Hide Away Home",
+  "advancements.barklings.find_forest_hermit.description": "Uncover the home of a Barkling hermit",
+
+  "advancements.barklings.find_every_forest_hermit.title": "Hide and Seek Champion",
+  "advancements.barklings.find_every_forest_hermit.description": "Find every kind of Barkling hermit home",
+
+  "advancements.barklings.gilded_oak_sapling.title": "Nature's Gold",
+  "advancements.barklings.gilded_oak_sapling.description": "Be gifted a Gilded Sapling",
+
+  "entity.barklings.barkling": "Barkling"
+}
