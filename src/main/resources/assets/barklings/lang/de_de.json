@@ -12,8 +12,8 @@
   "block.barklings.gilded_oak_trapdoor": "Vergoldete Eichenholzfalltür",
   "block.barklings.gilded_oak_log": "Vergoldeter Eichenstamm",
   "block.barklings.gilded_oak_wood": "Vergoldetes Eichenholz",
-  "block.barklings.stripped_gilded_oak_log": "Entrindeter vergoldeter Eichenstamm",
-  "block.barklings.stripped_gilded_oak_wood": "Entrindetes vergoldetes Eichenholz",
+  "block.barklings.stripped_gilded_oak_log": "Entrindeter Vergoldeter Eichenstamm",
+  "block.barklings.stripped_gilded_oak_wood": "Entrindetes Vergoldetes Eichenholz",
 
   "block.barklings.gilded_oak_sign": "Vergoldetes Eichenholzschild",
   "block.barklings.gilded_oak_hanging_sign": "Vergoldetes Eichenholzhängeschild",
@@ -36,7 +36,7 @@
   "item.barklings.marsh_star": "Sumpfstern",
   "item.barklings.wax_pear": "Wachsbirne",
   "item.barklings.warped_mango": "Wirrmango",
-  "item.barklings.crimson_durian": "Purpurdurian",
+  "item.barklings.crimson_durian": "Karmesindurian",
   "item.barklings.red_capaya": "Rote Kappaya",
   "item.barklings.brown_sporsimmon": "Brauner Sporkaki",
   "item.barklings.flowering_lychee": "Blütenlychee",
@@ -46,7 +46,7 @@
   "item.barklings.dusk_berry": "Dämmerbeere",
 
   "block.barklings.warped_mango_pod": "Wirrmango-Schote",
-  "block.barklings.crimson_durian_pod": "Purpurdurian-Frucht",
+  "block.barklings.crimson_durian_pod": "Karmesindurian-Frucht",
 
   "block.barklings.clover_carpet": "Klee-Teppich",
 
@@ -54,8 +54,8 @@
 
   "item.barklings.barkling_spawn_egg": "Barkling-Spawn-Ei",
 
-  "item.barklings.hidden_voices_music_disc": "§bMusikscheibe§b",
-  "item.barklings.hidden_voices_music_disc.desc": "Nathan - verborgene Stimmen",
+  "item.barklings.hidden_voices_music_disc": "§bSchallplatte§b",
+  "item.barklings.hidden_voices_music_disc.desc": "Nathan - hidden voices",
 
   "item.tag.barklings.fruit": "Früchte",
   "item.tag.barklings.gilded_oak_logs": "Vergoldete Eichenstämme",
