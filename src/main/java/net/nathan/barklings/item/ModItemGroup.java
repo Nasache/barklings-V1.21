@@ -44,13 +44,13 @@ public class ModItemGroup {
 
                         entries.add(ModBlocks.LIVING_LANTERN);
 
-                        entries.add(ModItems.AURORA_CHERRIES);
+                        entries.add(ModItems.WAX_PEAR);
+                        entries.add(ModItems.SNOWY_PLUM);
                         entries.add(ModItems.VIRANA);
                         entries.add(ModItems.SOLIND);
-                        entries.add(ModItems.SNOWY_PLUM);
                         entries.add(ModItems.NOCTURNATE);
-                        entries.add(ModItems.WAX_PEAR);
                         entries.add(ModItems.MARSH_STAR);
+                        entries.add(ModItems.AURORA_CHERRIES);
 
                         entries.add(ModItems.FLOWERING_LYCHEE);
 
