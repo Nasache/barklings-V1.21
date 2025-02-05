@@ -1,0 +1,87 @@
+{
+  "itemgroup.barklings": "Barklings",
+
+  "block.barklings.gilded_oak_planks": "Vergoldete Eichenholzbretter",
+  "block.barklings.gilded_oak_stairs": "Vergoldete Eichenholztreppe",
+  "block.barklings.gilded_oak_slab": "Vergoldete Eichenholzstufe",
+  "block.barklings.gilded_oak_button": "Vergoldeter Eichenholzknopf",
+  "block.barklings.gilded_oak_pressure_plate": "Vergoldete Eichenholzdruckplatte",
+  "block.barklings.gilded_oak_fence": "Vergoldeter Eichenholzzaun",
+  "block.barklings.gilded_oak_fence_gate": "Vergoldetes Eichenholzzauntor",
+  "block.barklings.gilded_oak_door": "Vergoldete Eichenholztür",
+  "block.barklings.gilded_oak_trapdoor": "Vergoldete Eichenholzfalltür",
+  "block.barklings.gilded_oak_log": "Vergoldeter Eichenstamm",
+  "block.barklings.gilded_oak_wood": "Vergoldetes Eichenholz",
+  "block.barklings.stripped_gilded_oak_log": "Entrindeter vergoldeter Eichenstamm",
+  "block.barklings.stripped_gilded_oak_wood": "Entrindetes vergoldetes Eichenholz",
+
+  "block.barklings.gilded_oak_sign": "Vergoldetes Eichenholzschild",
+  "block.barklings.gilded_oak_hanging_sign": "Vergoldetes Eichenholzhängeschild",
+
+  "item.barklings.gilded_oak_boat": "Vergoldetes Eichenholzboot",
+  "item.barklings.gilded_oak_chest_boat": "Vergoldete Eichenholztruhenboot",
+
+  "block.barklings.gilded_oak_leaves": "Vergoldete Eichenlaubblätter",
+
+  "block.barklings.gilded_oak_sapling": "Vergoldeter Eichensetzling",
+  "block.barklings.bloom_berry_bush": "Blütenbeerenstrauch",
+  "block.barklings.dusk_berry_bush": "Dämmerbeerenstrauch",
+  "block.barklings.dry_berry_bush": "Trockenbeerenstrauch",
+
+  "item.barklings.aurora_cherries": "Aurora-Kirschen",
+  "item.barklings.solind": "Sonnenrinde",
+  "item.barklings.virana": "Rebanane",
+  "item.barklings.snowy_plum": "Schneepflaume",
+  "item.barklings.nocturnate": "Nachtgranat",
+  "item.barklings.marsh_star": "Sumpfstern",
+  "item.barklings.wax_pear": "Wachsbirne",
+  "item.barklings.warped_mango": "Wirrmango",
+  "item.barklings.crimson_durian": "Purpurdurian",
+  "item.barklings.red_capaya": "Rote Kappaya",
+  "item.barklings.brown_sporsimmon": "Brauner Sporkaki",
+  "item.barklings.flowering_lychee": "Blütenlychee",
+
+  "item.barklings.bloom_berry": "Blütenbeere",
+  "item.barklings.dry_berries": "Trockenbeeren",
+  "item.barklings.dusk_berry": "Dämmerbeere",
+
+  "block.barklings.warped_mango_pod": "Wirrmango-Schote",
+  "block.barklings.crimson_durian_pod": "Purpurdurian-Frucht",
+
+  "block.barklings.clover_carpet": "Klee-Teppich",
+
+  "block.barklings.living_lantern": "Lebende Laterne",
+
+  "item.barklings.barkling_spawn_egg": "Barkling-Spawn-Ei",
+
+  "item.barklings.hidden_voices_music_disc": "§bMusikscheibe§b",
+  "item.barklings.hidden_voices_music_disc.desc": "Nathan - verborgene Stimmen",
+
+  "item.tag.barklings.fruit": "Früchte",
+  "item.tag.barklings.gilded_oak_logs": "Vergoldete Eichenstämme",
+
+  "painting.barklings.natures_palette.title": "Die Palette der Natur",
+  "painting.barklings.natures_palette.author": "Nathan",
+  "painting.barklings.the_forests_child.title": "Das Kind des Waldes",
+  "painting.barklings.the_forests_child.author": "Nathan",
+
+  "advancements.barklings.fruity_feast.title": "Fruchtiges Festmahl",
+  "advancements.barklings.fruity_feast.description": "Iss jede Frucht!",
+
+  "advancements.barklings.find_forest_village.title": "Verstecktes Weiler",
+  "advancements.barklings.find_forest_village.description": "Stolpere über ein Barkling-Dorf",
+
+  "advancements.barklings.find_every_forest_village.title": "Waldforscher",
+  "advancements.barklings.find_every_forest_village.description": "Entdecke alle Barkling-Dorfarten",
+
+  "advancements.barklings.find_forest_hermit.title": "Verstecktes Zuhause",
+  "advancements.barklings.find_forest_hermit.description": "Finde die Hütte eines Barkling-Einsiedlers",
+
+  "advancements.barklings.find_every_forest_hermit.title": "Meister im Versteckspiel",
+  "advancements.barklings.find_every_forest_hermit.description": "Finde jede Art von Barkling-Einsiedlerhütte",
+
+  "advancements.barklings.gilded_oak_sapling.title": "Gold der Natur",
+  "advancements.barklings.gilded_oak_sapling.description": "Erhalte einen vergoldeten Setzling",
+
+  "entity.barklings.barkling": "Barkling"
+}

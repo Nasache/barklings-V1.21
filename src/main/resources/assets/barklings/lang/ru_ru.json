@@ -1,5 +1,5 @@
 {
-  "itemgroup.barklings": "Barklings",
+  "itemgroup.barklings": "Барклинг",
 
   "block.barklings.gilded_oak_planks": "Доски из Золочёного Дуба",
   "block.barklings.gilded_oak_stairs": "Ступеньки из Золочёного Дуба",
@@ -55,7 +55,7 @@
   "item.barklings.barkling_spawn_egg": "Яйцо Призыва Барклинга",
 
   "item.barklings.hidden_voices_music_disc": "§bМузыкальная Пластинка§b",
-  "item.barklings.hidden_voices_music_disc.desc": "Nathan - Скрытые Голоса",
+  "item.barklings.hidden_voices_music_disc.desc": "Nathan - скрытые голоса",
 
   "item.tag.barklings.fruit": "Фрукты",
   "item.tag.barklings.gilded_oak_logs": "Брёвна Золочёного Дуба",
@@ -66,22 +66,22 @@
   "painting.barklings.the_forests_child.author": "Nathan",
 
   "advancements.barklings.fruity_feast.title": "Фруктовый Праздник",
-  "advancements.barklings.fruity_feast.description": "Съешьте Каждый Фрукт!",
+  "advancements.barklings.fruity_feast.description": "Съешьте каждый фрукт!",
 
   "advancements.barklings.find_forest_village.title": "Скрытая Деревушка",
-  "advancements.barklings.find_forest_village.description": "Найдите Деревню Барклингов",
+  "advancements.barklings.find_forest_village.description": "Наткнитесь на деревню барклингов",
 
   "advancements.barklings.find_every_forest_village.title": "Лесной Исследователь",
-  "advancements.barklings.find_every_forest_village.description": "Откройте Все Виды Деревень Барклингов",
+  "advancements.barklings.find_every_forest_village.description": "Откройте все виды деревень барклингов",
 
   "advancements.barklings.find_forest_hermit.title": "Укрытие Отшельника",
-  "advancements.barklings.find_forest_hermit.description": "Обнаружьте Жилище Отшельника-Барклинга",
+  "advancements.barklings.find_forest_hermit.description": "Обнаружьте жилище отшельника-барклинга",
 
   "advancements.barklings.find_every_forest_hermit.title": "Чемпион по Пряткам",
-  "advancements.barklings.find_every_forest_hermit.description": "Найдите Все Виды Жилищ Отшельников-Барклингов",
+  "advancements.barklings.find_every_forest_hermit.description": "Найдите все виды жилищ отшельников-барклингов",
 
   "advancements.barklings.gilded_oak_sapling.title": "Золото Природы",
-  "advancements.barklings.gilded_oak_sapling.description": "Получите в Подарок Золочёный Саженец",
+  "advancements.barklings.gilded_oak_sapling.description": "Получите в подарок Золочёный Саженец",
 
   "entity.barklings.barkling": "Барклинг"
 }
