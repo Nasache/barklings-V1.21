@@ -21,9 +21,6 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 
-
-        //blockStateModelGenerator.registerFlowerbed(ModBlocks.CLOVER_CARPET);
-
         blockStateModelGenerator.registerLantern(ModBlocks.LIVING_LANTERN);
 
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLOOM_BERRY_BUSH).coordinate(BlockStateVariantMap.create(Properties.AGE_3).register((stage) -> {

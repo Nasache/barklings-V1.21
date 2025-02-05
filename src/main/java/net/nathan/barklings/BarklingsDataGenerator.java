@@ -8,7 +8,6 @@ import net.nathan.barklings.datagen.*;
 import net.nathan.barklings.world.ModConfiguredFeatures;
 import net.nathan.barklings.world.ModPlacedFeatures;
 
-
 public class BarklingsDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {

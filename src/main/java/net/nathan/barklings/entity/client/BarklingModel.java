@@ -7,23 +7,16 @@ import net.minecraft.client.render.entity.model.ModelWithArms;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Arm;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RotationAxis;
 import net.nathan.barklings.entity.client.animation.BarklingAnimations;
 import net.nathan.barklings.entity.custom.BarklingEntity;
 
 public class BarklingModel extends SinglePartEntityModel<BarklingEntity> implements ModelWithArms {
     private final ModelPart body;
     private final ModelPart head;
-    private final ModelPart rightArm;
-    private final ModelPart leftArm;
 
     public BarklingModel(ModelPart root) {
         this.body = root.getChild("body");
         this.head = body.getChild("head");
-
-        ModelPart arms = body.getChild("arms");
-        this.rightArm = arms.getChild("rarm");
-        this.leftArm = arms.getChild("larm");
     }
 
     public static TexturedModelData getTexturedModelData() {

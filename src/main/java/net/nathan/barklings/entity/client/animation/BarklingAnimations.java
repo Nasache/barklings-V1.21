@@ -7,9 +7,6 @@ import net.minecraft.client.render.entity.animation.Transformation;
 
 public class BarklingAnimations {
 
-
-
-
     public static final Animation ANIM_BARKLING_IDLE = Animation.Builder.create(0f).looping()
             .addBoneAnimation("torso",
                     new Transformation(Transformation.Targets.TRANSLATE,
